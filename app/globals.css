@@ -141,7 +141,7 @@ ul {
 
 .box-container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .flex-container--reverse .box-container {

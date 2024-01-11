@@ -1,3 +1,4 @@
+"use client";
 import ill1 from "@/assets/ill1.png";
 import { mainShowcase } from "@/app/_lib/interfaces";
 import { client } from "@/app/_lib/sanity";
@@ -6,8 +7,9 @@ import StarsSvg from "@/svgs/StarsSvg";
 import WordLineDecorationSvg from "@/svgs/WordLineDecorationSvg";
 import Image from "next/image";
 import { BsFillPatchCheckFill } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
-export const revalidate  = 0
+export const revalidate = 0;
 
 async function getData() {
   const query = `
@@ -22,10 +24,18 @@ async function getData() {
   return data;
 }
 
-const Hero = async () => {
-  const data: mainShowcase= await getData();
+let data: null | mainShowcase = null;
+const Hero = () => {
+  async function x() {
+    data = await getData();
+  }
 
-  console.log(data)
+  useEffect(() => {
+    // x();
+    console.log(data);
+  }, []);
+
+  const [count, setCount] = useState(0);
 
   return (
     <section className="hero">
@@ -56,7 +66,7 @@ const Hero = async () => {
             Quisquam sunt sit iure ullam unde labore ab dolores sequi nulla
             fugiat tempore quis perferendis, modi, temporibus doloremque. Nobis,
             sequi. */}
-          {data?.paragraph}
+            {data?.paragraph}
           </p>
           <div>
             <ul className="hero-check-list">
@@ -92,6 +102,7 @@ const Hero = async () => {
             <BigDotsSvg className="hero-svg-big-dotts" />
             <StarsSvg className="hero-svg-stars" />
             <Image
+              priority
               style={{ width: "100%" }}
               src={ill1}
               className="hero-img"
