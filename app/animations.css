@@ -1,0 +1,72 @@
+
+.marlin-text .cls-1 {
+    fill: transparent;
+ 
+    stroke: var(--color-text-1);
+    stroke-width: 1px;
+    animation: m-anim 1s ease-out forwards;
+}
+
+
+#marlin-letter-m{
+    stroke-dasharray: 529;
+    stroke-dashoffset: 529;
+
+}
+#marlin-letter-a{
+    stroke-dasharray: 267;
+    stroke-dashoffset: 267;
+
+}
+#marlin-letter-r{
+    stroke-dasharray: 143;
+    stroke-dashoffset: 143;
+
+}
+
+#marlin-letter-l{
+    stroke-dasharray: 174;
+    stroke-dashoffset: 174;
+
+}
+
+
+#marlin-letter-i-top{
+    stroke-dasharray: 39;
+    stroke-dashoffset: 39;
+
+}
+
+#marlin-letter-i-bottom{
+    stroke-dasharray: 122;
+    stroke-dashoffset: 122;
+
+}
+
+#marlin-letter-n{
+    /* stroke-dasharray: 122;
+    stroke-dashoffset: 122; */
+    stroke-dasharray: 238;
+    stroke-dashoffset: 238;
+
+}
+
+#marlin-letter-6{
+ 
+
+}
+
+@keyframes m-anim {
+    90%{
+        fill: transparent;
+    }
+    
+    100%{
+        fill: var(--color-text-1);
+
+    stroke-dashoffset: 0;
+
+
+    }
+    
+}
