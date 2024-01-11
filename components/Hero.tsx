@@ -1,6 +1,6 @@
 import ill1 from "@/assets/ill1.png";
-import { mainShowcase } from "@/lib/interfaces";
-import { client } from "@/lib/sanity";
+import { mainShowcase } from "@/app/_lib/interfaces";
+import { client } from "@/app/_lib/sanity";
 import BigDotsSvg from "@/svgs/BigDotsSvg";
 import StarsSvg from "@/svgs/StarsSvg";
 import WordLineDecorationSvg from "@/svgs/WordLineDecorationSvg";
