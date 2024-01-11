@@ -1,51 +1,72 @@
 import ill1 from "@/assets/ill1.png";
+import { mainShowcase } from "@/lib/interfaces";
+import { client } from "@/lib/sanity";
 import BigDotsSvg from "@/svgs/BigDotsSvg";
 import StarsSvg from "@/svgs/StarsSvg";
 import WordLineDecorationSvg from "@/svgs/WordLineDecorationSvg";
 import Image from "next/image";
 import { BsFillPatchCheckFill } from "react-icons/bs";
-console.log(ill1)
 
+async function getData() {
+  const query = `
+  *[_type == "main-showcase"] | order(_createdAt desc){
+    title,
+    paragraph
+  }[0]
+    `;
 
+  const data = await client.fetch(query);
 
-const Hero = () => {
+  return data;
+}
+
+const Hero = async () => {
+  const data: mainShowcase= await getData();
+
+  console.log(data)
+
   return (
     <section className="hero">
       <div className="container-small hero__container flex-container">
         <div>
           <h1 data-aos="fade-down" data-aos-delay={400}>
-            <span className="hero-decorated-word" style={{paddingLeft: "0px"}}>
-            <WordLineDecorationSvg className="hero-decorated-word-svg" />
-
-            Simplifying
-            and cheapening 
-              </span>
-
-            
-              {/* Simplifying
-            and cheapening  */}
+            <span
+              className="hero-decorated-word"
+              style={{ paddingLeft: "0px" }}
+            >
+              <WordLineDecorationSvg className="hero-decorated-word-svg" />
+              Simplifying and cheapening
+            </span>
             <br /> communications between
             <br />
             <span style={{ color: "var(--color-primary)" }}>
               retailers and their vendors
-            {/* <span className="hero-decorated-word" style={{paddingLeft: "20px"}}>
-            <WordLineDecorationSvg className="hero-decorated-word-svg" />
-
-              
-               vendors
-              
-            </span> */}
-
             </span>
           </h1>
-          <p style={{marginBottom: "25px", fontSize: "16px", lineHeight: "1.3"}}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sed? Quisquam sunt sit iure ullam unde labore ab dolores sequi nulla fugiat tempore quis perferendis, modi, temporibus doloremque. Nobis, sequi.
+          <p
+            style={{
+              marginBottom: "25px",
+              fontSize: "16px",
+              lineHeight: "1.3",
+            }}
+          >
+            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. A, sed?
+            Quisquam sunt sit iure ullam unde labore ab dolores sequi nulla
+            fugiat tempore quis perferendis, modi, temporibus doloremque. Nobis,
+            sequi. */}
+          {data?.paragraph}
           </p>
           <div>
             <ul className="hero-check-list">
-              <li><BsFillPatchCheckFill /> Automate You Job</li>
-              <li><BsFillPatchCheckFill /> Communicate With Ease</li>
-              <li><BsFillPatchCheckFill /> Analize Data</li>
+              <li>
+                <BsFillPatchCheckFill /> Automate You Job
+              </li>
+              <li>
+                <BsFillPatchCheckFill /> Communicate With Ease
+              </li>
+              <li>
+                <BsFillPatchCheckFill /> Analize Data
+              </li>
             </ul>
           </div>
           <button
@@ -54,7 +75,6 @@ const Hero = () => {
             // data-aos="fade-up"
             // data-aos-delay={400}
           >
-
             <div className="bg"></div>
             Try it out
           </button>
