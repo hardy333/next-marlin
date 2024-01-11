@@ -7,6 +7,8 @@ import WordLineDecorationSvg from "@/svgs/WordLineDecorationSvg";
 import Image from "next/image";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 
+export const revalidate  = 0
+
 async function getData() {
   const query = `
   *[_type == "main-showcase"] | order(_createdAt desc){
