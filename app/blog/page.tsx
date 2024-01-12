@@ -13,7 +13,10 @@ export interface simpleBlogCard {
   smallDescription: string;
   currentSlug: string;
   titleImage: any;
+  date: string;
+
 }
+
 
 export interface fullBlog {
   currentSlug: string;
@@ -30,7 +33,8 @@ async function getData() {
     title,
       smallDescription,
       "currentSlug": slug.current,
-      titleImage
+      titleImage,
+      "date": _createdAt
   }`;
 
   const data = await client.fetch(query);

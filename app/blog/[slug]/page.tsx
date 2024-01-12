@@ -2,7 +2,9 @@ import { client, urlFor } from "@/app/_lib/sanity";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { fullBlog } from "../page";
-import "./style.css"
+import "./style.css";
+import { FacebookIcon, FacebookShareButton } from "next-share";
+import ShareComp from "@/components/ShareComp";
 
 export const revalidate = 0; // revalidate at most 30 seconds
 
@@ -46,6 +48,9 @@ export default async function BlogArticle({
       <div className="mt-16 prose prose-blue prose-lg text-3xl dark:prose-invert prose-li:marker:to-blue-600 prose-a:text-primary">
         <PortableText value={data.content} />
       </div>
+
+      <ShareComp title={data.title} slug={data.currentSlug} />
+
     </div>
   );
 }

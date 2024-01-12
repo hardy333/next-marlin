@@ -43,7 +43,7 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
         <footer>
           <span>
             {" "}
-            <Image src={clock} alt="" /> 3 min
+            <Image src={clock} alt="" /> 2 min
           </span>
           <span>September 9, 2023</span>
         </footer>

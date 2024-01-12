@@ -8,10 +8,13 @@ import Image from "next/image";
 import { simpleBlogCard } from "./page";
 import { urlFor } from "../_lib/sanity";
 import Link from "next/link";
+import readingTime from "reading-time";
+import { format } from "date-fns/format";
 
 const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
   console.log("dd", data);
 
+  console.log(new Date(data[0].date))
   return (
     <div className="blog-posts-section">
       <div className="container-small  blog-posts-section__container">
@@ -53,9 +56,9 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
             <footer>
               <span>
                 {" "}
-                <Image src={clock} alt="" /> 3 min
+                <Image src={clock} alt="" /> {Math.ceil(readingTime(blogPost.smallDescription).minutes*15 + 1)} min
               </span>
-              <span>September 9, 2023</span>
+              <span>{format(new Date(blogPost.date), "dd MM, yyyy")}</span>
             </footer>
           </article>
         ))}
