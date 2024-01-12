@@ -1,5 +1,5 @@
 "use client";
-import React, { AnimationEvent, MouseEvent, useState } from "react";
+import React, { AnimationEvent, MouseEvent, useEffect, useState } from "react";
 import classes from "./pricing.module.css";
 import Switch from "react-switch";
 import { FaCheck } from "react-icons/fa6";
@@ -193,23 +193,20 @@ const PriceCard = ({
 
     ripple.classList.add("ripple");
 
-    ripple.addEventListener("animationend", handleRippleAnimationEnd);
+    setTimeout(() => {
+      ripple.remove();
+    }, 1500);
 
     element.appendChild(ripple);
   };
 
-  function handleRippleAnimationEnd  (e: AnimationEvent<HTMLDivElement>)  {
-    e.currentTarget.removeEventListener(
-      "animationend",
-      handleRippleAnimationEnd
-    );
-    e.currentTarget.remove();
-  };
 
   return (
     <>
       <article
-        onClick={(e: MouseEvent<HTMLAreaElement>) => handleClick(e, strokeColor)}
+        onClick={(e: MouseEvent<HTMLAreaElement>) =>
+          handleClick(e, strokeColor)
+        }
         className={`${classes["price-card"]} ${classes[c]}`}
         style={{ border: `5px solid ${strokeColor}` }}
       >
@@ -241,9 +238,7 @@ const PriceCard = ({
         <ul>
           {cardList.map((liText, index) => {
             return (
-              <li
-              key={liText + index}
-              >
+              <li key={liText + index}>
                 <span
                   style={{ "--color": opacityColor }}
                   className={`${classes["price-card-check-circle"]}`}
