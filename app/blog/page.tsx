@@ -50,7 +50,7 @@ const Blog = async () => {
       <BlogShowcase />
       <BlogFilters />
       <div className="container-small">
-        <BigBlogPost />
+        <BigBlogPost post={data[0]} />
       </div>
       <BlogPostsSection data={data} />
     </>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
@@ -9,41 +9,47 @@ import { simpleBlogCard } from "./page";
 import { urlFor } from "../_lib/sanity";
 import Link from "next/link";
 
-const BlogPostsSection = ({data}: {data: simpleBlogCard[]}) => {
+const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
+  console.log("dd", data);
 
-  console.log("dd", data)
-  
-  
   return (
     <div className="blog-posts-section">
       <div className="container-small  blog-posts-section__container">
-        {data.map((blogPost, index) => (
+        {data.slice(1, data.length).map((blogPost, index) => (
           <article
-          key={index}
+            key={index}
             className="trend-card"
             data-aos-delay={200}
             data-aos="fade-in"
           >
-            <span className="trend-card__lable" style={{zIndex: "999999"}}>Industry news</span>
-            <div className="trend-card__img" style={{position: "relative"}}>
-            <Image
-              style={{ width: "100%", objectFit: "cover", height: "100%", borderRadius: "inherit" }}
-              width={1800}
-              height={1200}
-              src={urlFor(blogPost.titleImage).url()}
-              className="hero-img"
-              alt=""
-            />
+            <span className="trend-card__lable" style={{ zIndex: "999999" }}>
+              Industry news
+            </span>
+            <div className="trend-card__img" style={{ position: "relative" }}>
+              <Image
+                style={{
+                  width: "100%",
+                  objectFit: "cover",
+                  height: "100%",
+                  borderRadius: "inherit",
+                }}
+                width={1800}
+                height={1200}
+                src={urlFor(blogPost.titleImage).url()}
+                className="hero-img"
+                alt=""
+              />
             </div>
             <h4>{blogPost.title}</h4>
-            <p>
-              {blogPost.smallDescription}
-            </p>
-              <Link href={`/blog/${blogPost.currentSlug}`} className="post-reade-more-link">
-            <p className="trend-card__read-more">
-              Read more <BsArrowRightShort />{" "}
-            </p>
-              </Link>
+            <p>{blogPost.smallDescription}</p>
+            <Link
+              href={`/blog/${blogPost.currentSlug}`}
+              className="post-reade-more-link"
+            >
+              <p className="trend-card__read-more">
+                Read more <BsArrowRightShort />{" "}
+              </p>
+            </Link>
             <footer>
               <span>
                 {" "}
@@ -59,7 +65,9 @@ const BlogPostsSection = ({data}: {data: simpleBlogCard[]}) => {
         <span>2</span>
         <span>3</span>
         <span>4</span>
-        <span><IoIosArrowForward/></span>
+        <span>
+          <IoIosArrowForward />
+        </span>
       </div>
     </div>
   );
