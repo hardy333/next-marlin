@@ -10,6 +10,8 @@ import { urlFor } from "../_lib/sanity";
 import Link from "next/link";
 
 const BlogPostsSection = ({data}: {data: simpleBlogCard[]}) => {
+
+  console.log("dd", data)
   
   
   return (
