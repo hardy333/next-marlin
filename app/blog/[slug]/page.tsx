@@ -3,10 +3,8 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { fullBlog } from "../page";
 import "./style.css";
-import { FacebookIcon, FacebookShareButton } from "next-share";
 import ShareComp from "@/components/ShareComp";
 
-export const revalidate = 0; // revalidate at most 30 seconds
 
 async function getData(slug: string) {
   const query = `

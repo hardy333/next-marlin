@@ -25,7 +25,6 @@ export interface fullBlog {
   titleImage: any;
 }
 
-export const revalidate = 0; // revalidate at most 30 seconds
 
 async function getData() {
   const query = `

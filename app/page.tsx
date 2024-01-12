@@ -6,7 +6,6 @@ import ManageOrders from "@/components/ManageOrders";
 import Trends from "@/components/Trends";
 
 
-export const revalidate  = 0
 
 
 export default function Home() {
