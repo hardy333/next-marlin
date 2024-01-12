@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Features />
+      <Features   bgColor={null}/>
 
       <MiddleSections />
       <ShareComp />
