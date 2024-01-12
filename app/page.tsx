@@ -4,8 +4,6 @@ import Features from "@/components/Features";
 import MiddleSections from "@/components/MiddleSections";
 import ManageOrders from "@/components/ManageOrders";
 import Trends from "@/components/Trends";
-import ShareComp from "@/components/ShareComp";
-import { Metadata } from "next";
 
 
 export const revalidate  = 0
@@ -18,8 +16,6 @@ export default function Home() {
       <Features   bgColor={null}/>
 
       <MiddleSections />
-      <ShareComp />
-
       <ManageOrders />
       <Trends />
     </>
