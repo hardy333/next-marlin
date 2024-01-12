@@ -3,7 +3,7 @@
 
 import { FacebookShareButton, FacebookIcon } from "next-share";
 
-const ShareComp = ({slug, title}: {title: string,slug: string}) => {
+const ShareComp = ({slug, title}: {title: string, slug: string}) => {
 
   return (
     <div style={{marginTop: "50px"}}>
