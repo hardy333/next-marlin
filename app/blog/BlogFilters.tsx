@@ -23,7 +23,7 @@ const BlogFilters = () => {
       <div className="container-small blog-filters__container">
         <ul>
           {arr.map((text, index) => (
-            <li onClick={() => handleClick( index)}>
+            <li key={index} onClick={() => handleClick( index)}>
               {index === selectedIndex ? (
                 <motion.span
                   layoutId="underline"

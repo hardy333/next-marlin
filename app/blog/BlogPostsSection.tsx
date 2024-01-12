@@ -12,8 +12,9 @@ const BlogPostsSection = () => {
     
     <div className="blog-posts-section">
       <div className="container-small  blog-posts-section__container">
-        {blogPosts.map((blogPost) => (
+        {blogPosts.map((blogPost, index) => (
           <article
+          key={index}
             className="trend-card"
             data-aos-delay={200}
             data-aos="fade-in"
