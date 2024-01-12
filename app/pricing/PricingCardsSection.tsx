@@ -240,7 +240,7 @@ const PriceCard = ({
             return (
               <li key={liText + index}>
                 <span
-                  style={{ "--color": opacityColor }}
+                  style={{ backgroundColor: opacityColor }}
                   className={`${classes["price-card-check-circle"]}`}
                 >
                   <FaCheck fill={strokeColor} />
