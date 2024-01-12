@@ -1,0 +1,42 @@
+.blog-posts-section{
+    padding: 8rem 0 6rem;
+}
+
+
+.blog-posts-section__container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    row-gap: 8rem;
+
+}
+
+
+
+.blog-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 6rem;
+}
+
+.blog-pagination span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #A38DDF;
+
+text-align: center;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+cursor: pointer;
+
+}
+
+.blog-pagination span:hover{
+    color: var(--color-text-1);
+}

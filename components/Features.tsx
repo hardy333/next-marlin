@@ -4,7 +4,8 @@ import analize from "@/assets/analize.png"
 import SmallDotsSvg from '@/svgs/SmallDotsSvg'
 import Image from "next/image"
 
-const Features = ({bgColor=null}) => {
+const Features = ({bgColor=null}: {bgColor: string | null}) => {
+  
   return (
     <section className="features" style={{background: bgColor ?? ""}}>
         <SmallDotsSvg className="features-svg-small-dots-left"/>

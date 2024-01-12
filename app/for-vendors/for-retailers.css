@@ -1,0 +1,44 @@
+/* For Retailers Hero */
+/* For Retailers Hero */
+.for-retailers-hero{
+    background-color: #E8EBFC;
+
+}
+
+.for-retailers-hero__container {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.for-retailers-hero h1 {
+  color: #211543;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+}
+
+.for-retailers-hero span {
+  font-weight: 600;
+}
+
+
+
+.simple-cta-section{
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.simple-cta-section .btn{
+font-family: Inter;
+font-size: 25px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+
+padding: 10px 30px;
+}
