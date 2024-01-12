@@ -35,7 +35,11 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
         >
           {post.smallDescription}
         </p>
-        <Link href={`/blog/${post.currentSlug}`}>
+        <Link href={`/blog/${post.currentSlug}`}
+              prefetch={true}
+
+        
+        >
           <p className="trend-card__read-more">
             Read more <BsArrowRightShort />{" "}
           </p>

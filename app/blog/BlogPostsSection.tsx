@@ -48,6 +48,7 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
             <Link
               href={`/blog/${blogPost.currentSlug}`}
               className="post-reade-more-link"
+              prefetch={true}
             >
               <p className="trend-card__read-more">
                 Read more <BsArrowRightShort />{" "}
@@ -63,7 +64,7 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
           </article>
         ))}
       </div>
-      <div className="container-small blog-pagination">
+      <div className="container-small blog-pagination" style={{marginTop: "6rem"}}>
         <span>1</span>
         <span>2</span>
         <span>3</span>
