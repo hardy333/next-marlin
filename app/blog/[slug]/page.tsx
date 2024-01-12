@@ -49,7 +49,7 @@ export default async function BlogArticle({
         <PortableText value={data.content} />
       </div>
 
-      <ShareComp title={data.title} slug={data.currentSlug} />
+      <ShareComp data={data}/>
 
     </div>
   );
