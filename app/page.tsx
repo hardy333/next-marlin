@@ -11,16 +11,6 @@ import { Metadata } from "next";
 export const revalidate  = 0
 
 
-export const metadata: Metadata = {
-  title: 'Simplifying and cheapenin communications between retailers and their vendors',
-  description: 'Marlin is a digital platform that connects FMCG retailers to their vendors and helps them manage orders, order statuses, product catalogs, available stocks, special offers and much more, in a single space. ',
-  openGraph: {
-    title: 'Simplifying and cheapenin communications between retailers and their vendors',
-    description: 'Marlin is a digital platform that connects FMCG retailers to their vendors and helps them manage orders, order statuses, product catalogs, available stocks, special offers and much more, in a single space. ',
-  },
-}
-
-
 export default function Home() {
   return (
     <>
