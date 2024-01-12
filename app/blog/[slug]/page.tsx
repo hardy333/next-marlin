@@ -2,7 +2,7 @@ import { client, urlFor } from "@/app/_lib/sanity";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { fullBlog } from "../page";
-import "./style.css";
+// import "./style.css";
 import ShareComp from "@/components/ShareComp";
 
 
