@@ -3,9 +3,10 @@ import { mainShowcase } from "@/app/_lib/interfaces";
 import { client } from "@/app/_lib/sanity";
 import BigDotsSvg from "@/svgs/BigDotsSvg";
 import StarsSvg from "@/svgs/StarsSvg";
-import WordLineDecorationSvg from "@/svgs/WordLineDecorationSvg";
 import Image from "next/image";
 import { BsFillPatchCheckFill } from "react-icons/bs";
+import HeroH1 from "./HeroH1";
+
 
 export const revalidate = 0;
 
@@ -23,28 +24,15 @@ async function getData() {
 }
 
 const Hero = async () => {
-    const data: mainShowcase = await getData();
-
-
+  const data: mainShowcase = await getData();
 
   return (
     <section className="hero">
       <div className="container-small hero__container flex-container">
+        {/* <Framer /> */}
         <div>
-          <h1 data-aos="fade-down" data-aos-delay={400}>
-            <span
-              className="hero-decorated-word"
-              style={{ paddingLeft: "0px" }}
-            >
-              <WordLineDecorationSvg className="hero-decorated-word-svg" />
-              Simplifying and cheapening
-            </span>
-            <br /> communications between
-            <br />
-            <span style={{ color: "var(--color-primary)" }}>
-              retailers and their vendors
-            </span>
-          </h1>
+          <HeroH1 />
+
           <p
             style={{
               marginBottom: "25px",

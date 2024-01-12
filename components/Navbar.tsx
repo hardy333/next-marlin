@@ -5,13 +5,14 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="container navbar__container">
-        <Link href="/" className="home-link" data-aos="fade-right">
+        <Link href="/" className="home-link" data-aos="fade-right" style={{transform: "scale(0.9)", width: "180px"}}>
           <MarlinLogoSvg />
           <svg
             className="marlin-text"
             id="Layer_3"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 261.18 75.99"
+            style={{width: "90px"}}
           >
             <defs></defs>
             {/*  */}
@@ -62,20 +63,20 @@ const Navbar = () => {
             />
           </svg>
         </Link>
-        <ul className="navbar__list">
-          <li data-aos="fade-in " data-aos-delay={4 * 100 + 450}>
+        <ul className="navbar__list" style={{paddingRight: "45px"}}>
+          <li data-aos="fade-in " >
             <Link href="/#what-is-marlin">What is Marlin</Link>
           </li>
-          <li data-aos="fade-in " data-aos-delay={5 * 100 + 450}>
+          <li data-aos="fade-in " >
             <Link href="/for-retailers">For Retailers</Link>
           </li>
-          <li data-aos="fade-in " data-aos-delay={6 * 100 + 450}>
+          <li data-aos="fade-in " >
             <Link href="/for-vendors">For Vendors</Link>
           </li>
-          <li data-aos="fade-in " data-aos-delay={7 * 100 + 450}>
+          <li data-aos="fade-in " >
             <Link href="/blog">Blog</Link>
           </li>
-          <li data-aos="fade-in " data-aos-delay={8 * 100 + 450}>
+          <li data-aos="fade-in " >
             <Link href="/pricing">Pricing</Link>
           </li>
         </ul>

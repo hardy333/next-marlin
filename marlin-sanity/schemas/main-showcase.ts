@@ -2,6 +2,12 @@ export default {
     name: 'main-showcase',
     type: 'document',
     title: 'Main Showcase',
+    preview: {
+      select: {
+        title: 'title',
+        subtitle:"title"
+      }
+    },
     fields: [
       {
         name: 'title',
