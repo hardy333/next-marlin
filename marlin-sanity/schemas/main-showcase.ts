@@ -19,5 +19,10 @@ export default {
         type: 'text',
         title: 'Showcase paragraph'
       },
+      {
+        name: 'image',
+        type: 'image',
+        title: 'Showcase main image',
+      },
     ]
   }

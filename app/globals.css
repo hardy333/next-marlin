@@ -565,7 +565,7 @@ ul {
   color: #211543;
 
   
-  font-size: 40px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -600,6 +600,7 @@ ul {
   gap: 2rem;
 
   position: relative;
+
 }
 
 .trend-card__img {
@@ -613,28 +614,42 @@ ul {
   color: #211543;
 
   
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  max-height: 80px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space:nowrap */
 }
 
 .trend-card p {
   color: #211543;
 
   
-  font-size: 20px;
-  font-style: normal;
+  font-size: 16px;
   font-weight: 400;
   line-height: normal;
+  line-height: 1.5;
+
+  max-height: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
+
+.post-reade-more-link{
+  margin-top: auto;
+
+}
+
 
 .trend-card__read-more {
   color: #6e0ff5 !important;
 
   
   font-size: 20px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
 
@@ -642,6 +657,7 @@ ul {
   align-items: center;
   gap: 1rem;
   cursor: pointer;
+  margin-top: auto;
 }
 
 .trend-card__read-more:hover {
@@ -660,7 +676,7 @@ ul {
   color: #a38ddf;
 
   text-align: right;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -668,6 +684,9 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+
+  /* margin-top: auto; */
 }
 
 .trend-card footer span {
@@ -717,7 +736,7 @@ ul {
 
 .footer p {
   color: #211543;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

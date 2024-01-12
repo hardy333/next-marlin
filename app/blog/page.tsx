@@ -6,9 +6,44 @@ import "./blog-posts-section.css";
 import BlogShowcase from "./Showcase";
 import BigBlogPost from "./BigBlogPost";
 import BlogFilters from "./BlogFilters";
+import { client } from "../_lib/sanity";
 
-const Blog = () => {
- 
+export interface simpleBlogCard {
+  title: string;
+  smallDescription: string;
+  currentSlug: string;
+  titleImage: any;
+}
+
+export interface fullBlog {
+  currentSlug: string;
+  title: string;
+  content: any;
+  titleImage: any;
+}
+
+export const revalidate = 0; // revalidate at most 30 seconds
+
+async function getData() {
+  const query = `
+  *[_type == 'blog'] | order(_createdAt desc) {
+    title,
+      smallDescription,
+      "currentSlug": slug.current,
+      titleImage
+  }`;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+const Blog = async () => {
+  const data: simpleBlogCard[] = await getData();
+
+
+  console.log("ss", data)
+  
 
   return (
     <>
@@ -17,7 +52,7 @@ const Blog = () => {
       <div className="container-small">
         <BigBlogPost />
       </div>
-      <BlogPostsSection />
+      <BlogPostsSection data={data} />
     </>
   );
 };

@@ -5,30 +5,43 @@ import { BsArrowRightShort } from "react-icons/bs";
 import clock from "@/assets/clock.png";
 import { IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
+import { simpleBlogCard } from "./page";
+import { urlFor } from "../_lib/sanity";
+import Link from "next/link";
 
-const BlogPostsSection = () => {
-  const [blogPosts, setBlogPosts] = useState(Array.from({ length: 6 }).fill(1));
+const BlogPostsSection = ({data}: {data: simpleBlogCard[]}) => {
+  
+  
   return (
-    
     <div className="blog-posts-section">
       <div className="container-small  blog-posts-section__container">
-        {blogPosts.map((blogPost, index) => (
+        {data.map((blogPost, index) => (
           <article
           key={index}
             className="trend-card"
             data-aos-delay={200}
             data-aos="fade-in"
           >
-            <span className="trend-card__lable">Industry news</span>
-            <div className="trend-card__img"></div>
-            <h4>Title Lorem Ipsum Lorem</h4>
+            <span className="trend-card__lable" style={{zIndex: "999999"}}>Industry news</span>
+            <div className="trend-card__img" style={{position: "relative"}}>
+            <Image
+              style={{ width: "100%", objectFit: "cover", height: "100%", borderRadius: "inherit" }}
+              width={1800}
+              height={1200}
+              src={urlFor(blogPost.titleImage).url()}
+              className="hero-img"
+              alt=""
+            />
+            </div>
+            <h4>{blogPost.title}</h4>
             <p>
-              Body text lorem upsum lorem upsum lorem upsum lorem upsum lorem
-              upsum lorem upsum lorem upsum lorem upsum lorem
+              {blogPost.smallDescription}
             </p>
+              <Link href={`/blog/${blogPost.currentSlug}`} className="post-reade-more-link">
             <p className="trend-card__read-more">
               Read more <BsArrowRightShort />{" "}
             </p>
+              </Link>
             <footer>
               <span>
                 {" "}

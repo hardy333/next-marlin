@@ -1,6 +1,6 @@
 import ill1 from "@/assets/ill1.png";
 import { mainShowcase } from "@/app/_lib/interfaces";
-import { client } from "@/app/_lib/sanity";
+import { client, urlFor } from "@/app/_lib/sanity";
 import BigDotsSvg from "@/svgs/BigDotsSvg";
 import StarsSvg from "@/svgs/StarsSvg";
 import Image from "next/image";
@@ -14,7 +14,8 @@ async function getData() {
   const query = `
   *[_type == "main-showcase"] | order(_createdAt desc){
     title,
-    paragraph
+    paragraph,
+    image
   }[0]
     `;
 
@@ -25,6 +26,7 @@ async function getData() {
 
 const Hero = async () => {
   const data: mainShowcase = await getData();
+
 
   return (
     <section className="hero">
@@ -81,8 +83,10 @@ const Hero = async () => {
             <StarsSvg className="hero-svg-stars" />
             <Image
               priority
-              style={{ width: "100%" }}
-              src={ill1}
+              style={{ width: "100%", objectFit: "cover" }}
+              width={1800}
+              height={1200}
+              src={urlFor(data.image).url()}
               className="hero-img"
               alt=""
             />
