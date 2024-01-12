@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./blog/[slug]/style.css";
+import "./blog/blog.css"
+import "./blog/blog-posts-section.css"
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";

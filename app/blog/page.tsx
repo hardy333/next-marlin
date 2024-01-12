@@ -1,8 +1,6 @@
 import BlogPostsSection from "./BlogPostsSection";
 
 // Css
-import "./blog.css";
-import "./blog-posts-section.css";
 import BlogShowcase from "./Showcase";
 import BigBlogPost from "./BigBlogPost";
 import BlogFilters from "./BlogFilters";
