@@ -5,14 +5,19 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="container navbar__container">
-        <Link href="/" className="home-link" data-aos="fade-right" style={{transform: "scale(0.9)", width: "180px"}}>
+        <Link
+          href="/"
+          className="home-link"
+          data-aos="fade-right"
+          style={{ transform: "scale(0.9)", width: "180px" }}
+        >
           <MarlinLogoSvg />
           <svg
             className="marlin-text"
             id="Layer_3"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 261.18 75.99"
-            style={{width: "90px"}}
+            style={{ width: "90px" }}
           >
             <defs></defs>
             {/*  */}
@@ -62,21 +67,31 @@ const Navbar = () => {
             />
           </svg>
         </Link>
-        <ul className="navbar__list" style={{paddingRight: "45px"}}>
-          <li data-aos="fade-in " >
-            <Link href="/#what-is-marlin">What is Marlin</Link>
+        <ul className="navbar__list" style={{ paddingRight: "45px" }}>
+          <li data-aos="fade-in ">
+            <Link prefetch={true} href="/#what-is-marlin">
+              What is Marlin
+            </Link>
           </li>
-          <li data-aos="fade-in " >
-            <Link href="/for-retailers">For Retailers</Link>
+          <li data-aos="fade-in ">
+            <Link prefetch={true} href="/for-retailers">
+              For Retailers
+            </Link>
           </li>
-          <li data-aos="fade-in " >
-            <Link href="/for-vendors">For Vendors</Link>
+          <li data-aos="fade-in ">
+            <Link prefetch={true} href="/for-vendors">
+              For Vendors
+            </Link>
           </li>
-          <li data-aos="fade-in " >
-            <Link href="/blog">Blog</Link>
+          <li data-aos="fade-in ">
+            <Link prefetch={true} href="/blog">
+              Blog
+            </Link>
           </li>
-          <li data-aos="fade-in " >
-            <Link href="/pricing">Pricing</Link>
+          <li data-aos="fade-in ">
+            <Link prefetch={true} href="/pricing">
+              Pricing
+            </Link>
           </li>
         </ul>
         <button className="btn btn--outline" data-aos="fade-left">

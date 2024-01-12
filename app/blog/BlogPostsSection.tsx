@@ -48,6 +48,7 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
             <Link
               href={`/blog/${blogPost.currentSlug}`}
               className="post-reade-more-link"
+              prefetch={true}
             >
               <p className="trend-card__read-more">
                 Read more <BsArrowRightShort />{" "}
