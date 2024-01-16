@@ -3,7 +3,7 @@
 import WordLineDecorationSvg from "@/svgs/WordLineDecorationSvg";
 import { motion } from "framer-motion";
 
-const HeroH1 = () => {
+const HeroH1 = ({title}:{title: string}) => {
   return (
     <motion.h1
       initial={{
@@ -15,9 +15,12 @@ const HeroH1 = () => {
     >
       <span className="hero-decorated-word" style={{ paddingLeft: "0px" }}>
         <WordLineDecorationSvg className="hero-decorated-word-svg" />
-        Simplifying and cheapening
+        {/* Simplifying and cheapening */}
+        {title.split(" ").slice(0,4).join(" ")}
       </span>
-      <br /> communications between
+      <br /> 
+      {title.split(" ").slice(4,6).join(" ")}
+      {/* communications between */}
       <br />
       <span style={{ color: "var(--color-primary)" }}>
         retailers and their vendors

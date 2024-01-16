@@ -15,7 +15,8 @@ async function getData() {
   *[_type == "main-showcase"] | order(_createdAt desc){
     title,
     paragraph,
-    image
+    image,
+    ctaText
   }[0]
     `;
 
@@ -33,7 +34,7 @@ const Hero = async () => {
       <div className="container-small hero__container flex-container">
         {/* <Framer /> */}
         <div>
-          <HeroH1 />
+          <HeroH1 title={data?.title}/>
 
           <p
             style={{
@@ -68,7 +69,8 @@ const Hero = async () => {
             // data-aos-delay={400}
           >
             <div className="bg"></div>
-            Try it out
+            {/* Try it out */}
+            {data?.ctaText}
           </button>
         </div>
 

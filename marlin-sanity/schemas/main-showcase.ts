@@ -20,6 +20,11 @@ export default {
         title: 'Showcase paragraph'
       },
       {
+        name: 'ctaText',
+        type: 'string',
+        title: 'Cta text(ღილაკის ტექსტი)'
+      },
+      {
         name: 'image',
         type: 'image',
         title: 'Showcase main image',
