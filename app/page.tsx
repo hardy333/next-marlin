@@ -7,6 +7,7 @@ import Trends from "@/components/Trends";
 
 
 // export const revalidate  = 0
+export const revalidate = 0; // revalidate at most 30 seconds
 
 
 export default function Home() {

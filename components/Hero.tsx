@@ -8,7 +8,7 @@ import { BsFillPatchCheckFill } from "react-icons/bs";
 import HeroH1 from "./HeroH1";
 
 
-export const revalidate = 0;
+export const revalidate = 0; // revalidate at most 30 seconds
 
 async function getData() {
   const query = `
