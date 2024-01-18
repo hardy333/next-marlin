@@ -7,6 +7,7 @@ import "./blog/blog-posts-section.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title:
@@ -34,7 +35,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007"></script>
+        <Script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007" />
+        {/* <script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007"></script> */}
         <div
           className="d365-mkt-config"
           style={{ display: "none" }}
