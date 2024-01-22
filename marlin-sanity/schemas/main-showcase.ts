@@ -12,7 +12,12 @@ export default {
       {
         name: 'title',
         type: 'text',
-        title: 'Title of the showcase'
+        title: 'Showcase title'
+      },
+      {
+        name: 'titleColoredWords',
+        type: 'text',
+        title: 'Showcase title (ბოლო რამდენიმე სიტყვა რომელსაც სვა ფერი აქვს)'
       },
       {
         name: 'paragraph',

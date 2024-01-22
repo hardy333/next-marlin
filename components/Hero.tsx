@@ -16,6 +16,7 @@ async function getData() {
     title,
     paragraph,
     image,
+    titleColoredWords,
     ctaText
   }[0]
     `;
@@ -34,7 +35,7 @@ const Hero = async () => {
       <div className="container-small hero__container flex-container">
         {/* <Framer /> */}
         <div>
-          <HeroH1 title={data?.title}/>
+          <HeroH1 title={data?.title} coloredWords={data?.titleColoredWords}/>
 
           <p
             style={{

@@ -3,5 +3,6 @@ export interface mainShowcase {
   paragraph: string;
   image: any;
   ctaText: string;
+  titleColoredWords: string
 }
 
