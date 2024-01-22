@@ -36,32 +36,32 @@ const FormSection = () => {
           <div className={styles.topInputs}>
             <div className={styles.inputGroup}>
               <label htmlFor="firstName">First name</label>
-              <input type="text"  id="firstName"/>
+              <input type="text" name="firstName" id="firstName"/>
             </div>
             <div className={styles.inputGroup}>
               <label htmlFor="lastName">First name</label>
-              <input type="text" id="lastName"/>
+              <input type="text" name="lastName" id="lastName"/>
             </div>
           </div>
           {/* 2 */}
           <div className={styles.inputGroup}>
             <label htmlFor="email">Email</label>
-            <input type="email"  id="email"/>
+            <input type="email" name="email"  id="email"/>
           </div>
           {/* 3 */}
           <div className={styles.inputGroup}>
-            <label htmlFor="companyName">First name</label>
-            <input type="text" id="companyName"/>
+            <label htmlFor="companyName">Company Name</label>
+            <input type="text" name="companyName" id="companyName"/>
           </div>
           {/* 4 */}
           <div className={styles.inputGroup}>
             <label htmlFor="phone">phone</label>
-            <input type="number" id="phone"/>
+            <input type="number" name="phone" id="phone"/>
           </div>
           {/* 5 */}
           <div className={styles.inputGroup}>
             <label htmlFor="message">Message</label>
-            <input type="textarea"  id="message"/>
+            <input type="textarea"  name="message" id="message"/>
           </div>
           <button type="submit" role="button" className={styles.btn} >Send</button>
         </form>
