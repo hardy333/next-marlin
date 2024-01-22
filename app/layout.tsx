@@ -35,7 +35,6 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <Script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007" />
         {/* <script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007"></script> */}
         <div
           className="d365-mkt-config"
@@ -43,6 +42,7 @@ export default function RootLayout({
           data-website-id="OVIn_1QnbnnbAHtF0wNZPPhPTxN8jokE5JFuyzkI3mk"
           data-hostname="3dbdc4e02c174de9882917a6978be3f0.svc.dynamics.com"
         ></div>
+        <Script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007" />
       </body>
     </html>
   );
