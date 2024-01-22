@@ -700,7 +700,7 @@ ul {
 /* Footer */
 
 .footer {
-  padding: 10rem 0 4rem;
+  padding: 4rem 0 4rem;
 
   background-color: #e8ebfc;
 
@@ -712,12 +712,12 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .footer .logo-img {
-  height: 100px !important;
-  width: 100px !important;
+  height: 90px !important;
+  width: 90px !important;
 }
 
 .footer__links {
@@ -736,11 +736,21 @@ ul {
 
 .footer p {
   color: #211543;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
+
+.footer .footer__links a svg{
+  width: 30px;
+  height: 30px;   
+  fill: var(--color-primary);
+}
+.footer .footer__links a:hover svg{
+  filter: brightness(80%);
+}
+
 
 /* Ripple */
 /* Ripple */
