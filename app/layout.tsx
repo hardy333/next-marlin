@@ -3,6 +3,7 @@ import "./globals.css";
 import "./blog/[slug]/style.css";
 import "./blog/blog.css";
 import "./blog/blog-posts-section.css";
+import "./forms.css"
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -27,7 +28,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
+  return ( 
     <html lang="en">
       {/* <Navbar */}
       <Analytics />

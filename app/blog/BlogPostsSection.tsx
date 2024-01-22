@@ -10,6 +10,7 @@ import { urlFor } from "../_lib/sanity";
 import Link from "next/link";
 import readingTime from "reading-time";
 import { format } from "date-fns/format";
+import BlurImage from "@/components/BlurImage";
 
 const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
   console.log("dd", data);
@@ -28,8 +29,8 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
             <span className="trend-card__lable" style={{ zIndex: "999999" }}>
               Industry news
             </span>
-            <div className="trend-card__img" style={{ position: "relative" }}>
-              <Image
+            <div className="trend-card__img" style={{ position: "relative", overflow: "hidden" }}>
+              {/* <Image
                 style={{
                   width: "100%",
                   objectFit: "cover",
@@ -41,6 +42,12 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
                 src={urlFor(blogPost.titleImage).url()}
                 className="hero-img"
                 alt=""
+              /> */}
+
+              <BlurImage  
+                src={urlFor(blogPost.titleImage).url()}
+
+              
               />
             </div>
             <h4>{blogPost.title}</h4>

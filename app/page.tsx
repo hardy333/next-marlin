@@ -4,6 +4,7 @@ import Features from "@/components/Features";
 import MiddleSections from "@/components/MiddleSections";
 import ManageOrders from "@/components/ManageOrders";
 import Trends from "@/components/Trends";
+import FormSection from "@/components/formSection/FormSection";
 
 
 // export const revalidate  = 0
@@ -19,6 +20,7 @@ export default function Home() {
       <MiddleSections />
       <ManageOrders />
       <Trends />
+      <FormSection />
     </>
   );
 }

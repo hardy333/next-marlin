@@ -1,18 +1,20 @@
+"use client"
 import { BsArrowRightShort } from "react-icons/bs";
 import clock from "@/assets/clock.png";
 import Image from "next/image";
 import { simpleBlogCard } from "./page";
 import { urlFor } from "../_lib/sanity";
 import Link from "next/link";
+import BlurImage from "@/components/BlurImage";
 
 const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
   return (
     <article className="big-blog-post">
       <div
         className="big-blog-post__img-container"
-        style={{ position: "relative" }}
+        style={{ position: "relative", overflow: "hidden" }}
       >
-        <Image
+        {/* <Image
           style={{
             width: "100%",
             objectFit: "cover",
@@ -24,7 +26,8 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
           src={urlFor(post.titleImage).url()}
           className="hero-img"
           alt=""
-        />
+        /> */}
+        <BlurImage src={urlFor(post.titleImage).url()} />
       </div>
       <div className="big-blog-post__content">
         <span className="trend-card__lable">Industry news</span>
