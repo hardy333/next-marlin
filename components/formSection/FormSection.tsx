@@ -58,7 +58,7 @@ const FormSection = () => {
   return (
     <>
       <div className={`${public_sans.className} ${styles.container}`}>
-        <form onSubmit={ handleSubmit} className={styles.left}>
+        <form  className={styles.left}>
           {/* 1 */}
           <div className={styles.topInputs}>
             <div className={styles.inputGroup}>

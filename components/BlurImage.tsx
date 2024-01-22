@@ -13,7 +13,7 @@ function BlurImage({ src }: { src: any }) {
   return (
     //   <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8 border-2 border-purple-400">
         <Image
-          alt=""
+          alt=""    
           src={src}
           layout="fill"
           objectFit="cover"
