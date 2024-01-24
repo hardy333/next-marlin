@@ -33,8 +33,8 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
         <span className="trend-card__lable">{post.categoryTag}</span>
         <h2>{post.title}</h2>
         <p
-          className="big-blog-post__text"
-          style={{ maxHeight: "110px", overflow: "hidden" }}
+          className="big-blog-post__text line-clamp-3 "
+          style={{  }}
         >
           {post.smallDescription}
         </p>

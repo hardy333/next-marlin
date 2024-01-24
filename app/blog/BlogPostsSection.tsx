@@ -32,19 +32,7 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
               {blogPost.categoryTag}
             </span>
             <div className="trend-card__img" style={{ position: "relative", overflow: "hidden" }}>
-              {/* <Image
-                style={{
-                  width: "100%",
-                  objectFit: "cover",
-                  height: "100%",
-                  borderRadius: "inherit",
-                }}
-                width={1800}
-                height={1200}
-                src={urlFor(blogPost.titleImage).url()}
-                className="hero-img"
-                alt=""
-              /> */}
+             
 
               <BlurImage  
                 src={urlFor(blogPost.titleImage).url()}
@@ -53,7 +41,7 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
               />
             </div>
             <h4>{blogPost.title}</h4>
-            <p>{blogPost.smallDescription}</p>
+            <p className="line-clamp-3">{blogPost.smallDescription}</p>
             <Link
               href={`/blog/${blogPost.currentSlug}`}
               className="post-reade-more-link"
@@ -73,7 +61,7 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
           </article>
         ))}
       </div>
-      <div className="container-small blog-pagination" style={{marginTop: "6rem"}}>
+      <div className="container-small blog-pagination" style={{marginTop: "6rem", display: "none"}}>
         <span>1</span>
         <span>2</span>
         <span>3</span>
