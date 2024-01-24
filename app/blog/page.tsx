@@ -5,6 +5,8 @@ import BlogShowcase from "./Showcase";
 import BigBlogPost from "./BigBlogPost";
 import BlogFilters from "./BlogFilters";
 import { client } from "../_lib/sanity";
+import BlogFilterContextProvider from "./blogFilterContext";
+import AllBlogsSection from "./AllBlogsSection";
 
 export interface simpleBlogCard {
   title: string;
@@ -12,6 +14,7 @@ export interface simpleBlogCard {
   currentSlug: string;
   titleImage: any;
   date: string;
+  categoryTag: string;  
 
 }
 
@@ -32,6 +35,7 @@ async function getData() {
       smallDescription,
       "currentSlug": slug.current,
       titleImage,
+      categoryTag,
       "date": _createdAt
   }`;
 
@@ -45,17 +49,20 @@ const Blog = async () => {
 
 
   console.log("ss", data)
+  const categoryTags = Array.from(new Set(data.map(blog => blog.categoryTag)))
+  categoryTags.unshift("All")
+
   
 
   return (
     <>
+    <BlogFilterContextProvider>
       <BlogShowcase />
-      <BlogFilters />
-      <div className="container-small">
-        <BigBlogPost post={data[0]} />
-      </div>
-      <BlogPostsSection data={data} />
+      <BlogFilters categoryTags={categoryTags} />
+     <AllBlogsSection data={data}/>
+    </BlogFilterContextProvider>
     </>
+
   );
 };
 

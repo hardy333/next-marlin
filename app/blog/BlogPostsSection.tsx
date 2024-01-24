@@ -12,22 +12,24 @@ import readingTime from "reading-time";
 import { format } from "date-fns/format";
 import BlurImage from "@/components/BlurImage";
 
-const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
-  console.log("dd", data);
 
-  console.log(new Date(data[0].date))
+const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
+
+ 
+
+  
+
   return (
     <div className="blog-posts-section">
       <div className="container-small  blog-posts-section__container">
-        {data.slice(1, data.length).map((blogPost, index) => (
+        {data?.map((blogPost, index) => (
           <article
             key={index}
             className="trend-card"
-            data-aos-delay={200}
-            data-aos="fade-in"
+        
           >
             <span className="trend-card__lable" style={{ zIndex: "999999" }}>
-              Industry news
+              {blogPost.categoryTag}
             </span>
             <div className="trend-card__img" style={{ position: "relative", overflow: "hidden" }}>
               {/* <Image

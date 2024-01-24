@@ -2,29 +2,28 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useBlogFilterContext } from "./blogFilterContext";
 
-const BlogFilters = () => {
-  const [arr] = useState([
-    "All",
-    " Success cases",
-    " Industry news",
-    " Good to know",
-    " Tech and more",
-  ]);
+const BlogFilters = ({categoryTags}: {categoryTags: string[]}) => {
+  
+  const {blogFilter, setBlogFilter} = useBlogFilterContext()
 
-  const [selectedIndex, setSelectedIndex] = useState(2);
 
-  const handleClick = ( index: number) => {
-    setSelectedIndex(index);
+
+
+  const handleClick = ( tag:string ) => {
+    setBlogFilter(tag)
   };
+
+  
 
   return (
     <section className="blog-filters">
       <div className="container-small blog-filters__container">
         <ul>
-          {arr.map((text, index) => (
-            <li key={index} onClick={() => handleClick( index)}>
-              {index === selectedIndex ? (
+          {categoryTags?.map((text, index) => (
+            <li key={index} onClick={() => handleClick( text)}>
+              { blogFilter === text ? (
                 <motion.span
                   layoutId="underline"
                   className="blog-filter-line"

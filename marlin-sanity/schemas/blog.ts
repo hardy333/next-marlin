@@ -9,6 +9,11 @@ export default {
         title: 'Title of blog article',
       },
       {
+        name: 'categoryTag',
+        type: 'string',
+        title: 'Category Tag',
+      },
+      {
         name: 'slug',
         type: 'slug',
         title: 'Slug of your blog article',

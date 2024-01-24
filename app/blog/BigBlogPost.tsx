@@ -30,11 +30,11 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
         <BlurImage src={urlFor(post.titleImage).url()} />
       </div>
       <div className="big-blog-post__content">
-        <span className="trend-card__lable">Industry news</span>
+        <span className="trend-card__lable">{post.categoryTag}</span>
         <h2>{post.title}</h2>
         <p
           className="big-blog-post__text"
-          style={{ maxHeight: "105px", overflow: "hidden" }}
+          style={{ maxHeight: "110px", overflow: "hidden" }}
         >
           {post.smallDescription}
         </p>
