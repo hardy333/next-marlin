@@ -100,6 +100,11 @@ const Navbar = () => {
               Pricing
             </Link>
           </li>
+          <li data-aos="fade-in ">
+            <Link prefetch={true} href="/terms">
+              Terms
+            </Link>
+          </li>
         </ul>
         <button className="btn btn--outline" data-aos="fade-left">
           Book a call

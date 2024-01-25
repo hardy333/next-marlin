@@ -31,12 +31,11 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
             <span className="trend-card__lable" style={{ zIndex: "999999" }}>
               {blogPost.categoryTag}
             </span>
-            <div className="trend-card__img" style={{ position: "relative", overflow: "hidden" }}>
+            <div className="trend-card__img xl:aspect-w-7 xl:aspect-h-8" style={{ position: "relative", overflow: "hidden" }}>
              
 
               <BlurImage  
                 src={urlFor(blogPost.titleImage).url()}
-
               
               />
             </div>
