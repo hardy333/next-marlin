@@ -1,0 +1,140 @@
+.new-page{
+    --color-text-1: #071437;
+    --color-text-2: #99A1B7;
+
+    --color-text-green:#50cd89 ;
+    --color-text-yellow: #ffc700;
+    --color-text-red: #f1416c;
+    --color-text-purple: #7239ea;
+    --color-text-blue: #009ef7;
+    
+}
+
+
+.new-page header{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+   
+}
+
+.new-page header h1{
+    color: var(--color-text-1);
+    font-size: 38px;
+    margin-bottom: 26px;
+    font-weight: 600;
+
+}
+
+.new-page header h1 .decorated-word{
+    position: relative;
+
+}
+
+.new-page header h1 .decorated-word:before{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 8px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: var(--color-text-green);
+}
+
+
+
+.new-page header p{
+    font-size: 19px;
+    color: var(--color-text-2);
+    margin-bottom: 32px;
+    max-width: 700px;
+    margin-inline: auto;
+    font-weight: 500;
+
+    
+}
+
+.new-page header p .colored-word{
+    color: var(--color-text-1);
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+
+/* cards */
+/* cards */
+/* cards */
+.new-page-card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1100px;
+    margin: 20px auto;
+    margin-top: 50px;
+
+}
+
+.new-page-card{
+    width: 480px;
+    max-width: 100%;
+    margin: 0 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.new-page-card .icon-box{
+    margin-bottom: 32px;
+    border-radius: 8px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.new-page-card .icon-box svg{
+
+    width: 39px;
+}
+
+.new-page-card h2{
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: rgb(7, 20, 55);
+
+}
+
+.new-page-card p{
+    padding: 9px 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 0;
+    color: rgb(120, 130, 157);
+
+
+}
+
+.new-page-card a{
+    padding: 11px 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    font-size: 15px;
+    font-weight: 500px;
+
+}
+.new-page-card a svg{
+    transition: 0.3s ease-in-out;
+    transform: translate(0, 1px);
+
+}
+.new-page-card a:hover svg{
+    transform: translate(10px, 1px);
+    
+}
