@@ -23,9 +23,8 @@ const Page = () => {
                 {/* <NewPageCard Icon={Icon1}/>
                 <NewPageCard Icon={Icon2}/> */}
                 {
-                    cardsData.map((card) => (<NewPageCard card={card}/>))
+                    cardsData.map((card, index) => (<NewPageCard key={card.p + index} card={card}/>))
                 }
-                
             </div>
 
           
