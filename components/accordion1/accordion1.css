@@ -52,10 +52,10 @@ h3 {
   gap: 15px;
 
   font-size: 16px;
+  color: #4b5675;
   font-weight: 600;
   line-height: 1;
   color: var(--violet-11);
-  color: #4b5675;
   box-shadow: 0 1px 0 var(--mauve-6);
   background-color: white;
   cursor: pointer;
