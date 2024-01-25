@@ -23,16 +23,24 @@ const getData = async () => {
   return data;
 };
 
+
+import { Public_Sans } from "next/font/google";
+import cn from "classnames";
+
+const public_sans = Public_Sans({ subsets: ["latin"] });
+
+console.log(public_sans)
+
+
 const Pricing = async () => {
   const data = await getData();
-  console.log(data);
 
   return (
     <>
       <section className={classes.hero}>
         <div className={`container-small ${classes.hero__container}`}>
           <h1>{data.showcase.showcaseTitle}</h1>
-          <p style={{ width: "520px", maxWidth: "100%" }}>
+          <p style={{ width: "520px", maxWidth: "100%" }} className={cn(public_sans.className)}>
             {/* Choose either monthly or yearly subscription and enjoy <br />{" "}
             continuous service and support */}
             {data.showcase.showcaseParagraph}
