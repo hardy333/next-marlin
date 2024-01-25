@@ -6,6 +6,8 @@ import StarsSvg from "@/svgs/StarsSvg";
 import Image from "next/image";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 import HeroH1 from "./HeroH1";
+import BaseModal from "./baseModal/BaseModal";
+import HeroCtaBtn from "./HeroCtaBtn";
 
 
 export const revalidate = 0; // revalidate at most 30 seconds
@@ -32,6 +34,9 @@ const Hero = async () => {
 
   return (
     <section className="hero">
+      
+      
+      
       <div className="container-small hero__container flex-container">
         {/* <Framer /> */}
         <div>
@@ -63,16 +68,7 @@ const Hero = async () => {
               </li>
             </ul>
           </div>
-          <button
-            style={{ padding: "12px 60px", fontSize: "18px" }}
-            className="btn"
-            // data-aos="fade-up"
-            // data-aos-delay={400}
-          >
-            <div className="bg"></div>
-            {/* Try it out */}
-            {data?.ctaText}
-          </button>
+          <HeroCtaBtn>{data?.ctaText}</HeroCtaBtn>
         </div>
 
         <div className="box-container">

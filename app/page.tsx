@@ -20,7 +20,7 @@ export default function Home() {
       <MiddleSections />
       <ManageOrders />
       <Trends />
-      <FormSection />
+      {/* <FormSection /> */}
     </>
   );
 }
