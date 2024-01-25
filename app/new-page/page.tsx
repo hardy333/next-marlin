@@ -14,7 +14,7 @@ const Page = () => {
             </h1>
             <p>
               The most advanced <span className="colored-word"> Bootstrap 5</span> foundation with a solid design
-              system, extensive utility classes and custom madeM<span className="colored-word">in-house</span>
+              system, extensive utility classes and custom made <span className="colored-word">in-house </span>
               components.
             </p>
           </header>
