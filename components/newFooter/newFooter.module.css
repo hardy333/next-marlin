@@ -1,0 +1,177 @@
+.footer{
+
+    --text-2: #64748b;
+    --text-1:#1e293b;
+    --bg-light: #f1f5f9;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    color: var(--text-2);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 100px;
+
+
+
+
+
+}
+
+.container{
+    /* border-top: 1px solid #e2e8f0; */
+
+    /* padding-top: 50px; */
+    
+    width: 1180px;
+    max-width: 100%;
+    margin-inline: auto;
+
+
+
+
+}
+
+.footerTop{
+    display: flex;
+
+}
+
+.leftSection{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-right: 80px;
+
+
+}
+
+.footerForm{
+    display: flex;
+    gap: 20px;
+
+}
+
+.footerForm input{
+
+}
+
+.footerForm button{
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(139, 61, 255);
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+
+}
+
+.leftSection h2{
+    font-size: 32px;
+    color: var(--text-1);
+
+
+}
+
+.leftSection p{
+
+}
+
+.listsContainer{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+.mainList{
+    flex-grow: 1;
+    
+}
+
+.mainList h2{
+    color: var(--text-1);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    margin-top: 0;
+
+}
+
+.mainList ul{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+.mainList li{
+    font-size: 15px;
+    cursor: pointer;
+
+
+}
+
+.mainList li:hover{
+    color: #8b3dff;
+    
+
+}
+
+/* Bottom */
+/* Bottom */
+
+.footerBottom{
+    border-top: 1px solid #e2e8f0;
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+
+
+}
+
+.footerBottom p{
+    font-size: 14px;
+
+}
+
+.icons{
+    display: flex;
+    gap: 10px;
+
+
+}
+
+.icons li{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+
+
+
+}
+.icons li svg{
+    height: 20px;
+}
+.icons li:hover {
+    border-color: #5f0ad5;
+
+}
+
+.icons li:hover svg{
+    fill: #5f0ad5;
+
+}
+

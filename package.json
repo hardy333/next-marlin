@@ -30,7 +30,8 @@
     "react-modal": "^3.16.1",
     "react-paginate": "^8.2.0",
     "react-switch": "^7.0.0",
-    "reading-time": "^1.5.0"
+    "reading-time": "^1.5.0",
+    "sass": "^1.70.0"
   },
   "devDependencies": {
     "@types/node": "^20",
