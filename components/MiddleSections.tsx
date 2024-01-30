@@ -1,15 +1,12 @@
 import React from "react";
-import CheckSvg from "@/svgs/CheckSvg";
 import ill2 from "@/assets/ill2.png";
 import ill3 from "@/assets/ill3.png";
 import ill4 from "@/assets/ill4.png";
-import BigDotsSvg from "@/svgs/BigDotsSvg";
-import StarsSvg from "@/svgs/StarsSvg";
-import SmallDotsSvg from "@/svgs/SmallDotsSvg";
 import Image from "next/image";
+import { FaCheck } from "react-icons/fa";
+
 
 const MiddleSections = () => {
-  const delayInterval = 300;
 
   return (
     <>
@@ -30,7 +27,10 @@ const MiddleSections = () => {
             </p>
           </div>
           <div className="box-container" data-aos="fade-left">
-            <div className="box" style={{ width: "550xpx", position: "relative" }}>
+            <div
+              className="box"
+              style={{ width: "550xpx", position: "relative" }}
+            >
               <Image
                 style={{ width: "100%" }}
                 src={ill2}
@@ -59,7 +59,10 @@ const MiddleSections = () => {
             </p>
           </div>
           <div className="box-container" data-aos="fade-right">
-            <div className="box" style={{ width: "550px" ,  position: "relative"}}>
+            <div
+              className="box"
+              style={{ width: "550px", position: "relative" }}
+            >
               <Image
                 style={{ width: "100%" }}
                 src={ill3}
@@ -84,46 +87,60 @@ const MiddleSections = () => {
             <h2>How it works?</h2>
             <ul>
               <li data-aos="fade-right" data-aos-delay={300}>
-                <CheckSvg />
-
+                <span
+                  className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
+                >
+                  <FaCheck size={10} fill={"hsl(212, 86%, 64%)"} />
+                </span>
                 <div className="p-container">
                   <p className="top" data-aos-off="fade-in">
                     Smooth integration
                   </p>
                   <p className="bottom" data-aos-off="fade-in">
-                    Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum{" "}
+                    Arranging rapturous did believe him all had supported. 24
+                    Hours Alert Rapturous did believe him all had supported.
                   </p>
                 </div>
               </li>
               <li data-aos="fade-left" data-aos-delay={300}>
-                <CheckSvg />
+                <span
+                  className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
+                >
+                  <FaCheck size={10} fill={"hsl(212, 86%, 64%)"} />
+                </span>
                 <div className="p-container">
                   <p className="top" data-aos-off="fade-in">
-                    Smooth integration
+                    Fast Development
                   </p>
                   <p className="bottom" data-aos-off="fade-in">
-                    Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum{" "}
+                    Supposing so be resolving breakfast am or perfectly. Lorem
+                    ipsum dolor sit amet.
                   </p>
                 </div>
               </li>
               <li data-aos="fade-right" data-aos-delay={300}>
-                <CheckSvg />
+                <span
+                  className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
+                >
+                  <FaCheck size={10} fill={"hsl(212, 86%, 64%)"} />
+                </span>
                 <div className="p-container">
                   <p className="top" data-aos-off="fade-in">
-                    Smooth integration
+                    Quick Services
                   </p>
                   <p className="bottom" data-aos-off="fade-in">
-                    Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                    Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum{" "}
+                    Departure defective arranging rapturous did. Conduct denied
+                    adding worthy little.
                   </p>
                 </div>
               </li>
             </ul>
           </div>
           <div className="box-container" data-aos="fade-left">
-            <div className="box" style={{ width: "550px", height: "600px",  position: "relative" }}>
+            <div
+              className="box"
+              style={{ width: "550px", height: "600px", position: "relative" }}
+            >
               <Image
                 style={{ width: "100%" }}
                 src={ill4}
