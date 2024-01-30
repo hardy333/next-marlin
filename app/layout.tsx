@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { Public_Sans } from "next/font/google";
+const public_sans = Public_Sans({ subsets: ["latin"] });
+
 export default function RootLayout({
   children,
 }: {
@@ -33,7 +36,7 @@ export default function RootLayout({
     <html lang="en">
       {/* <Navbar */}
       <Analytics />
-      <body>
+      <body className={public_sans.className}>
         <Navbar />
         {children}
         {/* <Footer /> */}

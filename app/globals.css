@@ -23,7 +23,6 @@ body {
   --color-text-1: #211543;
   --color-text-2: #fff;
 
-  font-family: "Inter", sans-serif;
 
   color: var(--color-text-1);
 }
@@ -413,13 +412,11 @@ ul {
 
 .middle-section p {
   margin-bottom: 2rem;
-  color: #211543;
-
-  
-  font-size: 20px;
+  color: rgb(100, 116, 139);
+  font-size: 18px;
   font-style: normal;
-  font-weight: 300;
-  line-height: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .middle-section li {
@@ -449,11 +446,12 @@ ul {
   color: #211543;
 
   
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
   margin-bottom: 0;
+  max-width: 450px;
 }
 
 /* Manage Ordrs */

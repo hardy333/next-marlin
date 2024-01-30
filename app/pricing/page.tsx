@@ -5,6 +5,8 @@ import { client } from "../_lib/sanity";
 
 export const revalidate = 0
 
+
+
 const getData = async () => {
   const query = `
     *[_type == "pricingPage"] | order(_createdAt desc){
