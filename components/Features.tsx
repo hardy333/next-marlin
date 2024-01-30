@@ -24,19 +24,27 @@ const data = [
     h: "Analyze",
     p: `Arranging rapturous did believe him all had supported.`,
     color: "rgb(23, 162, 184)",
-    bgColor: "rgba(23, 162, 184, 0.1)"
+    bgColor: "rgba(23, 162, 184, 0.1)",
   },
 ];
 
 const Features = ({ bgColor = null }: { bgColor: string | null }) => {
   return (
-    <section className="features" style={{ background: bgColor ?? "" }}>
+    <section
+      className="features"
+      style={{ background: "white", marginTop: "50px", marginBottom: "50px" }}
+    >
       <SmallDotsSvg className="features-svg-small-dots-right" />
       <div className="container-small features__container">
         {data?.map((obj) => {
           return (
             <article className={cn(styles.featureCard)}>
-              <div className={cn(styles.svgBox)} style={{background: obj.bgColor, color: obj.color}}>{obj.img}</div>
+              <div
+                className={cn(styles.svgBox)}
+                style={{ background: obj.bgColor, color: obj.color }}
+              >
+                {obj.img}
+              </div>
               <h2>{obj.h}</h2>
               <p>{obj.p}</p>
             </article>
