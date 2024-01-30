@@ -6,6 +6,8 @@ import cn from "classnames";
 import styles from "./newFooter.module.css";
 
 import { Public_Sans } from "next/font/google";
+import Image from "next/image";
+import MarlinLogoSvg from "@/svgs/MarlinLogoSvg";
 
 const public_sans = Public_Sans({ subsets: ["latin"] });
 
@@ -15,16 +17,19 @@ const NewFooter = () => {
       <div className={cn(styles.container)}>
         <section className={cn(styles.footerTop)}>
           <div className={cn(styles.leftSection)}>
-            <h2>Marlin</h2>
+            <h2 className="flex items-center gap-5 mb-5">
+                <span className=""><MarlinLogoSvg /> </span>
+              <span>Marlin</span>
+            </h2>
             <p>
               Build faster websites with Block multipurpose bootstrap 5
               template. Duis imper diet mollis leo, quis ultrices erat ultrices
               simple dummy .
             </p>
-            <form className={cn(styles.footerForm)}>
+            {/* <form className={cn(styles.footerForm)}>
               <input type="text" placeholder="Email Address" />
               <button>Subscribe</button>
-            </form>
+            </form> */}
           </div>
           {/* 1 */}
           <section className={cn(styles.listsContainer)}>
