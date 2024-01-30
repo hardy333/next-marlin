@@ -183,15 +183,21 @@ ul {
 .hero-box {
   position: relative;
   height: 370px;
+  border-radius: 10px !important;
+  padding: 20px;
+  overflow: visible !important;
 }
 
 .hero-img {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   height: 100%;
   /* display: none; */
   /* border-radius: 30px; */
+  transform: translate(0, -50%);
+  border-radius: inherit;
+
 }
 
 .hero-svg-big-dotts {
