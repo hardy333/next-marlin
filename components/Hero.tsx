@@ -19,7 +19,8 @@ async function getData() {
     paragraph,
     image,
     titleColoredWords,
-    ctaText
+    ctaText,
+    showcaseKeyWords
   }[0]
     `;
 
@@ -30,6 +31,7 @@ async function getData() {
 
 const Hero = async () => {
   const data: mainShowcase = await getData();
+
 
 
   return (
@@ -58,13 +60,13 @@ const Hero = async () => {
           <div>
             <ul className="hero-check-list">
               <li>
-                <BsFillPatchCheckFill /> Automate You Job
+                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[0]}
               </li>
               <li>
-                <BsFillPatchCheckFill /> Communicate With Ease
+                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[1]}
               </li>
               <li>
-                <BsFillPatchCheckFill /> Analize Data
+                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[2]}
               </li>
             </ul>
           </div>
