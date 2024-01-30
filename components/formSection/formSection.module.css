@@ -8,14 +8,12 @@
 }
 
 .left{
-    width: 600px;
     height: 600px;
     border-radius: 5px;
-    border: 1px solid #e2e8f0;
-    padding: 15px;
+    /* border: 1px solid #e2e8f0; */
+    /* padding: 15px; */
     /* box-shadow: 0 0.125rem 0.25rem rgba(2,6,23,.075); */
 
-    flex: 3;
 
 }
 

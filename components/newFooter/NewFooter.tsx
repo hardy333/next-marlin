@@ -6,7 +6,6 @@ import cn from "classnames";
 import styles from "./newFooter.module.css";
 
 import { Public_Sans } from "next/font/google";
-import Image from "next/image";
 import MarlinLogoSvg from "@/svgs/MarlinLogoSvg";
 
 const public_sans = Public_Sans({ subsets: ["latin"] });
