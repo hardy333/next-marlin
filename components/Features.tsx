@@ -1,39 +1,50 @@
-import connect from "@/assets/connect.png"
-import optimize from "@/assets/optimize.png"
-import analize from "@/assets/analize.png"
-import SmallDotsSvg from '@/svgs/SmallDotsSvg'
-import Image from "next/image"
+import SmallDotsSvg from "@/svgs/SmallDotsSvg";
+import { ConnectSvg, OptimizeSvg, AnalyzeSvg } from "./FeatureSvgs";
+import cn from "classnames";
+import styles from "./features.module.css";
 
-const Features = ({bgColor=null}: {bgColor: string | null}) => {
-  
+const data = [
+  {
+    img: <ConnectSvg />,
+    h: "Connect",
+    p: `
+    Supposing so be resolving breakfast am or perfectly.`,
+    color: "rgb(12, 188, 135)",
+    bgColor: "rgba(12, 188, 135, 0.1)",
+  },
+  {
+    img: <OptimizeSvg />,
+    h: "Optimize",
+    p: `Rapturous did believe him all had supported.`,
+    bgColor: "rgba(253, 126, 20, 0.1)",
+    color: "rgb(253, 126, 20)",
+  },
+  {
+    img: <AnalyzeSvg />,
+    h: "Analyze",
+    p: `Arranging rapturous did believe him all had supported.`,
+    color: "rgb(23, 162, 184)",
+    bgColor: "rgba(23, 162, 184, 0.1)"
+  },
+];
+
+const Features = ({ bgColor = null }: { bgColor: string | null }) => {
   return (
-    <section className="features" style={{background: bgColor ?? ""}}>
-        <SmallDotsSvg className="features-svg-small-dots-left"/>
-        <SmallDotsSvg className="features-svg-small-dots-right"/>
-        <div className="container-small features__container">
-            <div className="feature-card" >
-                    <div className="feature-card-circle" style={{background: bgColor ? "rgba(64, 106, 255, 0.09)        ": "white"}} data-aos="fade-down">
-                        <Image className='feature-img' style={{width: "120%"}} src={connect} alt="" />
-                    </div>
-                    <p data-aos="fade-in" data-aos-delay="200"  data-aos-offset="0" >Connect</p>
-            </div>
-            <div className="feature-card">
-                    <div className="feature-card-circle" style={{background: bgColor ? "rgba(64, 106, 255, 0.09)        ": "white"}} data-aos="fade-down">
-                    <Image className='feature-img' src={optimize} alt="" />
-                        
-                    </div>
-                    <p data-aos="fade-in" data-aos-delay="200" data-aos-offset="0" >Optimize</p>
-            </div>
-            <div className="feature-card">
-                    <div className="feature-card-circle" style={{background: bgColor ? "rgba(64, 106, 255, 0.09)        ": "white"}} data-aos="fade-down">
-                    <Image className='feature-img' src={analize} alt="" />
-
-                    </div>
-                    <p data-aos="fade-in" data-aos-delay="200"  data-aos-offset="0">Analyze</p>
-            </div>
-        </div>
+    <section className="features" style={{ background: bgColor ?? "" }}>
+      <SmallDotsSvg className="features-svg-small-dots-right" />
+      <div className="container-small features__container">
+        {data?.map((obj) => {
+          return (
+            <article className={cn(styles.featureCard)}>
+              <div className={cn(styles.svgBox)} style={{background: obj.bgColor, color: obj.color}}>{obj.img}</div>
+              <h2>{obj.h}</h2>
+              <p>{obj.p}</p>
+            </article>
+          );
+        })}
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default Features
+export default Features;
