@@ -1,9 +1,10 @@
 "use client";
-import React, { AnimationEvent, MouseEvent, useEffect, useState } from "react";
+import React, {  MouseEvent,  useState } from "react";
 import classes from "./pricing.module.css";
-import Switch from "react-switch";
 import { FaCheck } from "react-icons/fa6";
 import CountUp from "react-countup";
+import PricingSwitch from "@/components/pricingSwitch/PricingSwitch";
+import PricingCard2 from "@/components/pricingCard2/PricingCard2";
 
 const prices: {
   basic: {
@@ -37,8 +38,6 @@ const PricingCardsSection = ({
   yearlyPrices,
   monthlyPrices,
   leftCardList,
-  middleCardList,
-  rightCardList,
 }: any) => {
   console.log(leftCardList);
   prices.basic.monthly = monthlyPrices.leftCardPrice;
@@ -53,52 +52,21 @@ const PricingCardsSection = ({
   const [isMonthly, setIsMonthly] = useState(false);
   const [isVendor, setIsVendor] = useState(false);
 
-  const handleDurationChange = () => {
-    setIsMonthly(!isMonthly);
-  };
-
-  const handleClientChange = () => {
-    setIsVendor(!isVendor);
-  };
 
   return (
     <section className={`${classes["pricing-section"]}`}>
       <div className="container-small">
         <div className={`${classes["switches-container"]}`}>
           <div className={classes.price_switch_container}>
-            <span>Monthly</span>
-            <Switch
-              className={classes.price_switch}
-              uncheckedIcon={false}
-              offHandleColor={"#6E0FF5"}
-              onHandleColor={"#fff"}
-              offColor="#fff"
-              onColor="#6E0FF5"
-              checkedIcon={false}
-              onChange={handleDurationChange}
-              checked={!isMonthly}
-            />
-            <span>Yearly</span>
+            <PricingSwitch setSwitchState={setIsMonthly} leftText="Monthly" rightText="Yearly" isOn={isMonthly}/>
           </div>
           <div className={classes.price_switch_container}>
-            <span>For Retailers</span>
-            <Switch
-              className={classes.price_switch}
-              uncheckedIcon={false}
-              offHandleColor={"#6E0FF5"}
-              onHandleColor={"#fff"}
-              offColor="#fff"
-              onColor="#6E0FF5"
-              checkedIcon={false}
-              onChange={handleClientChange}
-              checked={isVendor}
-            />
-            <span>For Vendors</span>
+          <PricingSwitch setSwitchState={setIsVendor} leftText="Retailer" rightText="Vendor" isOn={isVendor}/>
           </div>
         </div>
 
-        <section className={`${classes["price-cards"]}`}>
-          <PriceCard
+        <section className={`${classes["price-cards"]} gap-32`}>
+          {/* <PriceCard
             isMonthly={isMonthly}
             className="basic"
             priceNumber={550}
@@ -118,7 +86,10 @@ const PricingCardsSection = ({
             priceNumber={990}
             strokeColor={"#406AFF"}
             cardList={rightCardList}
-          />
+          /> */}
+           <PricingCard2 price={45} />
+          <PricingCard2 price={199} />
+          <PricingCard2 price={200}/>
         </section>
       </div>
     </section>

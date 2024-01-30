@@ -41,8 +41,6 @@ const Pricing = async () => {
         <div className={`container-small ${classes.hero__container}`}>
           <h1>{data.showcase.showcaseTitle}</h1>
           <p style={{ width: "520px", maxWidth: "100%" }} className={cn(public_sans.className)}>
-            {/* Choose either monthly or yearly subscription and enjoy <br />{" "}
-            continuous service and support */}
             {data.showcase.showcaseParagraph}
           </p>
         </div>

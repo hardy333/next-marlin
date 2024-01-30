@@ -1,0 +1,28 @@
+.switch {
+  padding: 4px;
+  border: 1px solid #f1f1f4;
+  display: flex;
+  border-radius: 6px;
+}
+
+.box {
+  padding: 10px 20px;
+  color: rgb(120, 130, 157);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 6px;
+
+}
+
+.active {
+  background-color: rgb(241, 241, 244);
+  color: rgb(37, 47, 74);
+}
+
+.left {
+}
+.right {
+}
