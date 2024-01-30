@@ -7,8 +7,7 @@ const data = [
   {
     img: <ConnectSvg />,
     h: "Connect",
-    p: `
-    Supposing so be resolving breakfast am or perfectly.`,
+    p: `Supposing so be resolving breakfast am or perfectly Lorem, ipsum..`,
     color: "rgb(12, 188, 135)",
     bgColor: "rgba(12, 188, 135, 0.1)",
   },
