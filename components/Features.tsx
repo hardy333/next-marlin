@@ -37,7 +37,7 @@ const Features = ({ bgColor = null }: { bgColor: string | null }) => {
       <div className="container-small features__container">
         {data?.map((obj) => {
           return (
-            <article className={cn(styles.featureCard)}>
+            <article key={obj.h} className={cn(styles.featureCard)}>
               <div
                 className={cn(styles.svgBox)}
                 style={{ background: obj.bgColor, color: obj.color }}
