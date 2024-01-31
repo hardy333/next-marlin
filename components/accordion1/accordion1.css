@@ -1,8 +1,5 @@
 /* reset */
-button,
-h3 {
-  all: unset;
-}
+
 
 .AccordionRoot {
   border-radius: 6px;
