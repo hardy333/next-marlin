@@ -4,9 +4,26 @@ import ill3 from "@/assets/ill3.png";
 import ill4 from "@/assets/ill4.png";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa";
+import { client, urlFor } from "@/app/_lib/sanity";
 
+async function getData() {
+  const query = `
+    *[_type == "mainPageMiddleSections"] | order(_createdAt desc){
+      section1,
+      section2,
+      section3
+    }[0]
+    `;
 
-const MiddleSections = () => {
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+const MiddleSections = async () => {
+  const data = await getData();
+
+  console.log(data);
 
   return (
     <>
@@ -14,17 +31,8 @@ const MiddleSections = () => {
       <section className="middle-section " id="what-is-marlin">
         <div className="container-small flex-container middle-section__container">
           <div data-aos="fade-right">
-            <h2>What is Marlin?</h2>
-            <p>
-              Marlin is a digital platform that connects FMCG retailers to their
-              vendors and helps them manage orders, order statuses, product
-              catalogs, available stocks, special offers and much more, in a
-              single space.
-            </p>
-            <p>
-              Last but not least, Marlin provides a single view of Service Level
-              Analytics for both businesses so that they can actually use it.
-            </p>
+            <h2>{data?.section1.heading} </h2>
+            <p>{data?.section1.paragraph}</p>
           </div>
           <div className="box-container" data-aos="fade-left">
             <div
@@ -33,7 +41,9 @@ const MiddleSections = () => {
             >
               <Image
                 style={{ width: "100%" }}
-                src={ill2}
+                width={700}
+                height={700}
+                src={urlFor(data?.section1.image).url()}
                 className="hero-img"
                 alt=""
               />
@@ -51,12 +61,8 @@ const MiddleSections = () => {
         "
         >
           <div data-aos="fade-left">
-            <h2>Who it’s for?</h2>
-            <p>
-              If you are FMCG Retailer with dozens of markets or if you are FMCG
-              distributor servicing chain retailers, Marlin is here for your
-              rescue. Manage relationships more efficiently, way faster.
-            </p>
+            <h2>{data?.section2.heading}</h2>
+            <p>{data?.section2.paragraph}</p>
           </div>
           <div className="box-container" data-aos="fade-right">
             <div
@@ -65,7 +71,9 @@ const MiddleSections = () => {
             >
               <Image
                 style={{ width: "100%" }}
-                src={ill3}
+                width={700}
+                height={700}
+                src={urlFor(data?.section2.image).url()}
                 className="hero-img"
                 alt=""
               />
@@ -84,8 +92,9 @@ const MiddleSections = () => {
         "
         >
           <div data-aos="fade-right">
-            <h2>How it works?</h2>
+            <h2>{data?.section3.heading}</h2>
             <ul>
+              {/* 1 */}
               <li data-aos="fade-right" data-aos-delay={300}>
                 <span
                   className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
@@ -94,14 +103,14 @@ const MiddleSections = () => {
                 </span>
                 <div className="p-container">
                   <p className="top" data-aos-off="fade-in">
-                    Smooth integration
+                    {data?.section3.list?.[0].heading}
                   </p>
                   <p className="bottom" data-aos-off="fade-in">
-                    Arranging rapturous did believe him all had supported. 24
-                    Hours Alert Rapturous did believe him all had supported.
+                    {data?.section3.list?.[0].paragraph}
                   </p>
                 </div>
               </li>
+              {/* 2 */}
               <li data-aos="fade-left" data-aos-delay={300}>
                 <span
                   className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
@@ -110,14 +119,14 @@ const MiddleSections = () => {
                 </span>
                 <div className="p-container">
                   <p className="top" data-aos-off="fade-in">
-                    Fast Development
+                    {data?.section3.list?.[1].heading}
                   </p>
                   <p className="bottom" data-aos-off="fade-in">
-                    Supposing so be resolving breakfast am or perfectly. Lorem
-                    ipsum dolor sit amet.
+                    {data?.section3.list?.[1].paragraph}
                   </p>
                 </div>
               </li>
+              {/* 3 */}
               <li data-aos="fade-right" data-aos-delay={300}>
                 <span
                   className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
@@ -126,11 +135,10 @@ const MiddleSections = () => {
                 </span>
                 <div className="p-container">
                   <p className="top" data-aos-off="fade-in">
-                    Quick Services
+                    {data?.section3.list?.[2].heading}
                   </p>
                   <p className="bottom" data-aos-off="fade-in">
-                    Departure defective arranging rapturous did. Conduct denied
-                    adding worthy little.
+                    {data?.section3.list?.[2].paragraph}
                   </p>
                 </div>
               </li>
@@ -143,7 +151,9 @@ const MiddleSections = () => {
             >
               <Image
                 style={{ width: "100%" }}
-                src={ill4}
+                width={700}
+                height={700}
+                src={urlFor(data?.section3.image).url()}
                 className="hero-img"
                 alt=""
               />

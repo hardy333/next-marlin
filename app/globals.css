@@ -182,6 +182,7 @@ ul {
 
 .hero{
   height: calc(100vh - 100px);
+  min-height: 600px;
 
 }
 
@@ -192,6 +193,8 @@ ul {
 
   top: 0;
   height: 100vh !important;
+  min-height: 700px;
+
   
   /* top: 100px;
   height: calc(100vh - 100px); */

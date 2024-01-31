@@ -9,7 +9,6 @@ import HeroH1 from "./HeroH1";
 import BaseModal from "./baseModal/BaseModal";
 import HeroCtaBtn from "./HeroCtaBtn";
 
-
 export const revalidate = 0; // revalidate at most 30 seconds
 
 async function getData() {
@@ -33,16 +32,12 @@ const Hero = async () => {
   const data: mainShowcase = await getData();
 
 
-
   return (
     <section className="hero">
-      
-      
-      
       <div className="container-small hero__container flex-container">
         {/* <Framer /> */}
         <div>
-          <HeroH1 title={data?.title} coloredWords={data?.titleColoredWords}/>
+          <HeroH1 title={data?.title} coloredWords={data?.titleColoredWords} />
 
           <p
             style={{
