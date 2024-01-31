@@ -180,9 +180,25 @@ ul {
   text-decoration: underline !important;
 }
 
+.hero{
+  height: calc(100vh - 100px);
+
+}
+
 .hero-box {
-  position: relative;
-  height: 370px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+
+  top: 0;
+  height: 100vh !important;
+  
+  /* top: 100px;
+  height: calc(100vh - 100px); */
+
+  z-index: -1;
+
+
   border-radius: 10px !important;
   padding: 20px;
   overflow: visible !important;

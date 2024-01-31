@@ -76,12 +76,11 @@ const Hero = async () => {
         <div className="box-container">
           <div
             className="box hero-box"
-            style={{ height: "500px" }}
             data-aos="fade-left"
             data-aos-delay={400}
           >
-            <BigDotsSvg className="hero-svg-big-dotts" />
-            <StarsSvg className="hero-svg-stars" />
+            {/* <BigDotsSvg className="hero-svg-big-dotts" /> */}
+            {/* <StarsSvg className="hero-svg-stars" /> */}
             <Image
               priority
               style={{ width: "100%", objectFit: "cover" }}

@@ -82,7 +82,7 @@ const Features = async ({ bgColor = null }: { bgColor: string | null }) => {
       className="features"
       style={{ background: "white", marginTop: "50px", marginBottom: "50px" }}
     >
-      <SmallDotsSvg className="features-svg-small-dots-right" />
+      {/* <SmallDotsSvg className="features-svg-small-dots-right" /> */}
       <div className="container-small features__container">
         {resData?.map((obj:any) => {
           return (
