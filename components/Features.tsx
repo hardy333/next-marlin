@@ -2,8 +2,9 @@ import SmallDotsSvg from "@/svgs/SmallDotsSvg";
 import { ConnectSvg, OptimizeSvg, AnalyzeSvg } from "./FeatureSvgs";
 import cn from "classnames";
 import styles from "./features.module.css";
+import { client } from "@/app/_lib/sanity";
 
-const data = [
+const initialData = [
   {
     img: <ConnectSvg />,
     h: "Connect",
@@ -27,7 +28,55 @@ const data = [
   },
 ];
 
-const Features = ({ bgColor = null }: { bgColor: string | null }) => {
+export const revalidate = 0; // revalidate at most 30 seconds
+
+async function getData() {
+  const query = `
+  *[_type == "features"] | order(_createdAt desc){
+      leftFeature,
+        middleFeature,
+        rightFeature
+     }[0]
+    
+    `;
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+const Features = async ({ bgColor = null }: { bgColor: string | null }) => {
+
+  let data = await getData();
+
+  let resData = null
+
+  if(data){
+    resData = initialData.map(((initObj, index) => {
+      if(index === 0){
+        return {
+          ...initObj,
+          h:data?.leftFeature.heading,
+          p:data?.leftFeature.paragraph,
+        }
+      }
+      if(index === 1){
+        return {
+          ...initObj,
+          h: data?.middleFeature.heading,
+          p: data?.middleFeature.paragraph,
+        }
+      }
+      if(index === 2){
+        return {
+          ...initObj,
+          h: data?.rightFeature.heading,
+          p: data?.rightFeature.paragraph
+        }
+      }
+    }))
+  }
+
+
   return (
     <section
       className="features"
@@ -35,7 +84,7 @@ const Features = ({ bgColor = null }: { bgColor: string | null }) => {
     >
       <SmallDotsSvg className="features-svg-small-dots-right" />
       <div className="container-small features__container">
-        {data?.map((obj) => {
+        {resData?.map((obj:any) => {
           return (
             <article key={obj.h} className={cn(styles.featureCard)}>
               <div

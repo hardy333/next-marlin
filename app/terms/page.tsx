@@ -1,6 +1,10 @@
 import Accordion1 from "@/components/accordion1/Accordion1";
 import Accordion2 from "@/components/accordion2/Accordion2";
 
+
+// Hello
+
+
 const Terms = () => {
   return (
     <div style={{ minHeight: "100vh" }}>
