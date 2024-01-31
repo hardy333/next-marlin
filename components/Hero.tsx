@@ -28,9 +28,21 @@ async function getData() {
   return data;
 }
 
+async function getLeadData() {
+  const query = `
+  *[ _type == "leadForm"] | order(_createdAt desc){
+    title,
+  }[0]
+    `;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
 const Hero = async () => {
   const data: mainShowcase = await getData();
-
+  const leadData = await getLeadData();
 
   return (
     <section className="hero">
@@ -65,7 +77,7 @@ const Hero = async () => {
               </li>
             </ul>
           </div>
-          <HeroCtaBtn>{data?.ctaText}</HeroCtaBtn>
+          <HeroCtaBtn leadData={leadData}>{data?.ctaText}</HeroCtaBtn>
         </div>
 
         <div className="box-container">

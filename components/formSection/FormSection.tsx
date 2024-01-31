@@ -10,7 +10,8 @@ const public_sans = Public_Sans({ subsets: ["latin"] });
 
 
 
-const FormSection = () => {
+const FormSection = ({title}:{title: string}) => {
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -42,9 +43,9 @@ const FormSection = () => {
           <Image src={formImg} alt="placeholder illustration"  />
         </div>
 
-        <form className={`${styles.left} w-[50%] border-l border-l-[rgb(116, 117, 121)] p-[15px] pl-16`}>
+        <form className={`${styles.left} w-[50%] border-l border-l-[rgb(116, 117, 121)] p-[15px] pl-16 `}>
           {/* 1 */}
-          <h2 className="text-[36px] font-bold mb-5">Welcome</h2>
+          <h2 className="text-[30px] font-bold mb-14">{title}</h2>
           <div className={styles.topInputs}>
             <div className={styles.inputGroup}>
               <label htmlFor="firstName">First Name</label>
