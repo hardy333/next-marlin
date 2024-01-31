@@ -44,13 +44,14 @@ const Hero = async () => {
   const data: mainShowcase = await getData();
   const leadData = await getLeadData();
 
+  console.log("ghhhhhhhhhh", data)
+
   return (
     <section className="hero">
       <div className="container-small hero__container flex-container">
         {/* <Framer /> */}
         <div>
-          <HeroH1 title={data?.title} coloredWords={data?.titleColoredWords} />
-
+          <HeroH1 title={data?.title.en} coloredWords={data?.titleColoredWords} />
           <p
             style={{
               marginBottom: "25px",

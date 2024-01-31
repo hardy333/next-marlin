@@ -1,5 +1,8 @@
 export interface mainShowcase {
-  title: string;
+  title: {
+    en: string,
+    geo?: string
+  };
   paragraph: string;
   image: any;
   ctaText: string;

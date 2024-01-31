@@ -6,12 +6,7 @@ const Trends = () => {
   return (
     <section className="trends">
       <div className="container-small trends-container">
-        <h3>
-            <span style={{display:"inline-block"}} data-aos="fade-right"> Take a dive </span>
-            <span style={{display:"inline-block", padding: "15px"}} data-aos="fade-in"> into </span>
-            <span style={{display:"inline-block"}} data-aos="fade-left">industry trends</span>
-            
-            </h3>
+        <h3>Take a dive into industry trends</h3>
         <div className="trends-card-container">
           {/* 1 */}
           <article

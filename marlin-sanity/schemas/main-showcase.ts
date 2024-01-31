@@ -1,3 +1,8 @@
+const supportedLanguages = [
+  {id: 'en', title: 'English', isDefault: true},
+  {id: 'geo', title: 'Georgian'},
+]
+
 export default {
   name: 'main-showcase',
   type: 'document',
@@ -11,8 +16,21 @@ export default {
   fields: [
     {
       name: 'title',
-      type: 'string',
       title: 'Showcase title',
+      type: 'object',
+      fields: supportedLanguages.map((lang) => ({
+        title: lang.title,
+        name: lang.id,
+        type: 'string',
+        fieldset: lang.isDefault ? null : 'translations',
+      })),
+      fieldsets: [
+        {
+          title: 'Translations',
+          name: 'translations',
+          options: {collapsible: true},
+        },
+      ],
     },
     {
       name: 'titleColoredWords',
@@ -41,5 +59,24 @@ export default {
       type: 'image',
       title: 'Showcase main image',
     },
+    // {
+    //   name: 'exampleText',
+    //   title: 'example text',
+    //   type: 'object',
+
+    //   fields: supportedLanguages.map((lang) => ({
+    //     title: lang.title,
+    //     name: lang.id,
+    //     type: 'string',
+    //     fieldset: lang.isDefault ? null : 'translations',
+    //   })),
+    //   fieldsets: [
+    //     {
+    //       title: 'Translations',
+    //       name: 'translations',
+    //       options: {collapsible: true},
+    //     },
+    //   ],
+    // },
   ],
 }
