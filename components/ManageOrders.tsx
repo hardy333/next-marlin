@@ -75,8 +75,6 @@ const ManageOrders = async () => {
         <button
           style={{ padding: "15px 35px", fontSize: "20px", width: "250px" }}
           className="btn"
-          data-aos="fade-up"
-          data-aos-delay={400}
         >
           {data?.buttonText}
         </button>

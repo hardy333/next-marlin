@@ -7,6 +7,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   row-gap: 8rem;
+  align-items: stretch;
+  justify-items: stretch;
 }
 
 /* Blog Card */
@@ -15,8 +17,7 @@
 .blog-card {
   display: flex;
   flex-direction: column;
-  width: 380px;
-  max-width: 100%;
+  max-width: 380px;
 }
 
 .blog-card__img-wrapper {
@@ -80,7 +81,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .blog-card__footer {

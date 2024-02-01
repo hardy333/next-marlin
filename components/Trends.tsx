@@ -25,15 +25,30 @@ async function getData() {
   return data;
 }
 
+async function getData2() {
+  const query = `
+  *[_type == "mainPageBlogSection"] | order(_createdAt desc){
+    heading,
+      blogPostCount,
+      buttonText
+   }[0]
+    `;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
 const Trends = async () => {
   const data: simpleBlogCard[] = await getData();
+  const data2 = await getData2();
 
   return (
     <section className="trends">
       <div className="container-small trends-container">
-        <h3>Take a dive into industry trends</h3>
+        <h3>{data2.heading}</h3>
         <div className="trends-card-container">
-          {data?.slice(0, 3).map((blogPost, index) => (
+          {data?.slice(0, data2.blogPostCount).map((blogPost, index) => (
             // Post start
             <article key={index} className="blog-card">
               {/* <span className="trend-card__lable" style={{ zIndex: "999999" }}>
@@ -77,6 +92,12 @@ const Trends = async () => {
           ))}
         </div>
       </div>
+      <button
+        style={{ margin: "40px auto", padding: "10px 30px", display: "flex" }}
+        className="btn"
+      >
+        {data2?.buttonText}
+      </button>
     </section>
   );
 };

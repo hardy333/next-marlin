@@ -605,9 +605,14 @@ ul {
 }
 
 .trends-card-container {
-  display: flex;
+  /* display: flex;
+
   justify-content: space-between;
-  gap: 6rem;
+  gap: 6rem; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  row-gap: 8rem;
 }
 
 .trend-card__lable {
