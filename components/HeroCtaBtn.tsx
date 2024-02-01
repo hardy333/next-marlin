@@ -4,12 +4,18 @@ import { MouseEvent, ReactNode, useState } from "react";
 import BaseModal from "./baseModal/BaseModal";
 import FormSection from "./formSection/FormSection";
 
-const HeroCtaBtn = ({ children, leadData }: { children: ReactNode, leadData: {title: string} }) => {
+const HeroCtaBtn = ({
+  children,
+  leadData,
+}: {
+  children: ReactNode;
+  leadData: { title: string; image: object };
+}) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     console.log("helo");
-    setModalIsOpen(true)
+    setModalIsOpen(true);
   };
 
   return (
@@ -18,7 +24,7 @@ const HeroCtaBtn = ({ children, leadData }: { children: ReactNode, leadData: {ti
         modalIsOpen={modalIsOpen}
         closeModal={() => setModalIsOpen(false)}
       >
-        <FormSection title={leadData.title} />
+        <FormSection image={leadData.image} title={leadData.title} />
       </BaseModal>
       <button
         onClick={handleClick}

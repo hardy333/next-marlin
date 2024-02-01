@@ -4,14 +4,15 @@ import formImg from "./form-img.svg";
 import Image from "next/image";
 
 import { Public_Sans } from "next/font/google";
+import { urlFor } from "@/app/_lib/sanity";
 const public_sans = Public_Sans({ subsets: ["latin"] });
 
+type Props = {
+  title: string;
+  image: object;
+};
 
-
-
-
-const FormSection = ({title}:{title: string}) => {
-
+const FormSection = ({ title, image }: Props) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -20,9 +21,6 @@ const FormSection = ({title}:{title: string}) => {
     formData.append("lastname", "Ainshtain");
 
     formData.append("email", "albert123@gmail.com");
-
-    console.log(formData);
-    console.log(formData.get("email"));
 
     const response = await fetch(
       "https://3dbdc4e02c174de9882917a6978be3f0.svc.dynamics.com/f/formpage/5e0ab75f-24b9-ee11-a569-000d3ad7f2e0/correlation/GvIjSbXYgAVO_fupgNHHEn_PfYpnM3UVyF-A278wImY",
@@ -39,11 +37,20 @@ const FormSection = ({title}:{title: string}) => {
   return (
     <>
       <div className={`${public_sans.className} ${styles.container}`}>
-        <div className={`${styles.right} w-[50%] flex items-center justify-center`}>
-          <Image src={formImg} alt="placeholder illustration"  />
+        <div
+          className={`${styles.right} w-[50%] flex items-center justify-center`}
+        >
+          <Image
+            width={1000}
+            height={800}
+            src={urlFor(image).url()}
+            alt="placeholder illustration"
+          />
         </div>
 
-        <form className={`${styles.left} w-[50%] border-l border-l-[rgb(116, 117, 121)] p-[15px] pl-16 `}>
+        <form
+          className={`${styles.left} w-[50%] border-l border-l-[rgb(116, 117, 121)] p-[15px] pl-16 `}
+        >
           {/* 1 */}
           <h2 className="text-[30px] font-bold mb-14">{title}</h2>
           <div className={styles.topInputs}>
