@@ -1,19 +1,40 @@
+import { client, urlFor } from "@/app/_lib/sanity";
 import large from "@/assets/large.png";
 import Image from "next/image";
+async function getData() {
+  const query = `
+  *[_type == "mainPageOrdersSection"] | order(_createdAt desc){
+    heading,
+      paragraph,
+      buttonHeading,
+      buttonText,
+      image
+  }[0]
+    `;
 
-const ManageOrders = () => {
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+const ManageOrders = async () => {
+  const data = await getData();
+
   return (
     <section className="manage-orders">
       <div className="manage-orders-img-container">
         <Image src={large} className="manage-orders-img" alt="" />
       </div>
       <div className="container-small manage-orders__container    ">
-        <h3 data-aos="fade-down">Manage Orders easily</h3>
-        <p data-aos="fade-up">
-          Marlin makes different ERP systems talk: send orders directly from you
-          ERP to your vendor’s ERP and forget thousands of excel files
-        </p>
-        <Image src={large} className="manage-orders-img" alt="" />
+        <h3 data-aos="fade-down">{data?.heading}</h3>
+        <p data-aos="fade-up">{data?.paragraph}</p>
+        <Image
+          width={1500}
+          height={1000}
+          src={urlFor(data?.image).url()}
+          className="manage-orders-img"
+          alt=""
+        />
         <p
           className="manage-orders-p"
           style={{
@@ -49,7 +70,7 @@ const ManageOrders = () => {
               fill="#FF7ABC"
             />
           </svg>
-          Ready to start your journey?
+          {data?.buttonHeading}
         </p>
         <button
           style={{ padding: "15px 35px", fontSize: "20px", width: "250px" }}
@@ -57,7 +78,7 @@ const ManageOrders = () => {
           data-aos="fade-up"
           data-aos-delay={400}
         >
-          Try it out
+          {data?.buttonText}
         </button>
       </div>
     </section>
