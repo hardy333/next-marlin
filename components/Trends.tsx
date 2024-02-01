@@ -92,12 +92,20 @@ const Trends = async () => {
           ))}
         </div>
       </div>
-      <button
-        style={{ margin: "40px auto", padding: "10px 30px", display: "flex" }}
-        className="btn"
-      >
-        {data2?.buttonText}
-      </button>
+      <div className="flex content-center">
+        <Link
+          href={"/blog"}
+          style={{
+            margin: "40px auto",
+            padding: "10px 30px",
+            display: "inline-flex",
+          }}
+          className="btn"
+          prefetch={true}
+        >
+          {data2?.buttonText}
+        </Link>
+      </div>
     </section>
   );
 };
