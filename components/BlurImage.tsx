@@ -1,15 +1,13 @@
-"use clinet";
+// "use clinet";
 
 import Image from "next/image";
-import { useState } from "react";
+// import { useState } from "react";
 
 function cn(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 function BlurImage({ src }: { src: any }) {
-  const [isLoading, setLoading] = useState(true);
-
   return (
     <Image
       alt=""
@@ -24,7 +22,7 @@ function BlurImage({ src }: { src: any }) {
       //     ? "scale-110 blur-2xl grayscale"
       //     : "scale-100 blur-0 grayscale-0"
       // )}
-      onLoadingComplete={() => setLoading(false)}
+      // onLoadingComplete={() => setLoading(false)}
     />
   );
 }
