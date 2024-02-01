@@ -28,6 +28,8 @@ async function getData() {
   return data;
 }
 
+const lang = "en";
+
 async function getLeadData() {
   const query = `
   *[ _type == "leadForm"] | order(_createdAt desc){
@@ -70,13 +72,13 @@ const Hero = async () => {
           <div>
             <ul className="hero-check-list">
               <li>
-                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[0]}
+                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[0][lang]}
               </li>
               <li>
-                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[1]}
+                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[1][lang]}
               </li>
               <li>
-                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[2]}
+                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[2][lang]}
               </li>
             </ul>
           </div>

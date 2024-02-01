@@ -1,3 +1,5 @@
+import {defineType, defineField} from 'sanity'
+
 const supportedLanguages = [
   {id: 'en', title: 'English', isDefault: true},
   {id: 'geo', title: 'Georgian'},
@@ -14,24 +16,11 @@ export default {
     },
   },
   fields: [
-    {
+    defineField({
       name: 'title',
       title: 'Showcase title',
-      type: 'object',
-      fields: supportedLanguages.map((lang) => ({
-        title: lang.title,
-        name: lang.id,
-        type: 'string',
-        fieldset: lang.isDefault ? null : 'translations',
-      })),
-      fieldsets: [
-        {
-          title: 'Translations',
-          name: 'translations',
-          options: {collapsible: true},
-        },
-      ],
-    },
+      type: 'localeString',
+    }),
     {
       name: 'titleColoredWords',
       type: 'string',
@@ -47,7 +36,8 @@ export default {
       name: 'showcaseKeyWords',
       title: 'Showcase key words',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [{type: 'localeString'}],
+      validation: (Rule: any) => Rule.required().min(3).max(3),
     },
     {
       name: 'ctaText',

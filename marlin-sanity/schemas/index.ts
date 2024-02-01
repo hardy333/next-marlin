@@ -1,6 +1,7 @@
 import blog from './blog'
 import features from './features'
 import leadForm from './leadForm'
+import {localeString} from './localeStringType'
 import mainShowcase from './main-showcase'
 import mainPageBlogSection from './mainPageBlogSection'
 import mainPageMiddleSections from './mainPageMiddleSections'
@@ -16,4 +17,5 @@ export const schemaTypes = [
   leadForm,
   mainPageOrdersSection,
   mainPageBlogSection,
+  localeString,
 ]
