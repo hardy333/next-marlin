@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { BsArrowRightShort } from "react-icons/bs";
 import clock from "@/assets/clock.png";
 import Image from "next/image";
@@ -6,6 +6,7 @@ import { simpleBlogCard } from "./page";
 import { urlFor } from "../_lib/sanity";
 import Link from "next/link";
 import BlurImage from "@/components/BlurImage";
+import { getColor } from "./blogCategoryColors";
 
 const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
   return (
@@ -14,7 +15,7 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
         className="big-blog-post__img-container"
         style={{ position: "relative", overflow: "hidden" }}
       >
-        {/* <Image
+        <Image
           style={{
             width: "100%",
             objectFit: "cover",
@@ -26,16 +27,12 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
           src={urlFor(post.titleImage).url()}
           className="hero-img"
           alt=""
-        /> */}
-        <BlurImage src={urlFor(post.titleImage).url()} />
+        />
       </div>
       <div className="big-blog-post__content">
         <span className="trend-card__lable">{post.categoryTag}</span>
         <h2>{post.title}</h2>
-        <p
-          className="big-blog-post__text line-clamp-3 "
-          style={{  }}
-        >
+        <p className="big-blog-post__text line-clamp-3 " style={{}}>
           {post.smallDescription}
         </p>
         <Link href={`/blog/${post.currentSlug}`} prefetch={true}>

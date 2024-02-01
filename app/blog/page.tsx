@@ -14,10 +14,8 @@ export interface simpleBlogCard {
   currentSlug: string;
   titleImage: any;
   date: string;
-  categoryTag: string;  
-
+  categoryTag: string;
 }
-
 
 export interface fullBlog {
   currentSlug: string;
@@ -47,22 +45,20 @@ async function getData() {
 const Blog = async () => {
   const data: simpleBlogCard[] = await getData();
 
-
-  console.log("ss", data)
-  const categoryTags = Array.from(new Set(data.map(blog => blog.categoryTag)))
-  categoryTags.unshift("All")
-
-  
+  console.log("ss", data);
+  const categoryTags = Array.from(
+    new Set(data.map((blog) => blog.categoryTag))
+  );
+  categoryTags.unshift("All");
 
   return (
     <>
-    <BlogFilterContextProvider>
-      <BlogShowcase />
-      <BlogFilters categoryTags={categoryTags} />
-     <AllBlogsSection data={data}/>
-    </BlogFilterContextProvider>
+      <BlogFilterContextProvider>
+        <BlogShowcase />
+        <BlogFilters categoryTags={categoryTags} />
+        <AllBlogsSection data={data} />
+      </BlogFilterContextProvider>
     </>
-
   );
 };
 
