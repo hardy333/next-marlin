@@ -1,4 +1,5 @@
 import blog from './blog'
+import blogPage from './blogPage'
 import features from './features'
 import leadForm from './leadForm'
 import {localeString} from './localeStringType'
@@ -20,4 +21,5 @@ export const schemaTypes = [
   mainPageBlogSection,
   localeString,
   pricingSections,
+  blogPage,
 ]
