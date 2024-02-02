@@ -3,9 +3,7 @@ import PricingCardsSection from "./PricingCardsSection";
 import AutomateSection from "./AutomateSection";
 import { client } from "../_lib/sanity";
 
-export const revalidate = 0
-
-
+export const revalidate = 0;
 
 const getData = async () => {
   const query = `
@@ -25,25 +23,39 @@ const getData = async () => {
   return data;
 };
 
+const getSectionData = async () => {
+  const query = `
+  *[_type == "pricingSections"] | order(_createdAt desc){
+      section1
+   }[0]
+    
+    `;
+
+  const data = await client.fetch(query);
+
+  return data;
+};
 
 import { Public_Sans } from "next/font/google";
 import cn from "classnames";
 
 const public_sans = Public_Sans({ subsets: ["latin"] });
 
-console.log(public_sans)
-
-
 const Pricing = async () => {
   const data = await getData();
+  const sectionData = await getSectionData();
+  console.log("section data", sectionData);
 
   return (
     <>
       <section className={classes.hero}>
         <div className={`container-small ${classes.hero__container}`}>
-          <h1>{data.showcase.showcaseTitle}</h1>
-          <p style={{ width: "520px", maxWidth: "100%" }} className={cn(public_sans.className)}>
-            {data.showcase.showcaseParagraph}
+          <h1>{data?.showcase.showcaseTitle}</h1>
+          <p
+            style={{ width: "520px", maxWidth: "100%" }}
+            className={cn(public_sans.className)}
+          >
+            {data?.showcase.showcaseParagraph}
           </p>
         </div>
       </section>
@@ -51,15 +63,23 @@ const Pricing = async () => {
         leftCardList={data.cardLeft}
         middleCardList={data.cardMiddle}
         rightCardList={data.cardRight}
-
         monthlyPrices={data.monthlyPrices}
         yearlyPrices={data.yearlyPrices}
       />
 
       <section className={classes["choose-plan"]}>
         <div className={`container-small ${classes["choose-plan__container"]}`}>
-          <h2>Difficulties choosing a plan?</h2>
-          <button className="btn btn--outline">Book a call</button>
+          <div>
+            <h2 style={{ marginBottom: "20px" }}>
+              {sectionData?.section1.heading}
+            </h2>
+            <p style={{ fontSize: "20px" }}>
+              {sectionData?.section1.paragraph}
+            </p>
+          </div>
+          <button className="btn btn--outline">
+            {sectionData?.section1?.buttonText}
+          </button>
         </div>
       </section>
 

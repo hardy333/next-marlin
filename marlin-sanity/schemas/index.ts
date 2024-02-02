@@ -7,6 +7,7 @@ import mainPageBlogSection from './mainPageBlogSection'
 import mainPageMiddleSections from './mainPageMiddleSections'
 import mainPageOrdersSection from './mainPageOrdersSection'
 import pricingCards from './pricing-cards'
+import pricingSections from './pricingSections'
 
 export const schemaTypes = [
   mainShowcase,
@@ -18,4 +19,5 @@ export const schemaTypes = [
   mainPageOrdersSection,
   mainPageBlogSection,
   localeString,
+  pricingSections,
 ]
