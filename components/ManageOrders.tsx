@@ -1,5 +1,6 @@
 import { client, urlFor } from "@/app/_lib/sanity";
 import large from "@/assets/large.png";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 async function getData() {
   const query = `
@@ -27,7 +28,7 @@ const ManageOrders = async () => {
       </div>
       <div className="container-small manage-orders__container    ">
         <h3 data-aos="fade-down">{data?.heading}</h3>
-        <p data-aos="fade-up">{data?.paragraph}</p>
+        <PortableText value={data?.paragraph} />
         <Image
           width={1500}
           height={1000}

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa";
 import { client, urlFor } from "@/app/_lib/sanity";
+import { PortableText } from "@portabletext/react";
 
 async function getData() {
   const query = `
@@ -20,14 +21,16 @@ async function getData() {
 const MiddleSections = async () => {
   const data = await getData();
 
+  console.log("param !!!!", data.section1.paragraph);
+
   return (
     <>
       {/* 1 */}
       <section className="middle-section " id="what-is-marlin">
         <div className="container-small flex-container middle-section__container">
           <div>
-            <h2>{data?.section1.heading} </h2>
-            <p>{data?.section1.paragraph}</p>
+            <h2>{data?.section1.heading}</h2>
+            <PortableText value={data?.section1.paragraph} />
           </div>
           <div className="box-container">
             <div
@@ -53,7 +56,7 @@ const MiddleSections = async () => {
         >
           <div>
             <h2>{data?.section2.heading}</h2>
-            <p>{data?.section2.paragraph}</p>
+            <PortableText value={data?.section2.paragraph} />
           </div>
           <div className="box-container">
             <div

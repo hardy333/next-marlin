@@ -13,8 +13,17 @@ export default {
       type: 'object',
       fields: [
         {name: 'heading', type: 'string', title: 'heading'},
-        {name: 'paragraph', type: 'string', title: 'paragraph'},
         {name: 'image', type: 'image', title: 'image'},
+        {
+          name: 'paragraph',
+          title: 'paragraph',
+          type: 'array',
+          of: [
+            {
+              type: 'block',
+            },
+          ],
+        },
       ],
     },
     {
@@ -23,8 +32,18 @@ export default {
       type: 'object',
       fields: [
         {name: 'heading', type: 'string', title: 'heading'},
-        {name: 'paragraph', type: 'string', title: 'paragraph'},
         {name: 'image', type: 'image', title: 'image'},
+
+        {
+          name: 'paragraph',
+          title: 'paragraph',
+          type: 'array',
+          of: [
+            {
+              type: 'block',
+            },
+          ],
+        },
       ],
     },
     {
