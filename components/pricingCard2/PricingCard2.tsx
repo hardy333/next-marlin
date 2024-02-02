@@ -1,4 +1,8 @@
 "use client";
+import { Public_Sans } from "next/font/google";
+const public_sans = Public_Sans({ subsets: ["latin"] });
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 
 import cn from "classnames";
 import styles from "./style.module.css";
@@ -15,40 +19,40 @@ const data = [
   { text: "Unlimited Cloud Space", isactive: false },
 ];
 
-import { Public_Sans } from "next/font/google";
-
-const public_sans = Public_Sans({ subsets: ["latin"] });
-
-
-import { Inter } from 'next/font/google'
- 
-// If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ['latin'] })
-
-const PricingCard2 = ({price}: {price: number}) => {
-console.log(public_sans)
-
+const PricingCard2 = ({
+  price,
+  cardList,
+  cardName,
+}: {
+  price: number;
+  cardList: string[];
+  cardName: string;
+}) => {
   return (
     <article className={cn(styles.card)}>
-      <h2 className={cn(styles.h, public_sans.className)}>Startup</h2>
-      <p className={cn(styles.p, inter.className)}>Optimal for 10+ team size and new startup</p>
+      <h2 className={cn(styles.h, public_sans.className)}>{cardName}</h2>
+      <p className={cn(styles.p, inter.className)}>
+        Optimal for 10+ team size and new startup
+      </p>
       <h3 className={cn(styles.moneyH)}>
         <span className={cn(styles.dollarSpan)}>$</span>
         <span className={cn(styles.numberSpan)}>{price}</span>
         <span className={cn(styles.intervalSpan, inter.className)}>/ Mon</span>
       </h3>
       <ul className={cn(styles.list)}>
-        {data?.map((liObj) => (
+        {cardList?.map((text, index) => (
           <li
-            key={liObj.text}
-            className={cn(styles.li, { [styles.disable]: !liObj.isactive })}
+            key={text}
+            className={cn(styles.li, {
+              [styles.disable]: index >= 4 ? true : false,
+            })}
           >
-            <span className={cn(styles.liText, inter.className)}>{liObj.text}</span>
+            <span className={cn(styles.liText, inter.className)}>{text}</span>
             <span
-              className={cn(styles.liCircle, )}
-              style={{ background: liObj.isactive ? "#17C65355" : "#99A1B744" }}
+              className={cn(styles.liCircle)}
+              style={{ background: index < 4 ? "#17C65355" : "#99A1B744" }}
             >
-              {liObj.isactive ? (
+              {index < 4 ? (
                 <FaCheck fill="#17C653" />
               ) : (
                 <FaXmark fill="#99A1B7" />

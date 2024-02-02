@@ -1,5 +1,5 @@
 "use client";
-import React, {  MouseEvent,  useState } from "react";
+import React, { MouseEvent, useState } from "react";
 import classes from "./pricing.module.css";
 import { FaCheck } from "react-icons/fa6";
 import CountUp from "react-countup";
@@ -38,8 +38,9 @@ const PricingCardsSection = ({
   yearlyPrices,
   monthlyPrices,
   leftCardList,
+  middleCardList,
+  rightCardList,
 }: any) => {
-  console.log(leftCardList);
   prices.basic.monthly = monthlyPrices.leftCardPrice;
   prices.basic.yearly = yearlyPrices.leftCardPrice;
 
@@ -52,16 +53,25 @@ const PricingCardsSection = ({
   const [isMonthly, setIsMonthly] = useState(false);
   const [isVendor, setIsVendor] = useState(false);
 
-
   return (
     <section className={`${classes["pricing-section"]}`}>
       <div className="container-small">
         <div className={`${classes["switches-container"]}`}>
           <div className={classes.price_switch_container}>
-            <PricingSwitch setSwitchState={setIsMonthly} leftText="Monthly" rightText="Yearly" isOn={isMonthly}/>
+            <PricingSwitch
+              setSwitchState={setIsMonthly}
+              leftText="Monthly"
+              rightText="Yearly"
+              isOn={isMonthly}
+            />
           </div>
           <div className={classes.price_switch_container}>
-          <PricingSwitch setSwitchState={setIsVendor} leftText="Retailer" rightText="Vendor" isOn={isVendor}/>
+            <PricingSwitch
+              setSwitchState={setIsVendor}
+              leftText="Retailer"
+              rightText="Vendor"
+              isOn={isVendor}
+            />
           </div>
         </div>
 
@@ -87,9 +97,23 @@ const PricingCardsSection = ({
             strokeColor={"#406AFF"}
             cardList={rightCardList}
           /> */}
-           <PricingCard2 price={45} />
-          <PricingCard2 price={199} />
-          <PricingCard2 price={200}/>
+          <PricingCard2
+            cardList={leftCardList}
+            price={isMonthly ? prices.basic.monthly : prices.basic.yearly}
+            cardName={"Basic"}
+          />
+          <PricingCard2
+            cardList={middleCardList}
+            price={
+              isMonthly ? prices.supernova.monthly : prices.supernova.yearly
+            }
+            cardName={"Supernova"}
+          />
+          <PricingCard2
+            cardList={rightCardList}
+            price={isMonthly ? prices.standard.monthly : prices.standard.yearly}
+            cardName={"Standard"}
+          />
         </section>
       </div>
     </section>
@@ -170,7 +194,6 @@ const PriceCard = ({
 
     element.appendChild(ripple);
   };
-
 
   return (
     <>
