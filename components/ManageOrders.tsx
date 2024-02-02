@@ -24,7 +24,12 @@ const ManageOrders = async () => {
   return (
     <section className="manage-orders">
       <div className="manage-orders-img-container">
-        <Image src={large} className="manage-orders-img" alt="" />
+        <Image
+          src={large}
+          className="manage-orders-img"
+          alt=""
+          style={{ borderRadius: "10px" }}
+        />
       </div>
       <div className="container-small manage-orders__container    ">
         <h3 data-aos="fade-down">{data?.heading}</h3>
@@ -35,6 +40,7 @@ const ManageOrders = async () => {
           src={urlFor(data?.image).url()}
           className="manage-orders-img"
           alt=""
+          style={{ borderRadius: "10px" }}
         />
         <p
           className="manage-orders-p"
