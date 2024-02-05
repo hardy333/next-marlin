@@ -7,11 +7,20 @@ import { urlFor } from "../_lib/sanity";
 import Link from "next/link";
 import BlurImage from "@/components/BlurImage";
 import { getColor } from "./blogCategoryColors";
+import { CiClock2 } from "react-icons/ci";
+import readingTime from "reading-time";
+import { format } from "date-fns/format";
+import { useRouter } from "next/navigation";
 
 const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
+  const router = useRouter();
+
   return (
-    <article className="big-blog-post">
+    <article className="big-blog-post" style={{ marginBottom: "10px" }}>
       <div
+        onClick={() => {
+          router.push(`/blog/${post.currentSlug}`);
+        }}
         className="big-blog-post__img-container"
         style={{ position: "relative", overflow: "hidden" }}
       >
@@ -30,22 +39,51 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
         />
       </div>
       <div className="big-blog-post__content">
-        <span className="trend-card__lable">{post.categoryTag}</span>
-        <h2>{post.title}</h2>
+        <span
+          className="blog-post__category-lable"
+          style={{
+            backgroundColor: getColor(),
+            justifySelf: "start",
+            width: "max-content",
+          }}
+        >
+          {post.categoryTag}
+        </span>
+        {/* <span className="trend-card__lable">{post.categoryTag}</span> */}
+
+        <h2
+          onClick={() => {
+            router.push(`/blog/${post.currentSlug}`);
+          }}
+          className="text-[30px]"
+          style={{ fontSize: "30px" }}
+        >
+          {post.title}
+        </h2>
         <p className="big-blog-post__text line-clamp-3 " style={{}}>
           {post.smallDescription}
         </p>
-        <Link href={`/blog/${post.currentSlug}`} prefetch={true}>
+        {/* <Link href={`/blog/${post.currentSlug}`} prefetch={true}>
           <p className="trend-card__read-more">
             Read more <BsArrowRightShort />{" "}
           </p>
-        </Link>
-        <footer>
+        </Link> */}
+        {/* <footer>
           <span>
             {" "}
             <Image src={clock} alt="" /> 2 min
           </span>
           <span>September 9, 2023</span>
+        </footer> */}
+
+        <footer className="blog-card__footer " style={{ fontSize: 16 }}>
+          <span className="blog-card__time">
+            <CiClock2 fill="rgb(100, 116, 139)" size={25} />
+            {Math.ceil(readingTime(post.smallDescription).minutes * 15 + 1)} min
+          </span>
+          <span className="blog-card__date">
+            {format(new Date(post.date), "dd MM, yyyy")}
+          </span>
         </footer>
       </div>
     </article>
