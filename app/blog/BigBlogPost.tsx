@@ -11,6 +11,7 @@ import { CiClock2 } from "react-icons/ci";
 import readingTime from "reading-time";
 import { format } from "date-fns/format";
 import { useRouter } from "next/navigation";
+import { colors } from "./BlogPostsSection";
 
 const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
   const router = useRouter();
@@ -42,7 +43,11 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
         <span
           className="blog-post__category-lable"
           style={{
-            backgroundColor: getColor(),
+            backgroundColor: colors?.find(
+              (obj) => obj.categoryName === post.categoryTag
+            )?.bg,
+            color: colors?.find((obj) => obj.categoryName === post.categoryTag)
+              ?.text,
             justifySelf: "start",
             width: "max-content",
           }}

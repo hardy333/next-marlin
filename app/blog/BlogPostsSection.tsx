@@ -13,6 +13,41 @@ import { format } from "date-fns/format";
 import BlurImage from "@/components/BlurImage";
 import { CiClock2 } from "react-icons/ci";
 import { getColor } from "./blogCategoryColors";
+import { color } from "framer-motion";
+
+// 1.იასამნისფერი - #E7D8FF (ბოქსი) #C9A6FF (ფონტი)
+// 2.ცისფერი - #C8E9FB (ბოქსი) #66C3F5 (ფონტი)
+// 3.ყვითელი - #FDEBDD (ბოქსი) #E6BB15 (ფონტი)
+// 4.მწვანე - #AFFBED (ბოქსი) ან #E4FEF9 (ბოქსი ღიაა უფრო) #55EBD1 (ფონტი)
+// 5.მალინა- # FFDEE9 (ბოქსი) #FF7BA7 (ფონტი)
+
+export const colors = [
+  {
+    bg: "#E7D8FF ",
+    text: "#C9A6FF",
+    categoryName: "Industry news",
+  },
+  {
+    bg: "#C8E9FB",
+    text: "#66C3F5",
+    categoryName: "Good to know",
+  },
+  {
+    bg: "#FDEBDD",
+    text: "#E6BB15",
+    categoryName: "",
+  },
+  {
+    bg: "#E4FEF9",
+    text: "#55EBD1",
+    categoryName: "Success cases",
+  },
+  {
+    bg: "#FFDEE9",
+    text: "#FF7BA7",
+    categoryName: "Tech and more",
+  },
+];
 
 const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
   return (
@@ -35,7 +70,14 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
             <div className="blog-card__content">
               <span
                 className="blog-post__category-lable"
-                style={{ backgroundColor: getColor() }}
+                style={{
+                  backgroundColor: colors?.find(
+                    (obj) => obj.categoryName === blogPost.categoryTag
+                  )?.bg,
+                  color: colors?.find(
+                    (obj) => obj.categoryName === blogPost.categoryTag
+                  )?.text,
+                }}
               >
                 {blogPost.categoryTag}
               </span>
