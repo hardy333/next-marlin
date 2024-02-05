@@ -31,12 +31,7 @@ const AutomateSection = async () => {
             </span>
             {getRestStr(data?.section2.heading)}
           </h2>
-          <p>
-            {/* Marlin is the platform for Retailers and vendors, providing the
-            speed and reliability innovators need to create at the moment of
-            inspiration. */}
-            {data?.section2.paragraph}
-          </p>
+          <p>{data?.section2.paragraph}</p>
         </div>
 
         <button className="btn btn--outline btn--big">

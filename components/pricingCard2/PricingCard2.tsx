@@ -61,7 +61,7 @@ const PricingCard2 = ({
           </li>
         ))}
       </ul>
-      <button className={cn(styles.btn)}>Select</button>
+      {/* <button className={cn(styles.btn)}>Select</button> */}
     </article>
   );
 };
