@@ -76,8 +76,7 @@ ul {
 }
 
 .btn:hover {
-  background-color: transparent;
-  color: var(--color-primary);
+  background: hsl(265, 92%, 43%);
 }
 
 .btn--outline {
