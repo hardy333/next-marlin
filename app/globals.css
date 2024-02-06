@@ -175,7 +175,6 @@ ul {
 
 .navbar__list a:hover {
   color: var(--color-primary);
-  text-decoration: underline !important;
 }
 
 .hero {

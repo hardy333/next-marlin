@@ -30,7 +30,7 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
             width: "100%",
             objectFit: "cover",
             height: "100%",
-            borderRadius: "inherit",
+            borderRadius: "10px",
           }}
           width={1800}
           height={1200}

@@ -24,27 +24,27 @@ import { color } from "framer-motion";
 export const colors = [
   {
     bg: "#E7D8FF ",
-    text: "#C9A6FF",
+    text: "#8739FA",
     categoryName: "Industry news",
   },
   {
     bg: "#C8E9FB",
-    text: "#66C3F5",
+    text: "#468CE4",
     categoryName: "Good to know",
   },
   {
     bg: "#FDEBDD",
-    text: "#E6BB15",
+    text: "#F59957",
     categoryName: "",
   },
   {
     bg: "#E4FEF9",
-    text: "#55EBD1",
+    text: "#1ED8B9",
     categoryName: "Success cases",
   },
   {
     bg: "#FFDEE9",
-    text: "#FF7BA7",
+    text: "#F55364",
     categoryName: "Tech and more",
   },
 ];
@@ -60,8 +60,14 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
               {blogPost.categoryTag}
             </span> */}
             <Link href={`/blog/${blogPost.currentSlug}`} prefetch={true}>
-              <div className="blog-card__img-wrapper">
-                <div className="blog-card__img-container">
+              <div
+                className="blog-card__img-wrapper"
+                style={{ borderRadius: "10px" }}
+              >
+                <div
+                  className="blog-card__img-container"
+                  style={{ borderRadius: "10px" }}
+                >
                   <BlurImage src={urlFor(blogPost.titleImage).url()} />
                 </div>
               </div>
