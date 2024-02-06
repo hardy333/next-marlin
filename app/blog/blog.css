@@ -16,8 +16,7 @@
 
   position: relative;
   overflow: hidden;
-  /* box-shadow: 1px 1px 10px -4px rgba(100, 100, 100, 0.3); */
-  border: 1px solid #ebeef426;
+  border: 1px solid #edeff426;
 }
 
 .blog-showcase__img-container::before {

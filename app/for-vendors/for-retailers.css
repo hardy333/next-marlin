@@ -1,11 +1,8 @@
 /* For Retailers Hero */
 /* For Retailers Hero */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-.for-retailers-hero{
-    background-color: #E8EBFC;
-
+.for-retailers-hero {
+  background-color: #e8ebfc;
 }
 
 .for-retailers-hero__container {
@@ -27,21 +24,38 @@
   font-weight: 600;
 }
 
-
-
-.simple-cta-section{
+.simple-cta-section {
   padding: 4rem 0;
   display: flex;
   justify-content: center;
 }
 
+.simple-cta-section .btn {
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 
-.simple-cta-section .btn{
-font-family: Inter;
-font-size: 25px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
+  padding: 10px 30px;
+}
 
-padding: 10px 30px;
+/* New Styles */
+/* New Styles */
+/* New Styles */
+
+.secondary-hero {
+  /* background-color: red; */
+}
+
+.secondary-hero__img-container {
+  /* background-color: black; */
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.secondary-hero__img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

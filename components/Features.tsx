@@ -30,52 +30,40 @@ const initialData = [
 
 export const revalidate = 0; // revalidate at most 30 seconds
 
-async function getData() {
-  const query = `
-  *[_type == "features"] | order(_createdAt desc){
-      leftFeature,
-        middleFeature,
-        rightFeature
-     }[0]
-    
-    `;
-  const data = await client.fetch(query);
+const Features = async ({
+  bgColor = null,
+  data,
+}: {
+  bgColor: string | null;
+  data: any;
+}) => {
+  let resData = null;
 
-  return data;
-}
-
-const Features = async ({ bgColor = null }: { bgColor: string | null }) => {
-
-  let data = await getData();
-
-  let resData = null
-
-  if(data){
-    resData = initialData.map(((initObj, index) => {
-      if(index === 0){
+  if (data) {
+    resData = initialData.map((initObj, index) => {
+      if (index === 0) {
         return {
           ...initObj,
-          h:data?.leftFeature.heading,
-          p:data?.leftFeature.paragraph,
-        }
+          h: data?.leftFeature.heading,
+          p: data?.leftFeature.paragraph,
+        };
       }
-      if(index === 1){
+      if (index === 1) {
         return {
           ...initObj,
           h: data?.middleFeature.heading,
           p: data?.middleFeature.paragraph,
-        }
+        };
       }
-      if(index === 2){
+      if (index === 2) {
         return {
           ...initObj,
           h: data?.rightFeature.heading,
-          p: data?.rightFeature.paragraph
-        }
+          p: data?.rightFeature.paragraph,
+        };
       }
-    }))
+    });
   }
-
 
   return (
     <section
@@ -84,7 +72,7 @@ const Features = async ({ bgColor = null }: { bgColor: string | null }) => {
     >
       {/* <SmallDotsSvg className="features-svg-small-dots-right" /> */}
       <div className="container-small features__container">
-        {resData?.map((obj:any) => {
+        {resData?.map((obj: any) => {
           return (
             <article key={obj.h} className={cn(styles.featureCard)}>
               <div

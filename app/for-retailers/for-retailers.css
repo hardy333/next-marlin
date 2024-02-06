@@ -1,8 +1,7 @@
 /* For Retailers Hero */
 /* For Retailers Hero */
-.for-retailers-hero{
-    background-color: #E8EBFC;
-
+.for-retailers-hero {
+  background-color: #e8ebfc;
 }
 
 .for-retailers-hero__container {
@@ -24,21 +23,17 @@
   font-weight: 600;
 }
 
-
-
-.simple-cta-section{
+.simple-cta-section {
   padding: 4rem 0;
   display: flex;
   justify-content: center;
 }
 
+.simple-cta-section .btn {
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 
-.simple-cta-section .btn{
-font-family: Inter;
-font-size: 25px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-
-padding: 10px 30px;
+  padding: 10px 30px;
 }
