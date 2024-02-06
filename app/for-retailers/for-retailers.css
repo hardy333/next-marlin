@@ -37,3 +37,24 @@
 
   padding: 10px 30px;
 }
+
+/* New Styles */
+/* New Styles */
+/* New Styles */
+
+.secondary-hero {
+  /* background-color: red; */
+}
+
+.secondary-hero__img-container {
+  /* background-color: black; */
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.secondary-hero__img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

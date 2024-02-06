@@ -1,28 +1,45 @@
-import React from "react";
+import Image from "next/image";
+import { client, urlFor } from "../_lib/sanity";
 
-const Hero = () => {
+async function getFeaturesData() {
+  const query = `
+  *[_type == "vendorsShowcase"] | order(_createdAt desc){
+    title,
+    paragraph,
+    image,
+    ctaText,
+  }[0]
+    `;
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+const Hero = async () => {
+  let data = await getFeaturesData();
+
   return (
-    <section className="for-retailers-hero">
+    <section className="for-retailers-hero secondary-hero">
       <div className="container-small for-retailers-hero__container flex-container">
         <div>
-          <h1 data-aos="fade-down" data-aos-delay={400}>
-         
-            See all your vendors here and <br /> bla bla bla lorem upsum
-          </h1>
-          <button className="btn btn--big" data-aos="fade-up" data-aos-delay={400}>
-            Test Demo
+          <h1 style={{ marginBottom: "15px" }}>{data?.title}</h1>
+          <p className="mb-10">{data?.paragraph}</p>
+          <button
+            className="btn "
+            style={{ fontSize: "18px", padding: "12px 30px" }}
+          >
+            {data?.ctaText}
           </button>
-
         </div>
 
-        <div className="box-container">
-          <div
-            className="box hero-box"
-            data-aos="fade-left"
-            data-aos-delay={400}
-          >
-            {/* <img src={p1} className='hero-img' alt="" /> */}
-          </div>
+        <div className="secondary-hero__img-container">
+          <Image
+            alt="img"
+            width={1800}
+            height={1200}
+            src={urlFor(data?.image).url()}
+            priority
+          />
         </div>
       </div>
     </section>

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Img from "./placeholder-img.webp";
 import { client, urlFor } from "../_lib/sanity";
 import { PortableText } from "@portabletext/react";
 
