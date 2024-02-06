@@ -6,6 +6,7 @@ import { getColor } from "@/app/blog/blogCategoryColors";
 import { CiClock2 } from "react-icons/ci";
 import readingTime from "reading-time";
 import { format } from "date-fns/format";
+import { TbArrowRight } from "react-icons/tb";
 
 export const revalidate = 0; // revalidate at most 30 seconds
 
@@ -104,6 +105,9 @@ const Trends = async () => {
           prefetch={true}
         >
           {data2?.buttonText}
+          <span>
+            <TbArrowRight />
+          </span>
         </Link>
       </div>
     </section>

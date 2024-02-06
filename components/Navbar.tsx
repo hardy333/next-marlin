@@ -1,8 +1,6 @@
 import MarlinLogoSvg from "@/svgs/MarlinLogoSvg";
 import Link from "next/link";
 
-
-
 import { Public_Sans } from "next/font/google";
 
 const public_sans = Public_Sans({ subsets: ["latin"] });
@@ -91,20 +89,20 @@ const Navbar = () => {
             </Link>
           </li>
           <li data-aos="fade-in ">
-            <Link prefetch={true} href="/blog">
-              Blog
-            </Link>
-          </li>
-          <li data-aos="fade-in ">
             <Link prefetch={true} href="/pricing">
               Pricing
             </Link>
           </li>
           <li data-aos="fade-in ">
+            <Link prefetch={true} href="/blog">
+              Blog
+            </Link>
+          </li>
+          {/* <li data-aos="fade-in ">
             <Link prefetch={true} href="/terms">
               Terms
             </Link>
-          </li>
+          </li> */}
         </ul>
         <button className="btn btn--outline" data-aos="fade-left">
           Book a call
@@ -115,7 +113,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
