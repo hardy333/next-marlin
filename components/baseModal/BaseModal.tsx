@@ -1,17 +1,15 @@
 import "./modal.css";
 import { ReactNode } from "react";
 import { IoMdClose } from "react-icons/io";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 
 type Props = {
-  modalIsOpen: boolean,
-  closeModal: () => void,
-  children: ReactNode
-}
-
+  modalIsOpen: boolean;
+  closeModal: () => void;
+  children: ReactNode;
+};
 
 const BaseModal = ({ modalIsOpen, closeModal, children }: Props) => {
-
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -23,16 +21,13 @@ const BaseModal = ({ modalIsOpen, closeModal, children }: Props) => {
       ariaHideApp={false}
     >
       <>
-      <button
-        onClick={() => closeModal()}
-        className="close-modal-btn"
-      >
-        <IoMdClose fill="#1c1238aa" />
-      </button>
+        <button onClick={() => closeModal()} className="close-modal-btn">
+          <IoMdClose fill="#1c1238aa" />
+        </button>
         {children}
       </>
     </Modal>
-);
+  );
 };
 
 export default BaseModal;

@@ -3,7 +3,7 @@ import "./globals.css";
 import "./blog/[slug]/style.css";
 import "./blog/blog.css";
 import "./blog/blog-posts-section.css";
-import "./forms.css"
+import "./forms.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -32,7 +32,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return ( 
+  return (
     <html lang="en">
       {/* <Navbar */}
       <Analytics />
@@ -53,3 +53,10 @@ export default function RootLayout({
     </html>
   );
 }
+
+// [
+//   {
+//     formId: { id: null, name: null, action: null, method: null, index: 0 },
+//     blockId: "5e0ab75f-24b9-ee11-a569-000d3ad7f2e0",
+//   },
+// ];
