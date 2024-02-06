@@ -4,6 +4,8 @@ import ForRetailersMiddleSections from "./MiddleSections";
 import { Public_Sans } from "next/font/google";
 const public_sans = Public_Sans({ subsets: ["latin"] });
 
+export const revalidate = 0; // revalidate at most 30 seconds
+
 // css
 import "./for-retailers.css";
 import Features from "@/components/Features";

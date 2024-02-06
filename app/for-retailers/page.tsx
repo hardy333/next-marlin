@@ -2,6 +2,8 @@ import { client } from "../_lib/sanity";
 import ForRetailersHero from "./Hero";
 import ForRetailersMiddleSections from "./MiddleSections";
 
+export const revalidate = 0; // revalidate at most 30 seconds
+
 // css
 import "./for-retailers.css";
 import Features from "@/components/Features";
@@ -11,7 +13,7 @@ const public_sans = Public_Sans({ subsets: ["latin"] });
 
 async function getFeaturesData() {
   const query = `
-  *[_type == "features"] | order(_createdAt desc){
+  *[_type == "retailersFeatures"] | order(_createdAt desc){
       leftFeature,
         middleFeature,
         rightFeature

@@ -3,7 +3,7 @@ import { client, urlFor } from "../_lib/sanity";
 
 async function getFeaturesData() {
   const query = `
-  *[_type == "vendorsShowcase"] | order(_createdAt desc){
+  *[_type == "retailersShowcase"] | order(_createdAt desc){
     title,
     paragraph,
     image,

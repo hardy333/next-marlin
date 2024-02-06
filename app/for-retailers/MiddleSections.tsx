@@ -5,7 +5,7 @@ import { PortableText } from "@portabletext/react";
 
 async function getData() {
   const query = `
-    *[_type == "vendorsMiddleSections"] | order(_createdAt desc){
+    *[_type == "retailersMiddleSections"] | order(_createdAt desc){
       section1,
       section2,
       section3

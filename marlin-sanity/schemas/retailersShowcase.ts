@@ -1,7 +1,7 @@
 export default {
-  name: 'vendorsShowcase',
+  name: 'retailersShowcase',
   type: 'document',
-  title: 'Vendors Page Showcase',
+  title: 'Retailers Page Showcase',
   preview: {
     select: {
       title: 'title',

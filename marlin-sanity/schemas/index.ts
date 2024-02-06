@@ -10,6 +10,9 @@ import mainPageMiddleSections from './mainPageMiddleSections'
 import mainPageOrdersSection from './mainPageOrdersSection'
 import pricingCards from './pricing-cards'
 import pricingSections from './pricingSections'
+import retailersFeatures from './retailersFeatures'
+import retailersMiddleSections from './retailersMiddleSections'
+import retailersShowcase from './retailersShowcase'
 import vendorsFeatures from './vendorsFeatures'
 import vendorsMiddleSections from './vendorsMiddleSections'
 
@@ -28,4 +31,7 @@ export const schemaTypes = [
   forVendorsShowcase,
   vendorsFeatures,
   vendorsMiddleSections,
+  retailersShowcase,
+  retailersFeatures,
+  retailersMiddleSections,
 ]
