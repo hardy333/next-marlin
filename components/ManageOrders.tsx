@@ -80,7 +80,7 @@ const ManageOrders = async () => {
           {data?.buttonHeading}
         </p>
         <button
-          style={{ padding: "15px 35px", fontSize: "20px", width: "250px" }}
+          style={{ padding: "12px 35px", fontSize: "18px", width: "250px" }}
           className="btn"
         >
           {data?.buttonText}

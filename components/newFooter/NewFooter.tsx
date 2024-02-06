@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
@@ -11,13 +12,17 @@ import MarlinLogoSvg from "@/svgs/MarlinLogoSvg";
 const public_sans = Public_Sans({ subsets: ["latin"] });
 
 const NewFooter = () => {
+  // const isBigFooter =
+
   return (
     <footer className={cn(styles.footer, public_sans.className)}>
       <div className={cn(styles.container)}>
         <section className={cn(styles.footerTop)}>
           <div className={cn(styles.leftSection)}>
             <h2 className="flex items-center gap-5 mb-5">
-                <span className=""><MarlinLogoSvg /> </span>
+              <span className="">
+                <MarlinLogoSvg />{" "}
+              </span>
               <span>Marlin</span>
             </h2>
             <p>

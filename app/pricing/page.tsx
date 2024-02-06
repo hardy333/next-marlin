@@ -44,7 +44,6 @@ const public_sans = Public_Sans({ subsets: ["latin"] });
 const Pricing = async () => {
   const data = await getData();
   const sectionData = await getSectionData();
-  console.log("section data", sectionData);
 
   return (
     <>
@@ -77,7 +76,10 @@ const Pricing = async () => {
               {sectionData?.section1.paragraph}
             </p>
           </div>
-          <button className="btn btn--outline">
+          <button
+            className="btn btn--outline"
+            style={{ fontSize: "18px", padding: "12px 30px" }}
+          >
             {sectionData?.section1?.buttonText}
           </button>
         </div>

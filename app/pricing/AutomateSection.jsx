@@ -19,7 +19,7 @@ const AutomateSection = async () => {
   const data = await getData();
 
   return (
-    <section className={`${classes.automate}`}>
+    <section className={`${classes.automate}`} style={{ display: "none" }}>
       <div className={`container-small ${classes.automate__container}`}>
         <div className={`${classes.automate__text}`}>
           <h2>
@@ -34,7 +34,10 @@ const AutomateSection = async () => {
           <p>{data?.section2.paragraph}</p>
         </div>
 
-        <button className="btn btn--outline btn--big">
+        <button
+          className="btn btn--outline "
+          style={{ fontSize: "18px", padding: "12px 40px" }}
+        >
           {" "}
           {data?.section2.buttonText}
         </button>
