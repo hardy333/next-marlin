@@ -93,17 +93,8 @@ const Trends = async () => {
           ))}
         </div>
       </div>
-      <div className="flex content-center">
-        <Link
-          href={"/blog"}
-          style={{
-            margin: "40px auto",
-            padding: "10px 30px",
-            display: "inline-flex",
-          }}
-          className="btn"
-          prefetch={true}
-        >
+      <div className="flex content-center trends__link-container">
+        <Link href={"/blog"} className="trends__link" prefetch={true}>
           {data2?.buttonText}
           <span>
             <TbArrowRight />

@@ -722,6 +722,32 @@ ul {
   align-items: center;
 }
 
+.trends__link-container {
+  max-width: 1180px;
+  margin: auto;
+}
+
+.trends__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 40px 0;
+  margin-left: auto;
+  color: #6e0ff5;
+}
+
+.trends__link:hover {
+  color: #211543;
+}
+
+.trends__link svg {
+  transition: 0.3s ease-in-out;
+  transform: translate(0, 0px);
+}
+.trends__link:hover svg {
+  transform: translate(10px, 0px);
+}
+
 /* Footer */
 /* Footer */
 /* Footer */
