@@ -40,6 +40,7 @@ import { Public_Sans } from "next/font/google";
 const public_sans = Public_Sans({ subsets: ["latin"] });
 
 import cn from "classnames";
+// Hello
 
 const Pricing = async () => {
   const data = await getData();
