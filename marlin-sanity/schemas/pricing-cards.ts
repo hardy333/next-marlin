@@ -23,9 +23,18 @@ export default {
       title: 'Monthly prices',
       type: 'object',
       fields: [
-        {name: 'leftCardPrice', type: 'number', title: 'left card price'},
-        {name: 'middleCardPrice', type: 'number', title: 'Middle card price'},
-        {name: 'rightCardPrice', type: 'number', title: 'Right card price'},
+        {name: 'leftCardPrice', type: 'number', title: 'left card price - for retailers'},
+        {name: 'leftCardPriceForVendors', type: 'number', title: 'left card price - for vendors'},
+
+        {name: 'middleCardPrice', type: 'number', title: 'Middle card price - for retailers'},
+        {
+          name: 'middleCardPriceForVendors',
+          type: 'number',
+          title: 'Middle card price - for vendors',
+        },
+
+        {name: 'rightCardPrice', type: 'number', title: 'Right card price - for retailers'},
+        {name: 'rightCardPriceForVendors', type: 'number', title: 'Right card price - for vendors'},
       ],
     },
     {
@@ -33,9 +42,18 @@ export default {
       title: 'Yearly prices',
       type: 'object',
       fields: [
-        {name: 'leftCardPrice', type: 'number', title: 'left card price'},
-        {name: 'middleCardPrice', type: 'number', title: 'Middle card price'},
-        {name: 'rightCardPrice', type: 'number', title: 'Right card price'},
+        {name: 'leftCardPrice', type: 'number', title: 'left card price - for retailers'},
+        {name: 'leftCardPriceForVendors', type: 'number', title: 'left card price - for vendors'},
+
+        {name: 'middleCardPrice', type: 'number', title: 'Middle card price - for retailers'},
+        {
+          name: 'middleCardPriceForVendors',
+          type: 'number',
+          title: 'Middle card price - for vendors',
+        },
+
+        {name: 'rightCardPrice', type: 'number', title: 'Right card price - for retailers'},
+        {name: 'rightCardPriceForVendors', type: 'number', title: 'Right card price - for vendors'},
       ],
     },
     {
