@@ -37,9 +37,9 @@ const getSectionData = async () => {
 };
 
 import { Public_Sans } from "next/font/google";
-import cn from "classnames";
-
 const public_sans = Public_Sans({ subsets: ["latin"] });
+
+import cn from "classnames";
 
 const Pricing = async () => {
   const data = await getData();
@@ -49,9 +49,19 @@ const Pricing = async () => {
     <>
       <section className={classes.hero}>
         <div className={`container-small ${classes.hero__container}`}>
-          <h1>{data?.showcase.showcaseTitle}</h1>
+          <h1
+            style={{
+              color: "var(--color-text-1)",
+            }}
+          >
+            {data?.showcase.showcaseTitle}
+          </h1>
           <p
-            style={{ width: "520px", maxWidth: "100%" }}
+            style={{
+              width: "520px",
+              maxWidth: "100%",
+              color: "var(--color-text-1)",
+            }}
             className={cn(public_sans.className)}
           >
             {data?.showcase.showcaseParagraph}
@@ -69,7 +79,7 @@ const Pricing = async () => {
       <section className={classes["choose-plan"]}>
         <div className={`container-small ${classes["choose-plan__container"]}`}>
           <div>
-            <h2 style={{ marginBottom: "20px" }}>
+            <h2 style={{ marginBottom: "20px", fontSize: "40px" }}>
               {sectionData?.section1.heading}
             </h2>
             <p style={{ fontSize: "20px" }}>

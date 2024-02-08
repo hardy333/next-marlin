@@ -371,7 +371,7 @@ ul {
 
 .features p {
   color: #211543;
-
+  color: red;
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
@@ -448,7 +448,7 @@ ul {
 .middle-section p {
   margin-bottom: 2rem;
   color: #211543;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
@@ -543,7 +543,7 @@ ul {
 
   text-align: center;
 
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -595,7 +595,7 @@ ul {
   text-align: center;
   color: #211543;
 
-  font-size: 25px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
