@@ -78,14 +78,14 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
                 className="blog-post__category-lable"
                 style={{
                   backgroundColor: colors?.find(
-                    (obj) => obj.categoryName === blogPost.categoryTag
+                    (obj) => obj.categoryName === blogPost.categoryTag.name
                   )?.bg,
                   color: colors?.find(
-                    (obj) => obj.categoryName === blogPost.categoryTag
+                    (obj) => obj.categoryName === blogPost.categoryTag.name
                   )?.text,
                 }}
               >
-                {blogPost.categoryTag}
+                {blogPost.categoryTag.name}
               </span>
               <Link href={`/blog/${blogPost.currentSlug}`} prefetch={true}>
                 <h4 className="blog-card__heading">{blogPost.title}</h4>

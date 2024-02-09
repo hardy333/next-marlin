@@ -13,8 +13,11 @@ export default {
     },
     {
       name: 'categoryTag',
-      type: 'string',
       title: 'Category Tag',
+      // type: 'string',
+      // of: [{type: 'reference', to: [{type: 'tag'}]}],
+      type: 'reference',
+      to: [{type: 'tag'}],
     },
     {
       name: 'slug',

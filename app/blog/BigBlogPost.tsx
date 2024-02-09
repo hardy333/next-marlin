@@ -44,15 +44,16 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
           className="blog-post__category-lable"
           style={{
             backgroundColor: colors?.find(
-              (obj) => obj.categoryName === post.categoryTag
+              (obj) => obj.categoryName === post.categoryTag.name
             )?.bg,
-            color: colors?.find((obj) => obj.categoryName === post.categoryTag)
-              ?.text,
+            color: colors?.find(
+              (obj) => obj.categoryName === post.categoryTag.name
+            )?.text,
             justifySelf: "start",
             width: "max-content",
           }}
         >
-          {post.categoryTag}
+          {post.categoryTag.name}
         </span>
         {/* <span className="trend-card__lable">{post.categoryTag}</span> */}
 

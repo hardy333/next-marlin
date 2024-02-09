@@ -14,7 +14,10 @@ export interface simpleBlogCard {
   currentSlug: string;
   titleImage: any;
   date: string;
-  categoryTag: string;
+  categoryTag: {
+    name: string;
+    _id?: string;
+  };
 }
 
 export interface fullBlog {
@@ -33,7 +36,10 @@ async function getData() {
       smallDescription,
       "currentSlug": slug.current,
       titleImage,
-      categoryTag,
+      categoryTag->{
+        name,
+        _id
+      },
       "date": _createdAt
   }`;
 
@@ -47,8 +53,9 @@ const Blog = async () => {
 
   console.log("ss", data);
   const categoryTags = Array.from(
-    new Set(data.map((blog) => blog.categoryTag))
+    new Set(data.map((blog) => blog.categoryTag.name))
   );
+
   categoryTags.unshift("All");
 
   return (

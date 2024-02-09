@@ -7,7 +7,9 @@ import { useBlogFilterContext } from "./blogFilterContext";
 const AllBlogsSection = ({ data }: { data: simpleBlogCard[] }) => {
   const { blogFilter } = useBlogFilterContext();
 
-  let filteredBlogs = data?.filter((post) => post.categoryTag === blogFilter);
+  let filteredBlogs = data?.filter(
+    (post) => post.categoryTag.name === blogFilter
+  );
 
   if (blogFilter === "All") {
     filteredBlogs = data;
