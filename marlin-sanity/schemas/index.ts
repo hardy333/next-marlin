@@ -1,5 +1,6 @@
 import blog from './blog'
 import blogPage from './blogPage'
+import {blogPageTags} from './blogPageTags'
 import features from './features'
 import forVendorsShowcase from './forVendorsShowcase'
 import leadForm from './leadForm'
@@ -8,6 +9,7 @@ import mainShowcase from './main-showcase'
 import mainPageBlogSection from './mainPageBlogSection'
 import mainPageMiddleSections from './mainPageMiddleSections'
 import mainPageOrdersSection from './mainPageOrdersSection'
+import mainPageWorksSection from './mainPageWorksSection'
 import pricingCards from './pricing-cards'
 import pricingSections from './pricingSections'
 import retailersFeatures from './retailersFeatures'
@@ -18,20 +20,27 @@ import vendorsMiddleSections from './vendorsMiddleSections'
 
 export const schemaTypes = [
   mainShowcase,
-  pricingCards,
-  blog,
   features,
   mainPageMiddleSections,
-  leadForm,
+  mainPageWorksSection,
   mainPageOrdersSection,
   mainPageBlogSection,
-  localeString,
-  pricingSections,
-  blogPage,
+
   forVendorsShowcase,
   vendorsFeatures,
   vendorsMiddleSections,
+
   retailersShowcase,
   retailersFeatures,
   retailersMiddleSections,
+
+  pricingCards,
+  pricingSections,
+
+  blog,
+  blogPage,
+  blogPageTags,
+
+  localeString,
+  leadForm,
 ]

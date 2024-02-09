@@ -54,7 +54,7 @@ const MiddleSections = async () => {
             <Image
               width={700}
               height={700}
-              src={urlFor(data?.section1.image).url()}
+              src={urlFor(data?.section2.image).url()}
               alt="img"
             />
           </div>
@@ -72,7 +72,7 @@ const MiddleSections = async () => {
             <Image
               width={700}
               height={700}
-              src={urlFor(data?.section1.image).url()}
+              src={urlFor(data?.section3.image).url()}
               alt="img"
             />
           </div>

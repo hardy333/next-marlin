@@ -7,10 +7,22 @@ import { PortableText } from "@portabletext/react";
 async function getData() {
   const query = `
     *[_type == "mainPageMiddleSections"] | order(_createdAt desc){
-      section1,
-      section2,
-      section3
-    }[0]
+      data
+    }
+    `;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+async function getWorksSectionData() {
+  const query = `
+  *[_type == "mainPageWorksSection"] | order(_createdAt desc){
+    heading,
+      image,
+      list
+      }[0]
     `;
 
   const data = await client.fetch(query);
@@ -20,35 +32,49 @@ async function getData() {
 
 const MiddleSections = async () => {
   const data = await getData();
-
-  console.log("param !!!!", data.section1.paragraph);
+  const worksSectionData = await getWorksSectionData();
+  console.log("Section", data);
 
   return (
     <>
       {/* 1 */}
-      <section className="middle-section " id="what-is-marlin">
-        <div className="container-small flex-container middle-section__container">
-          <div>
-            <h2>{data?.section1.heading}</h2>
-            <PortableText value={data?.section1.paragraph} />
-          </div>
-          <div className="box-container">
+      {data?.map((section: any, index: number) => {
+        return (
+          <section
+            key={section.data.heading}
+            className="middle-section "
+            id="what-is-marlin"
+          >
             <div
-              className="box"
-              style={{ width: "550xpx", position: "relative" }}
+              className={`container-small flex-container middle-section__container ${
+                index % 2 === 1 ? "flex-container--reverse" : ""
+              }`}
             >
-              <Image
-                width={700}
-                height={700}
-                src={urlFor(data?.section1.image).url()}
-                alt=""
-              />
+              <div>
+                <h2>{section.data.heading}</h2>
+
+                <PortableText value={section.data.paragraph} />
+              </div>
+              <div className="box-container">
+                <div
+                  className="box"
+                  style={{ width: "550xpx", position: "relative" }}
+                >
+                  <Image
+                    width={700}
+                    height={700}
+                    src={urlFor(section?.data.image)?.url()}
+                    alt=""
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        );
+      })}
+
       {/* 2 */}
-      <section className="middle-section">
+      {/* <section className="middle-section">
         <div
           className="container-small flex-container middle-section__container
         flex-container--reverse
@@ -72,7 +98,7 @@ const MiddleSections = async () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 3 */}
       <section className="middle-section  how-it-works">
@@ -81,44 +107,25 @@ const MiddleSections = async () => {
         "
         >
           <div>
-            <h2>{data?.section3.heading}</h2>
+            <h2>{worksSectionData?.heading}</h2>
             <ul>
               {/* 1 */}
-              <li>
-                <span
-                  className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
-                >
-                  <FaCheck size={10} fill={"hsl(212, 86%, 64%)"} />
-                </span>
-                <div className="p-container">
-                  <p className="top">{data?.section3.list?.[0].heading}</p>
-                  <p className="bottom">{data?.section3.list?.[0].paragraph}</p>
-                </div>
-              </li>
-              {/* 2 */}
-              <li>
-                <span
-                  className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
-                >
-                  <FaCheck size={10} fill={"hsl(212, 86%, 64%)"} />
-                </span>
-                <div className="p-container">
-                  <p className="top">{data?.section3.list?.[1].heading}</p>
-                  <p className="bottom">{data?.section3.list?.[1].paragraph}</p>
-                </div>
-              </li>
-              {/* 3 */}
-              <li>
-                <span
-                  className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
-                >
-                  <FaCheck size={10} fill={"hsl(212, 86%, 64%)"} />
-                </span>
-                <div className="p-container">
-                  <p className="top">{data?.section3.list?.[2].heading}</p>
-                  <p className="bottom">{data?.section3.list?.[2].paragraph}</p>
-                </div>
-              </li>
+
+              {worksSectionData.list.map((obj: any) => {
+                return (
+                  <li key={obj?.heading}>
+                    <span
+                      className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
+                    >
+                      <FaCheck size={10} fill={"hsl(212, 86%, 64%)"} />
+                    </span>
+                    <div className="p-container">
+                      <p className="top">{obj?.heading}</p>
+                      <p className="bottom">{obj?.paragraph}</p>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="box-container">
@@ -129,7 +136,7 @@ const MiddleSections = async () => {
               <Image
                 width={700}
                 height={700}
-                src={urlFor(data?.section3.image).url()}
+                src={urlFor(worksSectionData?.image).url()}
                 alt=""
               />
             </div>
