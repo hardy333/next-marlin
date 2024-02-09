@@ -58,9 +58,6 @@ const Trends = async () => {
           {data?.slice(0, data2.blogPostCount).map((blogPost, index) => (
             // Post start
             <article key={index} className="blog-card">
-              {/* <span className="trend-card__lable" style={{ zIndex: "999999" }}>
-              {blogPost.categoryTag}
-            </span> */}
               <Link href={`/blog/${blogPost.currentSlug}`} prefetch={true}>
                 <div className="blog-card__img-wrapper">
                   <div className="blog-card__img-container">

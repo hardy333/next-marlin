@@ -3,7 +3,10 @@ export interface mainShowcase {
     en: string;
     geo?: string;
   };
-  paragraph: string;
+  paragraph: {
+    en: string;
+    geo?: string;
+  };
   image: any;
   ctaText: string;
   titleColoredWords: string;

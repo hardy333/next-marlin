@@ -1,11 +1,12 @@
 import blog from './blog'
 import blogPage from './blogPage'
 import {blogPageTags} from './blogPageTags'
-import {blogPostTagColors} from './blogPostTagcolors'
+import {blogPostTagColors} from './blogPostTagColors'
 import features from './features'
 import forVendorsShowcase from './forVendorsShowcase'
 import leadForm from './leadForm'
 import {localeString} from './localeStringType'
+import {localeText} from './localeTextType'
 import mainShowcase from './main-showcase'
 import mainPageBlogSection from './mainPageBlogSection'
 import mainPageMiddleSections from './mainPageMiddleSections'
@@ -44,5 +45,7 @@ export const schemaTypes = [
   pricingSections,
 
   localeString,
+  localeText,
+
   leadForm,
 ]

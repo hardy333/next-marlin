@@ -1,20 +1,15 @@
-import {defineType, defineField} from 'sanity'
-
-const supportedLanguages = [
-  {id: 'en', title: 'English', isDefault: true},
-  {id: 'geo', title: 'Georgian'},
-]
+import {defineField} from 'sanity'
 
 export default {
   name: 'main-showcase',
   type: 'document',
   title: 'Main Showcase',
-  preview: {
-    select: {
-      title: 'title',
-      subtitle: 'title',
-    },
-  },
+  // preview: {
+  //   select: {
+  //     title: 'title',
+  //     subtitle: 'title',
+  //   },
+  // },
   fields: [
     defineField({
       name: 'title',
@@ -28,7 +23,7 @@ export default {
     },
     {
       name: 'paragraph',
-      type: 'text',
+      type: 'localeText',
       title: 'Showcase paragraph',
     },
 

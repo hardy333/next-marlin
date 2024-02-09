@@ -67,7 +67,7 @@ const Hero = async () => {
             Quisquam sunt sit iure ullam unde labore ab dolores sequi nulla
             fugiat tempore quis perferendis, modi, temporibus doloremque. Nobis,
             sequi. */}
-            {data?.paragraph}
+            {data?.paragraph.en}
           </p>
           <div>
             <ul className="hero-check-list">
