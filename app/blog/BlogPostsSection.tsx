@@ -23,7 +23,7 @@ import { color } from "framer-motion";
 
 export const colors = [
   {
-    bg: "#E7D8FF ",
+    bg: "#E7D8FF",
     text: "#8739FA",
     categoryName: "Industry news",
   },
@@ -56,9 +56,6 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
         {data?.map((blogPost, index) => (
           // Post start
           <article key={index} className="blog-card">
-            {/* <span className="trend-card__lable" style={{ zIndex: "999999" }}>
-              {blogPost.categoryTag}
-            </span> */}
             <Link href={`/blog/${blogPost.currentSlug}`} prefetch={true}>
               <div
                 className="blog-card__img-wrapper"
@@ -77,12 +74,9 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
               <span
                 className="blog-post__category-lable"
                 style={{
-                  backgroundColor: colors?.find(
-                    (obj) => obj.categoryName === blogPost.categoryTag.name
-                  )?.bg,
-                  color: colors?.find(
-                    (obj) => obj.categoryName === blogPost.categoryTag.name
-                  )?.text,
+                  backgroundColor:
+                    blogPost.categoryTag.tagColor.tagColors.bgColor,
+                  color: blogPost.categoryTag.tagColor.tagColors.textColor,
                 }}
               >
                 {blogPost.categoryTag.name}

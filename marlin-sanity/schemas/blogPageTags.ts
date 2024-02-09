@@ -10,5 +10,11 @@ export const blogPageTags = defineType({
       title: 'Category Tag Name',
       type: 'string',
     },
+    {
+      name: 'tagColor',
+      title: 'Tag color',
+      type: 'reference',
+      to: [{type: 'blogPostTagColors'}],
+    },
   ],
 })

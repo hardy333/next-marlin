@@ -1,6 +1,7 @@
 import blog from './blog'
 import blogPage from './blogPage'
 import {blogPageTags} from './blogPageTags'
+import {blogPostTagColors} from './blogPostTagcolors'
 import features from './features'
 import forVendorsShowcase from './forVendorsShowcase'
 import leadForm from './leadForm'
@@ -26,6 +27,11 @@ export const schemaTypes = [
   mainPageOrdersSection,
   mainPageBlogSection,
 
+  blog,
+  blogPage,
+  blogPageTags,
+  blogPostTagColors,
+
   forVendorsShowcase,
   vendorsFeatures,
   vendorsMiddleSections,
@@ -36,10 +42,6 @@ export const schemaTypes = [
 
   pricingCards,
   pricingSections,
-
-  blog,
-  blogPage,
-  blogPageTags,
 
   localeString,
   leadForm,

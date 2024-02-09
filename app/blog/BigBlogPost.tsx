@@ -43,19 +43,14 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
         <span
           className="blog-post__category-lable"
           style={{
-            backgroundColor: colors?.find(
-              (obj) => obj.categoryName === post.categoryTag.name
-            )?.bg,
-            color: colors?.find(
-              (obj) => obj.categoryName === post.categoryTag.name
-            )?.text,
+            backgroundColor: post.categoryTag.tagColor.tagColors.bgColor,
+            color: post.categoryTag.tagColor.tagColors.textColor,
             justifySelf: "start",
             width: "max-content",
           }}
         >
           {post.categoryTag.name}
         </span>
-        {/* <span className="trend-card__lable">{post.categoryTag}</span> */}
 
         <h2
           onClick={() => {
@@ -69,18 +64,6 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
         <p className="big-blog-post__text line-clamp-3 " style={{}}>
           {post.smallDescription}
         </p>
-        {/* <Link href={`/blog/${post.currentSlug}`} prefetch={true}>
-          <p className="trend-card__read-more">
-            Read more <BsArrowRightShort />{" "}
-          </p>
-        </Link> */}
-        {/* <footer>
-          <span>
-            {" "}
-            <Image src={clock} alt="" /> 2 min
-          </span>
-          <span>September 9, 2023</span>
-        </footer> */}
 
         <footer className="blog-card__footer " style={{ fontSize: 16 }}>
           <span className="blog-card__time">

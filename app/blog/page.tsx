@@ -17,6 +17,12 @@ export interface simpleBlogCard {
   categoryTag: {
     name: string;
     _id?: string;
+    tagColor: {
+      tagColors: {
+        bgColor: string;
+        textColor: string;
+      };
+    };
   };
 }
 
@@ -38,7 +44,10 @@ async function getData() {
       titleImage,
       categoryTag->{
         name,
-        _id
+        _id,
+        tagColor->{
+          tagColors
+        }
       },
       "date": _createdAt
   }`;
@@ -52,6 +61,7 @@ const Blog = async () => {
   const data: simpleBlogCard[] = await getData();
 
   console.log("ss", data);
+
   const categoryTags = Array.from(
     new Set(data.map((blog) => blog.categoryTag.name))
   );

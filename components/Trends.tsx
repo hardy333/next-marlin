@@ -17,7 +17,13 @@ async function getData() {
       smallDescription,
       "currentSlug": slug.current,
       titleImage,
-      categoryTag,
+      categoryTag->{
+        name,
+        _id,
+        tagColor->{
+          tagColors
+        }
+      },
       "date": _createdAt
   }`;
 
@@ -62,11 +68,14 @@ const Trends = async () => {
                   </div>
                 </div>
               </Link>
-
               <div className="blog-card__content">
                 <span
                   className="blog-post__category-lable"
-                  style={{ backgroundColor: getColor() }}
+                  style={{
+                    backgroundColor:
+                      blogPost.categoryTag.tagColor.tagColors.bgColor,
+                    color: blogPost.categoryTag.tagColor.tagColors.textColor,
+                  }}
                 >
                   {blogPost.categoryTag.name}
                 </span>
