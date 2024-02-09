@@ -68,7 +68,7 @@ const Trends = async () => {
                   className="blog-post__category-lable"
                   style={{ backgroundColor: getColor() }}
                 >
-                  {blogPost.categoryTag}
+                  {blogPost.categoryTag.name}
                 </span>
                 <Link href={`/blog/${blogPost.currentSlug}`} prefetch={true}>
                   <h4 className="blog-card__heading">{blogPost.title}</h4>
