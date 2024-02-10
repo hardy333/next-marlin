@@ -5,36 +5,47 @@ import MiddleSections from "@/components/MiddleSections";
 import ManageOrders from "@/components/ManageOrders";
 import Trends from "@/components/Trends";
 import { client } from "./_lib/sanity";
-import ClientComp from "./ClientComp";
+import { getLang } from "../_utils/getLang";
 
 // export const revalidate  = 0
 export const revalidate = 0; // revalidate at most 30 seconds
 
-async function getData() {
+async function getData(lang: string) {
   const query = `
   *[_type == "features"] | order(_createdAt desc){
-      leftFeature,
-        middleFeature,
-        rightFeature
-     }[0]
-    
+    "leftFeature": {
+     "paragraph": leftFeature.paragraph["${lang}"],
+      "heading": leftFeature.heading["${lang}"],
+       
+    },
+    "middleFeature": {
+     "paragraph": middleFeature.paragraph["${lang}"],
+      "heading": middleFeature.heading["${lang}"],
+       
+    },
+    "rightFeature": {
+     "paragraph": rightFeature.paragraph["${lang}"],
+      "heading": rightFeature.heading["${lang}"],
+    },
+   }[0]
     `;
   const data = await client.fetch(query);
 
   return data;
 }
 
-export default async function HomeContent() {
-  let featuresData = await getData();
+export default async function Home() {
+  const lang = getLang();
+
+  let featuresData = await getData(lang);
+
   return (
     <>
-      <Hero />
+      <Hero lang={lang} />
       <Features data={featuresData} bgColor={null} />
-      <ClientComp />
       <MiddleSections />
       <ManageOrders />
       <Trends />
-      {/* <FormSection /> */}
     </>
   );
 }

@@ -23,8 +23,6 @@ async function getFeaturesData() {
 const ForVendors = async () => {
   let featuresData = await getFeaturesData();
 
-  console.log(featuresData);
-
   return (
     <>
       <main>

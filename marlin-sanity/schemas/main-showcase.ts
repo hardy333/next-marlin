@@ -4,12 +4,12 @@ export default {
   name: 'main-showcase',
   type: 'document',
   title: 'Main Showcase',
-  // preview: {
-  //   select: {
-  //     title: 'title',
-  //     subtitle: 'title',
-  //   },
-  // },
+  preview: {
+    select: {
+      title: 'title.en',
+      subtitle: 'title.en',
+    },
+  },
   fields: [
     defineField({
       name: 'title',
@@ -18,7 +18,7 @@ export default {
     }),
     {
       name: 'titleColoredWords',
-      type: 'string',
+      type: 'localeString',
       title: 'Showcase title (ბოლო რამდენიმე სიტყვა რომელსაც სხვა ფერი აქვს)',
     },
     {
@@ -36,7 +36,7 @@ export default {
     },
     {
       name: 'ctaText',
-      type: 'string',
+      type: 'localeString',
       title: 'Cta text(ღილაკის ტექსტი)',
     },
     {

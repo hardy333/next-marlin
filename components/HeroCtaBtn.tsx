@@ -14,7 +14,6 @@ const HeroCtaBtn = ({
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    console.log("helo");
     setModalIsOpen(true);
   };
 

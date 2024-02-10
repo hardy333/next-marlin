@@ -7,7 +7,7 @@ export default {
     subtitle: 'leftFeature',
   },
   fields: [
-    {name: 'heading', type: 'string', title: 'heading'},
+    {name: 'heading', type: 'localeString', title: 'heading'},
     {name: 'image', type: 'image', title: 'image'},
     {
       name: 'list',
@@ -17,8 +17,8 @@ export default {
         {
           type: 'object',
           fields: [
-            {name: 'heading', type: 'string', title: 'heading'},
-            {name: 'paragraph', type: 'string', title: 'paragraph'},
+            {name: 'heading', type: 'localeString', title: 'heading'},
+            {name: 'paragraph', type: 'localeString', title: 'paragraph'},
           ],
         },
       ],

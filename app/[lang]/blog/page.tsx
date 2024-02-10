@@ -57,8 +57,6 @@ async function getData() {
 const Blog = async () => {
   const data: simpleBlogCard[] = await getData();
 
-  console.log("ss", data);
-
   const categoryTags = Array.from(
     new Set(data.map((blog) => blog.categoryTag.name))
   );

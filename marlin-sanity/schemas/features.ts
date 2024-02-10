@@ -3,8 +3,8 @@ export default {
   type: 'document',
   title: 'Main Page Features',
   preview: {
-      title: 'title',
-      subtitle: "leftFeature.heading"
+    title: 'title',
+    subtitle: 'leftFeature.heading',
   },
   fields: [
     {
@@ -12,8 +12,8 @@ export default {
       title: 'Left feature',
       type: 'object',
       fields: [
-        {name: 'heading', type: 'string', title: 'heading'},
-        {name: 'paragraph', type: 'string', title: 'paragraph'},
+        {name: 'heading', type: 'localeString', title: 'heading'},
+        {name: 'paragraph', type: 'localeString', title: 'paragraph'},
       ],
     },
     {
@@ -21,8 +21,8 @@ export default {
       title: 'Middle feature',
       type: 'object',
       fields: [
-        {name: 'heading', type: 'string', title: 'heading'},
-        {name: 'paragraph', type: 'string', title: 'paragraph'},
+        {name: 'heading', type: 'localeString', title: 'heading'},
+        {name: 'paragraph', type: 'localeString', title: 'paragraph'},
       ],
     },
     {
@@ -30,8 +30,8 @@ export default {
       title: 'Right feature',
       type: 'object',
       fields: [
-        {name: 'heading', type: 'string', title: 'heading'},
-        {name: 'paragraph', type: 'string', title: 'paragraph'},
+        {name: 'heading', type: 'localeString', title: 'heading'},
+        {name: 'paragraph', type: 'localeString', title: 'paragraph'},
       ],
     },
   ],

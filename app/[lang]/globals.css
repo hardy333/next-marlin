@@ -34,6 +34,14 @@ body.font-2 {
   font-family: var(--font-capriola);
 }
 
+body.font-public-sans {
+  font-family: var(--font-public-sans);
+}
+
+body.font-dejavu {
+  font-family: var(--font-dejavu);
+}
+
 .logo-img {
   width: 100%;
   width: 45px;
@@ -582,7 +590,7 @@ ul {
 
 .manage-orders-p-svg {
   position: absolute;
-  top: -50px;
+  top: -10px;
   left: 50%;
   /* width: 350%; */
   transform: translate(-50%, 0);

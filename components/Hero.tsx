@@ -1,20 +1,21 @@
-import { mainShowcase } from "@/app/_lib/interfaces";
-import { client, urlFor } from "@/app/_lib/sanity";
+import { mainShowcase } from "@/app/[lang]/_lib/interfaces";
+import { client, urlFor } from "@/app/[lang]/_lib/sanity";
 import Image from "next/image";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 import HeroH1 from "./HeroH1";
 import HeroCtaBtn from "./HeroCtaBtn";
+import { getLang } from "@/app/_utils/getLang";
 
 export const revalidate = 0; // revalidate at most 30 seconds
 
 async function getData(lang: string) {
   const query = `
   *[_type == "main-showcase"] | order(_createdAt desc){
-    "title": title.${lang},
-    paragraph,
+    "title": title["${lang}"],
+    "paragraph": paragraph["${lang}"],
     image,
-    titleColoredWords,
-    ctaText,
+    "titleColoredWords": titleColoredWords["${lang}"],
+    "ctaText": ctaText["${lang}"],
     showcaseKeyWords
   }[0]
     `;
@@ -37,11 +38,16 @@ async function getLeadData(lang: string) {
   return data;
 }
 
-const Hero = async () => {
-  let lang = "en";
+type Props = {
+  lang: string;
+};
 
+const Hero = async () => {
+  const lang = getLang();
   const data: mainShowcase = await getData(lang);
   const leadData = await getLeadData(lang);
+
+  console.log("Hello", data?.showcaseKeyWords[0]["geo"]);
 
   return (
     <section className="hero">
@@ -60,18 +66,18 @@ const Hero = async () => {
             Quisquam sunt sit iure ullam unde labore ab dolores sequi nulla
             fugiat tempore quis perferendis, modi, temporibus doloremque. Nobis,
             sequi. */}
-            {data?.paragraph.en}
+            {data?.paragraph}
           </p>
           <div>
             <ul className="hero-check-list">
               <li>
-                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[0][lang]}
+                <BsFillPatchCheckFill /> {data?.showcaseKeyWords[0][lang]}
               </li>
               <li>
-                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[1][lang]}
+                <BsFillPatchCheckFill /> {data?.showcaseKeyWords[1][lang]}
               </li>
               <li>
-                <BsFillPatchCheckFill /> {data?.showcaseKeyWords?.[2][lang]}
+                <BsFillPatchCheckFill /> {data?.showcaseKeyWords[2][lang]}
               </li>
             </ul>
           </div>

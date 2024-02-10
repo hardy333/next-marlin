@@ -1,4 +1,5 @@
-import { client, urlFor } from "@/app/_lib/sanity";
+import { client, urlFor } from "@/app/[lang]/_lib/sanity";
+import { getLang } from "@/app/_utils/getLang";
 import large from "@/assets/large.png";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
@@ -19,6 +20,7 @@ async function getData() {
 }
 
 const ManageOrders = async () => {
+  const lang = getLang();
   const data = await getData();
 
   return (
@@ -32,15 +34,15 @@ const ManageOrders = async () => {
         />
       </div>
       <div className="container-small manage-orders__container    ">
-        <h3 data-aos="fade-down">{data?.heading}</h3>
-        <PortableText value={data?.paragraph} />
+        <h3 data-aos="fade-down">{data?.heading[lang]}</h3>
+        <PortableText value={data?.paragraph[lang]} />
         <Image
           width={1500}
           height={1000}
           src={urlFor(data?.image).url()}
           className="manage-orders-img"
           alt=""
-          style={{ borderRadius: "10px" }}
+          style={{ borderRadius: "10px", marginTop: "30px" }}
         />
         <p
           className="manage-orders-p"
@@ -58,6 +60,7 @@ const ManageOrders = async () => {
             viewBox="0 0 531 49"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            style={{ zIndex: "-1" }}
           >
             <path
               d="M527.098 15.0977L530.701 13.5155C530.789 13.4276 530.789 13.3397 530.701 13.3397L527.098 11.7576L525.428 8.06592C525.428 7.97803 525.34 7.97803 525.34 8.06592L523.67 11.6697L520.066 13.3397C519.978 13.3397 519.978 13.4276 520.066 13.5155L523.67 15.0977L525.34 18.7015H525.428L527.098 15.0977Z"
@@ -77,13 +80,13 @@ const ManageOrders = async () => {
               fill="#FF7ABC"
             />
           </svg>
-          {data?.buttonHeading}
+          {data?.buttonHeading[lang]}
         </p>
         <button
           style={{ padding: "12px 35px", fontSize: "18px", width: "250px" }}
           className="btn"
         >
-          {data?.buttonText}
+          {data?.buttonText[lang]}
         </button>
       </div>
     </section>

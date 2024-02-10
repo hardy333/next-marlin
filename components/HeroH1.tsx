@@ -8,8 +8,6 @@ const HeroH1 = ({
   title: string;
   coloredWords: string;
 }) => {
-  console.log(title);
-
   return (
     <motion.h1
       initial={{

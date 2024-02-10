@@ -6,7 +6,6 @@ import "./blog/blog-posts-section.css";
 import "./forms.css";
 
 import Navbar from "@/components/Navbar";
-import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import NewFooter from "@/components/newFooter/NewFooter";
 import localFont from "next/font/local";
@@ -24,11 +23,17 @@ export const metadata: Metadata = {
   },
 };
 
-import { Public_Sans } from "next/font/google";
-const public_sans = Public_Sans({ subsets: ["latin"] });
-
 import { Advent_Pro, Capriola } from "next/font/google";
 import LanguageContextProvider from "./context/languageContext";
+import { cookies } from "next/headers";
+
+import { Public_Sans } from "next/font/google";
+import classNames from "classnames";
+
+const public_sans = Public_Sans({
+  subsets: ["latin"],
+  variable: "--font-public-sans",
+});
 
 const capriola = Capriola({
   subsets: ["latin"],
@@ -43,20 +48,40 @@ const adventPro = Advent_Pro({
 });
 
 // Font files can be colocated inside of `pages`
-const myFont = localFont({ src: "./_fonts/dejavu-sans-extra-light.ttf" });
+const dejavu = localFont({
+  src: "./_fonts/dejavu-sans-extra-light.ttf",
+  variable: "--font-dejavu",
+});
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const cookieStore = cookies();
+  let lang = cookieStore.get("lang")?.value;
+  if (!lang) lang = "en";
+
+  console.log("Layout was rendered");
+
   return (
     <html lang="en">
-      <Analytics />
-      {/* <body className={`${capriola.variable} ${adventPro.variable} font-2`}> */}
-      {/* <body className={`${myFont.className}`}> */}
-      <body className={`${public_sans.className}`}>
-        <LanguageContextProvider>
+      {/* <body className={`${capriola.variable} ${adventPro.variable} font-1`}> */}
+      <body
+        className={`${public_sans.variable} ${dejavu.variable}  ${
+          lang === "geo" ? "font-dejavu" : "font-public-sans"
+        }`}
+      >
+        {/* <body className={`${myFont.className}`}> */}
+        {/* <body
+        // className={`${lang === "geo" ? dejavu.variable : public_sans.variable}`}
+        // className={classNames(
+        //   lang === "geo" ? "font-dejavu" : "font-public-sans",
+        //   dejavu.variable,
+        //   public_sans.variable
+        // )}
+      > */}
+        <LanguageContextProvider langValue={lang}>
           <Navbar />
           {children}
           <NewFooter />

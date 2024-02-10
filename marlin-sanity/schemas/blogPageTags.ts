@@ -8,7 +8,7 @@ export const blogPageTags = defineType({
     {
       name: 'name',
       title: 'Category Tag Name',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'tagColor',

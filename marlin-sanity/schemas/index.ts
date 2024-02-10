@@ -5,6 +5,7 @@ import {blogPostTagColors} from './blogPostTagColors'
 import features from './features'
 import forVendorsShowcase from './forVendorsShowcase'
 import leadForm from './leadForm'
+import {localeBlockArrayType} from './localeBlockArrayType'
 import {localeString} from './localeStringType'
 import {localeText} from './localeTextType'
 import mainShowcase from './main-showcase'
@@ -46,6 +47,7 @@ export const schemaTypes = [
 
   localeString,
   localeText,
+  localeBlockArrayType,
 
   leadForm,
 ]

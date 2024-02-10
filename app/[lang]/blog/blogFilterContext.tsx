@@ -8,8 +8,8 @@ type ContextType = {
 };
 
 export const BlogFilterContext = createContext<ContextType>({
-    blogFilter: "All",
-    setBlogFilter: () => {}
+  blogFilter: "All",
+  setBlogFilter: () => {},
 });
 
 const BlogFilterContextProvider = ({
@@ -19,9 +19,6 @@ const BlogFilterContextProvider = ({
 }) => {
   const [blogFilter, setBlogFilter] = useState("All");
 
-  console.log({blogFilter})
-  
-  
   return (
     <BlogFilterContext.Provider value={{ blogFilter, setBlogFilter }}>
       {children}

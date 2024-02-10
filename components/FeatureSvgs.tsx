@@ -37,14 +37,14 @@ export const ConnectSvg = () => (
   >
     <path
       fill="currentColor"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M2 6a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7.333L4 21.5c-.824.618-2 .03-2-1V6Z"
       className="duoicon-secondary-layer"
       opacity=".3"
     ></path>
     <path
       fill="currentColor"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M8 12a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2H8ZM7 9a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1Z"
       className="duoicon-primary-layer"
     ></path>
@@ -62,14 +62,14 @@ export const OptimizeSvg = () => {
     >
       <path
         fill="currentColor"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5Z"
         className="duoicon-secondary-layer"
         opacity=".3"
       ></path>
       <path
         fill="currentColor"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M15 7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-4Z"
         className="duoicon-primary-layer"
       ></path>

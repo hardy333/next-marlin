@@ -1,4 +1,4 @@
-import { client, urlFor } from "@/app/_lib/sanity";
+import { client, urlFor } from "@/app/[lang]/_lib/sanity";
 import { simpleBlogCard } from "@/app/blog/page";
 import Link from "next/link";
 import BlurImage from "./BlurImage";
@@ -7,6 +7,7 @@ import { CiClock2 } from "react-icons/ci";
 import readingTime from "reading-time";
 import { format } from "date-fns/format";
 import { TbArrowRight } from "react-icons/tb";
+import { getLang } from "@/app/_utils/getLang";
 
 export const revalidate = 0; // revalidate at most 30 seconds
 
@@ -47,13 +48,14 @@ async function getData2() {
 }
 
 const Trends = async () => {
+  const lang = getLang();
   const data: simpleBlogCard[] = await getData();
   const data2 = await getData2();
 
   return (
     <section className="trends">
       <div className="container-small trends-container">
-        <h3>{data2.heading}</h3>
+        <h3>{data2.heading[lang]}</h3>
         <div className="trends-card-container">
           {data?.slice(0, data2.blogPostCount).map((blogPost, index) => (
             // Post start
@@ -74,7 +76,7 @@ const Trends = async () => {
                     color: blogPost.categoryTag.tagColor.tagColors.textColor,
                   }}
                 >
-                  {blogPost.categoryTag.name}
+                  {blogPost.categoryTag.name[lang]}
                 </span>
                 <Link href={`/blog/${blogPost.currentSlug}`} prefetch={true}>
                   <h4 className="blog-card__heading">{blogPost.title}</h4>
@@ -101,7 +103,7 @@ const Trends = async () => {
       </div>
       <div className="flex content-center trends__link-container">
         <Link href={"/blog"} className="trends__link" prefetch={true}>
-          {data2?.buttonText}
+          {data2?.buttonText[lang]}
           <span>
             <TbArrowRight />
           </span>

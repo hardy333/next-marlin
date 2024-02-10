@@ -5,7 +5,6 @@ import { useLanguageContext } from "./context/languageContext";
 
 const ClientComp = () => {
   const theme = useLanguageContext();
-  console.log({ theme });
 
   return <div></div>;
 };

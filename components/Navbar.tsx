@@ -1,5 +1,6 @@
 import MarlinLogoSvg from "@/svgs/MarlinLogoSvg";
 import Link from "next/link";
+import LangSwitcher from "./langSwitcher.tsx/LangSwitcher";
 
 const Navbar = () => {
   return (
@@ -69,40 +70,41 @@ const Navbar = () => {
           </svg>
         </Link>
         <ul className="navbar__list" style={{ paddingRight: "45px" }}>
-          <li data-aos="fade-in ">
+          <li>
             <Link prefetch={true} href="/#what-is-marlin">
               What is Marlin
             </Link>
           </li>
-          <li data-aos="fade-in ">
+          <li>
             <Link prefetch={true} href="/for-retailers">
               For Retailers
             </Link>
           </li>
-          <li data-aos="fade-in ">
+          <li>
             <Link prefetch={true} href="/for-vendors">
               For Vendors
             </Link>
           </li>
-          <li data-aos="fade-in ">
+          <li>
             <Link prefetch={true} href="/pricing">
               Pricing
             </Link>
           </li>
-          <li data-aos="fade-in ">
+          <li>
             <Link prefetch={true} href="/blog">
               Blog
             </Link>
           </li>
-          {/* <li data-aos="fade-in ">
+          {/* <li >
             <Link prefetch={true} href="/terms">
               Terms
             </Link>
           </li> */}
         </ul>
-        <button className="btn btn--outline" data-aos="fade-left">
-          Book a call
-        </button>
+        <div className="flex gap-4 items-center">
+          <LangSwitcher />
+          <button className="btn btn--outline">Book a call</button>
+        </div>
       </div>
     </header>
   );

@@ -2,7 +2,7 @@ import SmallDotsSvg from "@/svgs/SmallDotsSvg";
 import { ConnectSvg, OptimizeSvg, AnalyzeSvg } from "./FeatureSvgs";
 import cn from "classnames";
 import styles from "./features.module.css";
-import { client } from "@/app/_lib/sanity";
+import { client } from "@/app/[lang]/_lib/sanity";
 
 const initialData = [
   {

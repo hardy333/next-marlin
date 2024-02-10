@@ -12,17 +12,12 @@ export default {
       title: 'Section',
       type: 'object',
       fields: [
-        {name: 'heading', type: 'string', title: 'heading'},
+        {name: 'heading', type: 'localeString', title: 'heading'},
         {name: 'image', type: 'image', title: 'image'},
         {
           name: 'paragraph',
           title: 'paragraph',
-          type: 'array',
-          of: [
-            {
-              type: 'block',
-            },
-          ],
+          type: 'localeBlockArray',
         },
       ],
     },

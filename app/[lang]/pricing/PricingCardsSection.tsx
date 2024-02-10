@@ -54,8 +54,6 @@ const PricingCardsSection = ({
   const [isMonthly, setIsMonthly] = useState(true);
   const [isVendor, setIsVendor] = useState(true);
 
-  console.log(yearlyPrices);
-
   return (
     <section className={`${classes["pricing-section"]}`}>
       <div className="container-small">

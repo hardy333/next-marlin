@@ -7,8 +7,8 @@ export default {
     subtitle: 'leftFeature',
   },
   fields: [
-    {name: 'heading', type: 'string', title: 'heading'},
+    {name: 'heading', type: 'localeString', title: 'heading'},
     {name: 'blogPostCount', type: 'number', title: 'Number of blog post cards on this section'},
-    {name: 'buttonText', type: 'string', title: 'Button Text'},
+    {name: 'buttonText', type: 'localeString', title: 'Button Text'},
   ],
 }

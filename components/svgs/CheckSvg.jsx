@@ -1,8 +1,6 @@
 import React from "react";
 
 const CheckSvg = ({ fill, delay }) => {
-  console.log(fill, delay);
-
   return (
     <>
       <span data-aos-delay={delay} data-aos="fade-in">

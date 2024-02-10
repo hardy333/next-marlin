@@ -7,19 +7,14 @@ export default {
     subtitle: 'leftFeature',
   },
   fields: [
-    {name: 'heading', type: 'string', title: 'heading'},
+    {name: 'heading', type: 'localeString', title: 'heading'},
     {
       name: 'paragraph',
       title: 'paragraph',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-        },
-      ],
+      type: 'localeBlockArray',
     },
     {name: 'image', type: 'image', title: 'image'},
-    {name: 'buttonHeading', type: 'string', title: 'Button Heading'},
-    {name: 'buttonText', type: 'string', title: 'Button Text'},
+    {name: 'buttonHeading', type: 'localeString', title: 'Button Heading'},
+    {name: 'buttonText', type: 'localeString', title: 'Button Text'},
   ],
 }

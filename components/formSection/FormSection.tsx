@@ -1,7 +1,7 @@
 "use client";
 import styles from "./formSection.module.css";
 import Image from "next/image";
-import { urlFor } from "@/app/_lib/sanity";
+import { urlFor } from "@/app/[lang]/_lib/sanity";
 
 type Props = {
   title: string;
@@ -27,7 +27,6 @@ const FormSection = ({ title, image }: Props) => {
     );
 
     const res = await response.json();
-    console.log("res", res);
   };
 
   return (

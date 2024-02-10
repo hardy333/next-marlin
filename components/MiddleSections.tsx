@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa";
-import { client, urlFor } from "@/app/_lib/sanity";
+import { client, urlFor } from "@/app/[lang]/_lib/sanity";
 import { PortableText } from "@portabletext/react";
+import { getLang } from "@/app/_utils/getLang";
 
 async function getData() {
   const query = `
@@ -31,9 +32,9 @@ async function getWorksSectionData() {
 }
 
 const MiddleSections = async () => {
+  const lang = getLang();
   const data = await getData();
   const worksSectionData = await getWorksSectionData();
-  console.log("Section", data);
 
   return (
     <>
@@ -51,9 +52,9 @@ const MiddleSections = async () => {
               }`}
             >
               <div>
-                <h2>{section.data.heading}</h2>
+                <h2>{section.data.heading[lang]}</h2>
 
-                <PortableText value={section.data.paragraph} />
+                <PortableText value={section.data.paragraph[lang]} />
               </div>
               <div className="box-container">
                 <div
@@ -107,7 +108,7 @@ const MiddleSections = async () => {
         "
         >
           <div>
-            <h2>{worksSectionData?.heading}</h2>
+            <h2>{worksSectionData?.heading[lang]}</h2>
             <ul>
               {/* 1 */}
 
@@ -120,8 +121,8 @@ const MiddleSections = async () => {
                       <FaCheck size={10} fill={"hsl(212, 86%, 64%)"} />
                     </span>
                     <div className="p-container">
-                      <p className="top">{obj?.heading}</p>
-                      <p className="bottom">{obj?.paragraph}</p>
+                      <p className="top">{obj?.heading[lang]}</p>
+                      <p className="bottom">{obj?.paragraph[lang]}</p>
                     </div>
                   </li>
                 );
