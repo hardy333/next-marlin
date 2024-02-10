@@ -1,13 +1,9 @@
 import MarlinLogoSvg from "@/svgs/MarlinLogoSvg";
 import Link from "next/link";
 
-import { Public_Sans } from "next/font/google";
-
-const public_sans = Public_Sans({ subsets: ["latin"] });
-
 const Navbar = () => {
   return (
-    <header className={`navbar ${public_sans.className}`}>
+    <header className={`navbar `}>
       <div className="container navbar__container">
         <Link
           prefetch={true}

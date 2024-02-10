@@ -8,9 +8,6 @@ export const revalidate = 0; // revalidate at most 30 seconds
 import "./for-retailers.css";
 import Features from "@/components/Features";
 
-import { Public_Sans } from "next/font/google";
-const public_sans = Public_Sans({ subsets: ["latin"] });
-
 async function getFeaturesData() {
   const query = `
   *[_type == "retailersFeatures"] | order(_createdAt desc){
@@ -29,7 +26,7 @@ const ForRetailers = async () => {
 
   return (
     <>
-      <main className={`${public_sans.className}`}>
+      <main>
         <ForRetailersHero />
         <Features bgColor="white" data={featuresData} />
         <ForRetailersMiddleSections />

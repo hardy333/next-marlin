@@ -1,5 +1,3 @@
-import React from "react";
-import Img from "./placeholder-img.webp";
 import Image from "next/image";
 import { client, urlFor } from "../_lib/sanity";
 

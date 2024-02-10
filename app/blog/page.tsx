@@ -1,8 +1,5 @@
-import BlogPostsSection from "./BlogPostsSection";
-
 // Css
 import BlogShowcase from "./Showcase";
-import BigBlogPost from "./BigBlogPost";
 import BlogFilters from "./BlogFilters";
 import { client } from "../_lib/sanity";
 import BlogFilterContextProvider from "./blogFilterContext";

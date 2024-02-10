@@ -36,9 +36,6 @@ const getSectionData = async () => {
   return data;
 };
 
-import { Public_Sans } from "next/font/google";
-const public_sans = Public_Sans({ subsets: ["latin"] });
-
 import cn from "classnames";
 // Hello
 
@@ -63,7 +60,6 @@ const Pricing = async () => {
               maxWidth: "100%",
               color: "var(--color-text-1)",
             }}
-            className={cn(public_sans.className)}
           >
             {data?.showcase.showcaseParagraph}
           </p>

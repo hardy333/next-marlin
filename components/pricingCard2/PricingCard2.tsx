@@ -1,6 +1,4 @@
 "use client";
-import { Public_Sans } from "next/font/google";
-const public_sans = Public_Sans({ subsets: ["latin"] });
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +28,7 @@ const PricingCard2 = ({
 }) => {
   return (
     <article className={cn(styles.card)}>
-      <h2 className={cn(styles.h, public_sans.className)}>{cardName}</h2>
+      <h2 className={cn(styles.h)}>{cardName}</h2>
       <p className={cn(styles.p, inter.className)}>
         Optimal for 10+ team size and new startup
       </p>

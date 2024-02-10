@@ -1,20 +1,16 @@
-import ill1 from "@/assets/ill1.png";
 import { mainShowcase } from "@/app/_lib/interfaces";
 import { client, urlFor } from "@/app/_lib/sanity";
-import BigDotsSvg from "@/svgs/BigDotsSvg";
-import StarsSvg from "@/svgs/StarsSvg";
 import Image from "next/image";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 import HeroH1 from "./HeroH1";
-import BaseModal from "./baseModal/BaseModal";
 import HeroCtaBtn from "./HeroCtaBtn";
 
 export const revalidate = 0; // revalidate at most 30 seconds
 
-async function getData() {
+async function getData(lang: string) {
   const query = `
   *[_type == "main-showcase"] | order(_createdAt desc){
-    title,
+    "title": title.${lang},
     paragraph,
     image,
     titleColoredWords,
@@ -28,9 +24,7 @@ async function getData() {
   return data;
 }
 
-const lang = "en";
-
-async function getLeadData() {
+async function getLeadData(lang: string) {
   const query = `
   *[ _type == "leadForm"] | order(_createdAt desc){
     title,
@@ -44,18 +38,17 @@ async function getLeadData() {
 }
 
 const Hero = async () => {
-  const data: mainShowcase = await getData();
-  const leadData = await getLeadData();
+  let lang = "en";
+
+  const data: mainShowcase = await getData(lang);
+  const leadData = await getLeadData(lang);
 
   return (
     <section className="hero">
       <div className="container-small hero__container flex-container">
         {/* <Framer /> */}
         <div>
-          <HeroH1
-            title={data?.title.en}
-            coloredWords={data?.titleColoredWords}
-          />
+          <HeroH1 title={data?.title} coloredWords={data?.titleColoredWords} />
           <p
             style={{
               marginBottom: "25px",

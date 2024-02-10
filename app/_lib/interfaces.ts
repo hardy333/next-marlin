@@ -1,12 +1,6 @@
 export interface mainShowcase {
-  title: {
-    en: string;
-    geo?: string;
-  };
-  paragraph: {
-    en: string;
-    geo?: string;
-  };
+  title: string;
+  paragraph: string;
   image: any;
   ctaText: string;
   titleColoredWords: string;

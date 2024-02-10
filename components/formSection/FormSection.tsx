@@ -1,11 +1,7 @@
 "use client";
 import styles from "./formSection.module.css";
-import formImg from "./form-img.svg";
 import Image from "next/image";
-
-import { Public_Sans } from "next/font/google";
 import { urlFor } from "@/app/_lib/sanity";
-const public_sans = Public_Sans({ subsets: ["latin"] });
 
 type Props = {
   title: string;
@@ -36,7 +32,7 @@ const FormSection = ({ title, image }: Props) => {
 
   return (
     <>
-      <div className={`${public_sans.className} ${styles.container}`}>
+      <div className={` ${styles.container}`}>
         <div
           className={`${styles.right} w-[50%] flex items-center justify-center`}
         >

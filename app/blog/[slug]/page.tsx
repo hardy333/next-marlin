@@ -10,8 +10,6 @@ import ShareComp from "@/components/ShareComp";
 
 import AsideImg from "./blog-aside-img.jpg";
 import clock from "@/assets/clock.png";
-import { Public_Sans } from "next/font/google";
-const public_sans = Public_Sans({ subsets: ["latin"] });
 
 export const revalidate = 0; // revalidate at most 30 seconds
 
@@ -66,7 +64,7 @@ export default async function BlogArticle({
           />
 
           <div
-            className={`mt-16 prose prose-blue prose-lg text-3xl dark:prose-invert prose-li:marker:to-blue-600 prose-a:text-primary content-container ${public_sans.className} blog-content-wrapper`}
+            className={`mt-16 prose prose-blue prose-lg text-3xl dark:prose-invert prose-li:marker:to-blue-600 prose-a:text-primary content-container  blog-content-wrapper`}
           >
             <PortableText value={data.content} />
           </div>

@@ -1,9 +1,5 @@
 import ForRetailersHero from "./Hero";
 import ForRetailersMiddleSections from "./MiddleSections";
-
-import { Public_Sans } from "next/font/google";
-const public_sans = Public_Sans({ subsets: ["latin"] });
-
 export const revalidate = 0; // revalidate at most 30 seconds
 
 // css
@@ -31,7 +27,7 @@ const ForVendors = async () => {
 
   return (
     <>
-      <main className={`${public_sans.className}`}>
+      <main>
         <ForRetailersHero />
         <Features bgColor="white" data={featuresData} />
         <ForRetailersMiddleSections />
