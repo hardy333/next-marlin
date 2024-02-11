@@ -8,10 +8,10 @@ const AllBlogsSection = ({ data, lang }: { data: any; lang: "en" | "geo" }) => {
   const { blogFilter } = useBlogFilterContext();
 
   let filteredBlogs = data?.filter(
-    (post: any) => post.categoryTag.name === blogFilter
+    (post: any) => post.categoryTag.name[lang] === blogFilter
   );
 
-  if (blogFilter === "All") {
+  if (blogFilter === "All" || blogFilter === "ყველა") {
     filteredBlogs = data;
   }
 

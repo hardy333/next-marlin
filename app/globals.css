@@ -41,6 +41,9 @@ body.font-public-sans {
 body.font-dejavu {
   font-family: var(--font-dejavu);
 }
+body.font-dejavu-2 {
+  font-family: var(--font-dejavu-2);
+}
 
 .logo-img {
   width: 100%;

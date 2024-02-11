@@ -54,6 +54,11 @@ const dejavu = localFont({
   variable: "--font-dejavu",
 });
 
+const dejavu2 = localFont({
+  src: "./_fonts/bpg_dejavu_sans.ttf",
+  variable: "--font-dejavu-2",
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -67,8 +72,8 @@ export default function RootLayout({
     <html lang="en">
       {/* <body className={`${capriola.variable} ${adventPro.variable} font-1`}> */}
       <body
-        className={`${public_sans.variable} ${dejavu.variable}  ${
-          lang === "geo" ? "font-dejavu" : "font-public-sans"
+        className={`${public_sans.variable} ${dejavu2.variable}  ${
+          lang === "geo" ? "font-dejavu-2" : "font-public-sans"
         }`}
       >
         {/* <body className={`${myFont.className}`}> */}

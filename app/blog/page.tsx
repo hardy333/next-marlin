@@ -68,6 +68,7 @@ const Blog = async () => {
   );
 
   categoryTags.unshift(lang === "geo" ? "ყველა" : "All");
+  console.log("tags", categoryTags);
 
   return (
     <>

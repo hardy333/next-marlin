@@ -27,7 +27,7 @@ const BigBlogPost = ({ post, lang }: { post: any; lang: string }) => {
           }}
           width={1800}
           height={1200}
-          src={urlFor(post.titleImage).url()}
+          src={urlFor(post?.titleImage).url()}
           className="hero-img"
           alt=""
         />
