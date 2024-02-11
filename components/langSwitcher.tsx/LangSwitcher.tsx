@@ -30,7 +30,9 @@ const LangSwitcher = () => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button className="IconButton" aria-label="Customise options">
-          <span style={{ textTransform: "capitalize" }}>{lang}</span>
+          <span style={{ textTransform: "capitalize", fontWeight: 200 }}>
+            {lang}
+          </span>
           <IoIosArrowDown />
         </button>
       </DropdownMenu.Trigger>

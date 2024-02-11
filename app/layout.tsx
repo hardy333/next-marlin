@@ -29,6 +29,7 @@ import { cookies } from "next/headers";
 
 import { Public_Sans } from "next/font/google";
 import classNames from "classnames";
+import { getLang } from "./_utils/getLang";
 
 const public_sans = Public_Sans({
   subsets: ["latin"],
@@ -58,9 +59,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = cookies();
-  let lang = cookieStore.get("lang")?.value;
-  if (!lang) lang = "en";
+  const lang = getLang();
 
   console.log("Layout was rendered");
 
