@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormModalContext } from "@/app/context/formModalContext";
+import { useFormModalContext } from "@/app/context/FormModalContext";
 import "./modal.css";
 import { ReactNode } from "react";
 import { IoMdClose } from "react-icons/io";

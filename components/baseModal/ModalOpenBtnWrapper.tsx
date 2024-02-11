@@ -1,5 +1,5 @@
 "use client";
-import { useFormModalContext } from "@/app/context/formModalContext";
+import { useFormModalContext } from "@/app/context/FormModalContext";
 
 type Props = {
   children: React.ReactNode;

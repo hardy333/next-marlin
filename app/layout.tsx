@@ -25,12 +25,10 @@ export const metadata: Metadata = {
 
 import { Advent_Pro, Capriola } from "next/font/google";
 import LanguageContextProvider from "./context/languageContext";
-import { cookies, headers } from "next/headers";
 
 import { Public_Sans } from "next/font/google";
-import classNames from "classnames";
 import { getLang } from "./_utils/getLang";
-import FormModalContextProvider from "./context/formModalContext";
+import FormModalContextProvider from "./context/FormModalContext";
 import BaseModal from "@/components/baseModal/BaseModal";
 import FormSection from "@/components/formSection/FormSection";
 import { client } from "./_lib/sanity";
