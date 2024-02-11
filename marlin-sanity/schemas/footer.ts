@@ -3,19 +3,65 @@ export default {
   type: 'document',
   title: 'Footer',
   preview: {
-    title: 'title',
-    subtitle: 'leftFeature.heading',
+    select: {
+      title: 'title',
+    },
+    prepare() {
+      return {
+        title: 'Footer (ბოლო სექცია)',
+      }
+    },
   },
   fields: [
     {
       name: 'paragraph',
       title: 'Footer text',
-      type: 'text',
+      type: 'localeString',
+    },
+    // Links List 1
+    {
+      name: 'list1',
+      type: 'object',
+      title: 'ფუთერის ლინკების პირველი სია',
+      fields: [
+        {
+          name: 'heading',
+          type: 'localeString',
+          title: 'Heading (მაგ: დამხმარე ბმულები)',
+        },
+        {
+          name: 'links',
+          title: 'links',
+          type: 'array',
+          of: [
+            {
+              preview: {
+                select: {
+                  title: 'name.en',
+                },
+              },
+              type: 'object',
+              fields: [
+                {
+                  name: 'name',
+                  title: 'name',
+                  type: 'localeString',
+                },
+                {
+                  name: 'url',
+                  title: 'url',
+                  type: 'string',
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'subParagraph',
       title: 'Sub paragraph',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'icons',
@@ -44,6 +90,42 @@ export default {
           name: 'twitter',
           type: 'object',
           title: 'twitter',
+          fields: [
+            {
+              name: 'url',
+              type: 'url',
+              title: 'url',
+            },
+            {
+              name: 'enable',
+              type: 'boolean',
+              title: 'enabled',
+              initialValue: true,
+            },
+          ],
+        },
+        {
+          name: 'linkedin',
+          type: 'object',
+          title: 'linkedin',
+          fields: [
+            {
+              name: 'url',
+              type: 'url',
+              title: 'url',
+            },
+            {
+              name: 'enable',
+              type: 'boolean',
+              title: 'enabled',
+              initialValue: true,
+            },
+          ],
+        },
+        {
+          name: 'instagram',
+          type: 'object',
+          title: 'instagram',
           fields: [
             {
               name: 'url',

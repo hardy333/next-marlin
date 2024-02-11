@@ -1,14 +1,35 @@
-"use client";
-import React from "react";
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
 import cn from "classnames";
 import styles from "./newFooter.module.css";
 
 import MarlinLogoSvg from "@/svgs/MarlinLogoSvg";
+import { client } from "@/app/_lib/sanity";
+import { getLang } from "@/app/_utils/getLang";
+import SocIcons from "./SocIcons";
+import Link from "next/link";
 
-const NewFooter = () => {
-  // const isBigFooter =
+export const revalidate = 0; // revalidate at most 30 seconds
+
+async function getData(lang: string) {
+  const query = `
+  *[_type == "footer"] | order(_createdAt desc){
+      icons,
+      "paragraph" : paragraph["${lang}"],
+      "subParagraph" : subParagraph["${lang}"],
+      list1
+
+  }[0]
+
+
+    `;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+const NewFooter = async () => {
+  const lang = getLang();
+  const data = await getData(lang);
 
   return (
     <footer className={cn(styles.footer)}>
@@ -21,26 +42,20 @@ const NewFooter = () => {
               </span>
               <span>Marlin</span>
             </h2>
-            <p>
-              Build faster websites with Block multipurpose bootstrap 5
-              template. Duis imper diet mollis leo, quis ultrices erat ultrices
-              simple dummy .
-            </p>
-            {/* <form className={cn(styles.footerForm)}>
-              <input type="text" placeholder="Email Address" />
-              <button>Subscribe</button>
-            </form> */}
+            <p>{data.paragraph}</p>
           </div>
           {/* 1 */}
           <section className={cn(styles.listsContainer)}>
             <div className={cn(styles.mainList)}>
-              <h2>დამხმარე ბმულები</h2>
+              <h2>{data.list1.heading[lang]}</h2>
               <ul>
-                <li>ბლოგი</li>
-                <li>FAQ/დახმარება</li>
-                <li>რეპორტინგი</li>
-                <li>ქლაუდი</li>
-                <li>სასწავლო მასალები</li>
+                {data.list1.links.map((link: any, index: number) => {
+                  return (
+                    <li key={index}>
+                      <Link href={link.url}>{link.name[lang]}</Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             {/* 2 */}
@@ -67,25 +82,9 @@ const NewFooter = () => {
           </section>
         </section>
         <section className={cn(styles.footerBottom)}>
-          <p>
-            Copyright © 2024 <span style={{ color: "#5f0ad5" }}> Marlin</span> |
-            By Marlin team
-          </p>
+          <p>{data.subParagraph}</p>
           <ul className={cn(styles.icons)}>
-            <li>
-              <FaInstagram />
-            </li>
-            <li>
-              <FaFacebook />
-            </li>
-            <li>
-              <FaTwitter />
-            </li>
-            <li>
-              {/* <CiLinkedin /> */}
-              {/* <RiLinkedinBoxLine /> */}
-              <FaLinkedin />
-            </li>
+            <SocIcons data={data} />
           </ul>
         </section>
       </div>

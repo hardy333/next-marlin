@@ -72,9 +72,9 @@ const Navbar = async () => {
           <MarlinTextSvg />
         </Link>
         <ul className="navbar__list" style={{ paddingRight: "45px" }}>
-          {linksArr.map((link) => {
+          {linksArr.map((link, index) => {
             return (
-              <li key={link.link}>
+              <li key={link.link + index}>
                 <Link prefetch={true} href={link.link}>
                   {link.text[lang]}
                 </Link>

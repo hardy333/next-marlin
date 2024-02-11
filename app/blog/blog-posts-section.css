@@ -58,6 +58,7 @@
   padding: 4.2px 7.8px;
   /* background: rgb(232, 216, 255); */
   text-transform: uppercase;
+  letter-spacing: 0.6px;
 }
 
 .blog-card__heading {

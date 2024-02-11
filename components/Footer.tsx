@@ -1,11 +1,8 @@
 import MarlinLogoSvg from "@/svgs/MarlinLogoSvg";
-import fb from "@/assets/fb.png";
-import insta from "@/assets/insta.png";
-import youtube from "@/assets/youtube.png";
-import Image from "next/image";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareInstagram, FaSquareYoutube } from "react-icons/fa6";
 import { IoLogoYoutube } from "react-icons/io5";
+import { client } from "@/app/_lib/sanity";
 
 const Footer = () => {
   return (
