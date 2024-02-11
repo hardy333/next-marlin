@@ -47,7 +47,7 @@ const LanguageContextProvider = ({
     setCookie("lang", lang, {
       path: "/",
     });
-  }, [lang]);
+  }, [lang, setCookie]);
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>

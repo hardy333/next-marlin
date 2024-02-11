@@ -43,8 +43,6 @@ const Hero = async () => {
   const data: mainShowcase = await getData(lang);
   const leadData = await getLeadData(lang);
 
-  console.log("Hello", data?.showcaseKeyWords[0]["geo"]);
-
   return (
     <section className="hero">
       <div className="container-small hero__container flex-container">
