@@ -28,7 +28,7 @@ const BlogFilters = ({ categoryTags }: { categoryTags: string[] }) => {
                   layout
                 ></motion.span>
               ) : null} */}
-              {text === text}
+              {text}
             </li>
           ))}
         </ul>
