@@ -4,11 +4,11 @@ import BlogPostsSection from "./BlogPostsSection";
 import { simpleBlogCard } from "./page";
 import { useBlogFilterContext } from "./blogFilterContext";
 
-const AllBlogsSection = ({ data }: { data: simpleBlogCard[] }) => {
+const AllBlogsSection = ({ data, lang }: { data: any; lang: "en" | "geo" }) => {
   const { blogFilter } = useBlogFilterContext();
 
   let filteredBlogs = data?.filter(
-    (post) => post.categoryTag.name === blogFilter
+    (post: any) => post.categoryTag.name === blogFilter
   );
 
   if (blogFilter === "All") {
@@ -18,9 +18,12 @@ const AllBlogsSection = ({ data }: { data: simpleBlogCard[] }) => {
   return (
     <>
       <div className="container-small">
-        <BigBlogPost post={filteredBlogs[0]} />
+        <BigBlogPost lang={lang} post={filteredBlogs[0]} />
       </div>
-      <BlogPostsSection data={filteredBlogs?.slice(1, filteredBlogs.length)} />
+      <BlogPostsSection
+        lang={lang}
+        data={filteredBlogs?.slice(1, filteredBlogs.length)}
+      />
     </>
   );
 };

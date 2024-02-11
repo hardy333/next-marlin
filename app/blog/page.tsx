@@ -4,6 +4,7 @@ import BlogFilters from "./BlogFilters";
 import { client } from "../_lib/sanity";
 import BlogFilterContextProvider from "./blogFilterContext";
 import AllBlogsSection from "./AllBlogsSection";
+import { getLang } from "../_utils/getLang";
 
 export interface simpleBlogCard {
   title: string;
@@ -12,7 +13,10 @@ export interface simpleBlogCard {
   titleImage: any;
   date: string;
   categoryTag: {
-    name: string;
+    name: {
+      en: string;
+      geo: string;
+    };
     _id?: string;
     tagColor: {
       tagColors: {
@@ -55,20 +59,22 @@ async function getData() {
 }
 
 const Blog = async () => {
+  const lang = getLang();
+
   const data: simpleBlogCard[] = await getData();
 
   const categoryTags = Array.from(
-    new Set(data.map((blog) => blog.categoryTag.name))
+    new Set(data.map((blog) => blog.categoryTag.name[lang]))
   );
 
-  categoryTags.unshift("All");
+  categoryTags.unshift(lang === "geo" ? "ყველა" : "All");
 
   return (
     <>
       <BlogFilterContextProvider>
         <BlogShowcase />
         <BlogFilters categoryTags={categoryTags} />
-        <AllBlogsSection data={data} />
+        <AllBlogsSection data={data} lang={lang} />
       </BlogFilterContextProvider>
     </>
   );

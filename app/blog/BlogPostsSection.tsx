@@ -49,7 +49,13 @@ export const colors = [
   },
 ];
 
-const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
+const BlogPostsSection = ({
+  data,
+  lang,
+}: {
+  data: simpleBlogCard[];
+  lang: "geo" | "en";
+}) => {
   return (
     <div className="blog-posts-section">
       <div className="container-small  blog-posts-section__container">
@@ -79,7 +85,7 @@ const BlogPostsSection = ({ data }: { data: simpleBlogCard[] }) => {
                   color: blogPost.categoryTag.tagColor.tagColors.textColor,
                 }}
               >
-                {blogPost.categoryTag.name}
+                {blogPost.categoryTag.name[lang]}
               </span>
               <Link href={`/blog/${blogPost.currentSlug}`} prefetch={true}>
                 <h4 className="blog-card__heading">{blogPost.title}</h4>

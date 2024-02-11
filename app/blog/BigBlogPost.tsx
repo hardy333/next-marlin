@@ -1,19 +1,12 @@
 "use client";
-import { BsArrowRightShort } from "react-icons/bs";
-import clock from "@/assets/clock.png";
 import Image from "next/image";
-import { simpleBlogCard } from "./page";
 import { urlFor } from "../_lib/sanity";
-import Link from "next/link";
-import BlurImage from "@/components/BlurImage";
-import { getColor } from "./blogCategoryColors";
 import { CiClock2 } from "react-icons/ci";
 import readingTime from "reading-time";
 import { format } from "date-fns/format";
 import { useRouter } from "next/navigation";
-import { colors } from "./BlogPostsSection";
 
-const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
+const BigBlogPost = ({ post, lang }: { post: any; lang: string }) => {
   const router = useRouter();
 
   return (
@@ -49,7 +42,7 @@ const BigBlogPost = ({ post }: { post: simpleBlogCard }) => {
             width: "max-content",
           }}
         >
-          {post.categoryTag.name}
+          {post.categoryTag.name[lang]}
         </span>
 
         <h2

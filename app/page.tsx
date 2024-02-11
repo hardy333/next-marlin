@@ -5,7 +5,7 @@ import MiddleSections from "@/components/MiddleSections";
 import ManageOrders from "@/components/ManageOrders";
 import Trends from "@/components/Trends";
 import { client } from "./_lib/sanity";
-import { getLang } from "../_utils/getLang";
+import { getLang } from "./_utils/getLang";
 
 // export const revalidate  = 0
 export const revalidate = 0; // revalidate at most 30 seconds
@@ -41,7 +41,7 @@ export default async function Home() {
 
   return (
     <>
-      <Hero lang={lang} />
+      <Hero />
       <Features data={featuresData} bgColor={null} />
       <MiddleSections />
       <ManageOrders />

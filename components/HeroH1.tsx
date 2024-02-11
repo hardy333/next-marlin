@@ -9,17 +9,10 @@ const HeroH1 = ({
   coloredWords: string;
 }) => {
   return (
-    <motion.h1
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-    >
+    <h1>
       <span style={{ fontWeight: "300" }}>{title} </span>
       <span style={{ color: "var(--color-primary)" }}>{coloredWords}</span>
-    </motion.h1>
+    </h1>
   );
 };
 

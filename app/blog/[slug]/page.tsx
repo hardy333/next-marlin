@@ -1,4 +1,4 @@
-import { client, urlFor } from "@/app/[lang]/_lib/sanity";
+import { client, urlFor } from "@/app/_lib/sanity";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { fullBlog } from "../page";
@@ -38,7 +38,7 @@ export default async function BlogArticle({
       <div className="full-blog-post-page ">
         <main className="full-blog-post-page__main">
           <h1>
-            <span className="mt-2 block text-3xl mt-10 leading-8 font-bold tracking-tight sm:text-6xl">
+            <span className=" block text-3xl mt-10 leading-8 font-bold tracking-tight sm:text-6xl">
               {data.title}
             </span>
           </h1>

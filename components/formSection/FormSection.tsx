@@ -1,7 +1,7 @@
 "use client";
 import styles from "./formSection.module.css";
 import Image from "next/image";
-import { urlFor } from "@/app/[lang]/_lib/sanity";
+import { urlFor } from "@/app/_lib/sanity";
 
 type Props = {
   title: string;

@@ -1,5 +1,5 @@
-import { mainShowcase } from "@/app/[lang]/_lib/interfaces";
-import { client, urlFor } from "@/app/[lang]/_lib/sanity";
+import { mainShowcase } from "@/app/_lib/interfaces";
+import { client, urlFor } from "@/app/_lib/sanity";
 import Image from "next/image";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 import HeroH1 from "./HeroH1";
@@ -37,10 +37,6 @@ async function getLeadData(lang: string) {
 
   return data;
 }
-
-type Props = {
-  lang: string;
-};
 
 const Hero = async () => {
   const lang = getLang();

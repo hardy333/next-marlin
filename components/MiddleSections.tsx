@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa";
-import { client, urlFor } from "@/app/[lang]/_lib/sanity";
+import { client, urlFor } from "@/app/_lib/sanity";
 import { PortableText } from "@portabletext/react";
 import { getLang } from "@/app/_utils/getLang";
 

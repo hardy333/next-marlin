@@ -1,20 +1,17 @@
 export default {
-  name: 'features',
+  name: 'navbar',
   type: 'document',
-  title: 'Main Page Features',
+  title: 'Navbar',
   preview: {
     title: 'title',
     subtitle: 'leftFeature.heading',
   },
   fields: [
     {
-      name: 'leftFeature',
-      title: 'Left feature',
+      name: 'links',
+      title: 'Navbar Links',
       type: 'object',
-      fields: [
-        {name: 'heading', type: 'string', title: 'heading'},
-        {name: 'paragraph', type: 'string', title: 'paragraph'},
-      ],
+      fields: [{name: 'link1', type: 'string', title: 'Link 1'}],
     },
   ],
 }

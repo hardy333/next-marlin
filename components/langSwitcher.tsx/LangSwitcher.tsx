@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguageContext } from "@/app/[lang]/context/languageContext";
+import { useLanguageContext } from "@/app/context/languageContext";
 import React from "react";
 import { useRouter } from "next/navigation";
 

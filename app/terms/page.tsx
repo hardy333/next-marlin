@@ -1,6 +1,5 @@
 import Accordion1 from "@/components/accordion1/Accordion1";
 import NewPageCard from "./NewPageCard";
-import { Icon1, Icon2 } from "./cardIcons";
 import cardsData from "./cardsData";
 import "./new-page.css";
 import Accordion2 from "@/components/accordion2/Accordion2";

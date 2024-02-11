@@ -3,6 +3,7 @@ import blogPage from './blogPage'
 import {blogPageTags} from './blogPageTags'
 import {blogPostTagColors} from './blogPostTagColors'
 import features from './features'
+import footer from './footer'
 import forVendorsShowcase from './forVendorsShowcase'
 import leadForm from './leadForm'
 import {localeBlockArrayType} from './localeBlockArrayType'
@@ -13,6 +14,7 @@ import mainPageBlogSection from './mainPageBlogSection'
 import mainPageMiddleSections from './mainPageMiddleSections'
 import mainPageOrdersSection from './mainPageOrdersSection'
 import mainPageWorksSection from './mainPageWorksSection'
+import navbar from './navbar'
 import pricingCards from './pricing-cards'
 import pricingSections from './pricingSections'
 import retailersFeatures from './retailersFeatures'
@@ -22,6 +24,9 @@ import vendorsFeatures from './vendorsFeatures'
 import vendorsMiddleSections from './vendorsMiddleSections'
 
 export const schemaTypes = [
+  navbar,
+  footer,
+
   mainShowcase,
   features,
   mainPageMiddleSections,
