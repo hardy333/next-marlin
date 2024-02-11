@@ -1,27 +1,30 @@
+"use client";
+
+import { useFormModalContext } from "@/app/context/formModalContext";
 import "./modal.css";
 import { ReactNode } from "react";
 import { IoMdClose } from "react-icons/io";
 import Modal from "react-modal";
 
 type Props = {
-  modalIsOpen: boolean;
-  closeModal: () => void;
   children: ReactNode;
 };
 
-const BaseModal = ({ modalIsOpen, closeModal, children }: Props) => {
+const BaseModal = ({ children }: Props) => {
+  const { isOpen, setIsOpen } = useFormModalContext();
+
   return (
     <Modal
-      isOpen={modalIsOpen}
+      isOpen={isOpen}
       shouldCloseOnOverlayClick={true}
-      onRequestClose={closeModal}
+      onRequestClose={() => setIsOpen(false)}
       className="base-modal"
       overlayClassName="base-modal-overlay"
       closeTimeoutMS={300}
       ariaHideApp={false}
     >
       <>
-        <button onClick={() => closeModal()} className="close-modal-btn">
+        <button onClick={() => setIsOpen(false)} className="close-modal-btn">
           <IoMdClose fill="#1c1238aa" />
         </button>
         {children}

@@ -3,6 +3,7 @@ import { getLang } from "@/app/_utils/getLang";
 import large from "@/assets/large.png";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+import ModalOpenBtnWrapper from "./baseModal/ModalOpenBtnWrapper";
 async function getData() {
   const query = `
   *[_type == "mainPageOrdersSection"] | order(_createdAt desc){
@@ -82,12 +83,14 @@ const ManageOrders = async () => {
           </svg>
           {data?.buttonHeading[lang]}
         </p>
-        <button
-          style={{ padding: "12px 35px", fontSize: "18px", width: "250px" }}
-          className="btn"
-        >
-          {data?.buttonText[lang]}
-        </button>
+        <ModalOpenBtnWrapper>
+          <button
+            style={{ padding: "12px 35px", fontSize: "18px", width: "250px" }}
+            className="btn"
+          >
+            {data?.buttonText[lang]}
+          </button>
+        </ModalOpenBtnWrapper>
       </div>
     </section>
   );

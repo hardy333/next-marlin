@@ -25,11 +25,15 @@ export const metadata: Metadata = {
 
 import { Advent_Pro, Capriola } from "next/font/google";
 import LanguageContextProvider from "./context/languageContext";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 
 import { Public_Sans } from "next/font/google";
 import classNames from "classnames";
 import { getLang } from "./_utils/getLang";
+import FormModalContextProvider from "./context/formModalContext";
+import BaseModal from "@/components/baseModal/BaseModal";
+import FormSection from "@/components/formSection/FormSection";
+import { client } from "./_lib/sanity";
 
 const public_sans = Public_Sans({
   subsets: ["latin"],
@@ -59,14 +63,27 @@ const dejavu2 = localFont({
   variable: "--font-dejavu-2",
 });
 
-export default function RootLayout({
+async function getLeadData(lang: string) {
+  const query = `
+  *[ _type == "leadForm"] | order(_createdAt desc){
+    title,
+    image,
+    btnText
+  }[0]
+    `;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const lang = getLang();
-
-  console.log("Layout was rendered");
+  const leadData = await getLeadData(lang);
 
   return (
     <html lang="en">
@@ -85,18 +102,27 @@ export default function RootLayout({
         //   public_sans.variable
         // )}
       > */}
-        <LanguageContextProvider langValue={lang}>
-          <Navbar />
-          {children}
-          <NewFooter />
-          <div
-            className="d365-mkt-config"
-            style={{ display: "none" }}
-            data-website-id="OVIn_1QnbnnbAHtF0wNZPPhPTxN8jokE5JFuyzkI3mk"
-            data-hostname="3dbdc4e02c174de9882917a6978be3f0.svc.dynamics.com"
-          ></div>
-          <Script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007" />
-        </LanguageContextProvider>
+        <FormModalContextProvider>
+          <LanguageContextProvider langValue={lang}>
+            <Navbar />
+            {children}
+            <NewFooter />
+            <BaseModal>
+              <FormSection
+                image={leadData.image}
+                title={leadData.title[lang]}
+                btnText={leadData.btnText[lang]}
+              />
+            </BaseModal>
+            <div
+              className="d365-mkt-config"
+              style={{ display: "none" }}
+              data-website-id="OVIn_1QnbnnbAHtF0wNZPPhPTxN8jokE5JFuyzkI3mk"
+              data-hostname="3dbdc4e02c174de9882917a6978be3f0.svc.dynamics.com"
+            ></div>
+            <Script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007" />
+          </LanguageContextProvider>
+        </FormModalContextProvider>
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import { useBlogFilterContext } from "./blogFilterContext";
 
 const BlogFilters = ({ categoryTags }: { categoryTags: string[] }) => {
@@ -29,7 +28,7 @@ const BlogFilters = ({ categoryTags }: { categoryTags: string[] }) => {
                   layout
                 ></motion.span>
               ) : null} */}
-              {text}
+              {text === text}
             </li>
           ))}
         </ul>

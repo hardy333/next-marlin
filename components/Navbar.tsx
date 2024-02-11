@@ -3,6 +3,7 @@ import Link from "next/link";
 import LangSwitcher from "./langSwitcher.tsx/LangSwitcher";
 import { client } from "@/app/_lib/sanity";
 import { getLang } from "@/app/_utils/getLang";
+import ModalOpenBtnWrapper from "./baseModal/ModalOpenBtnWrapper";
 
 const linksArr = [
   {
@@ -84,7 +85,9 @@ const Navbar = async () => {
         </ul>
         <div className="flex gap-4 items-center">
           <LangSwitcher />
-          <button className="btn btn--outline">{data.btnText}</button>
+          <ModalOpenBtnWrapper>
+            <button className="btn btn--outline">{data.btnText}</button>
+          </ModalOpenBtnWrapper>
         </div>
       </div>
     </header>

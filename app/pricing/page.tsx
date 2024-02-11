@@ -37,6 +37,7 @@ const getSectionData = async () => {
 };
 
 import cn from "classnames";
+import ModalOpenBtnWrapper from "@/components/baseModal/ModalOpenBtnWrapper";
 // Hello
 
 const Pricing = async () => {
@@ -83,12 +84,14 @@ const Pricing = async () => {
               {sectionData?.section1.paragraph}
             </p>
           </div>
-          <button
-            className="btn btn--outline"
-            style={{ fontSize: "18px", padding: "12px 30px" }}
-          >
-            {sectionData?.section1?.buttonText}
-          </button>
+          <ModalOpenBtnWrapper>
+            <button
+              className="btn btn--outline"
+              style={{ fontSize: "18px", padding: "12px 30px" }}
+            >
+              {sectionData?.section1?.buttonText}
+            </button>
+          </ModalOpenBtnWrapper>
         </div>
       </section>
 

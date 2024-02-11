@@ -10,12 +10,17 @@ export default {
     {
       name: 'title',
       title: 'Form Title',
-      type: 'string',
+      type: 'localeString',
     },
     {
       name: 'image',
       title: 'Form Illustration',
       type: 'image',
+    },
+    {
+      name: 'btnText',
+      title: 'Submit Button text',
+      type: 'localeString',
     },
   ],
 }

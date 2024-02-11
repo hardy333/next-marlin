@@ -6,9 +6,10 @@ import { urlFor } from "@/app/_lib/sanity";
 type Props = {
   title: string;
   image: object;
+  btnText: string;
 };
 
-const FormSection = ({ title, image }: Props) => {
+const FormSection = ({ title, image, btnText }: Props) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -47,7 +48,7 @@ const FormSection = ({ title, image }: Props) => {
           className={`${styles.left} w-[50%] border-l border-l-[rgb(116, 117, 121)] p-[15px] pl-16 `}
         >
           {/* 1 */}
-          <h2 className="text-[30px] font-bold mb-14">{title}</h2>
+          <h2 className="text-[24px] font-bold mb-14">{title}</h2>
           <div className={styles.topInputs}>
             <div className={styles.inputGroup}>
               <label htmlFor="firstName">First Name</label>
@@ -79,7 +80,7 @@ const FormSection = ({ title, image }: Props) => {
             <input type="textarea" name="message" id="message" />
           </div>
           <button type="submit" role="button" className={styles.btn}>
-            Send
+            {btnText}
           </button>
         </form>
       </div>

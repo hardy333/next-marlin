@@ -10,6 +10,7 @@ import ShareComp from "@/components/ShareComp";
 
 import AsideImg from "./blog-aside-img.jpg";
 import clock from "@/assets/clock.png";
+import ModalOpenBtnWrapper from "@/components/baseModal/ModalOpenBtnWrapper";
 
 export const revalidate = 0; // revalidate at most 30 seconds
 
@@ -32,6 +33,7 @@ export default async function BlogArticle({
   params: { slug: string };
 }) {
   const data: fullBlog = await getData(params.slug);
+  console.log("Layout was rendered", params);
 
   return (
     <div className="relative pt-8">
@@ -62,7 +64,6 @@ export default async function BlogArticle({
             className=" mt-8 border"
             style={{ borderRadius: "10px", height: 450, objectFit: "cover" }}
           />
-
           <div
             className={`mt-16 prose prose-blue prose-lg text-3xl dark:prose-invert prose-li:marker:to-blue-600 prose-a:text-primary content-container  blog-content-wrapper`}
           >
@@ -79,12 +80,14 @@ export default async function BlogArticle({
               შეიტყვე როგორ დაგეხმარება BDO Digital-ი ციფრული ტრანსფორმაციის
               გზაზე
             </p>
-            <button
-              className="btn m-auto mx-auto mt-5"
-              style={{ display: "flex" }}
-            >
-              Book a Call
-            </button>
+            <ModalOpenBtnWrapper>
+              <button
+                className="btn m-auto mx-auto mt-5"
+                style={{ display: "flex" }}
+              >
+                Book a Call
+              </button>
+            </ModalOpenBtnWrapper>
           </div>
         </aside>
       </div>

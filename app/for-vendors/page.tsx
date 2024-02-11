@@ -6,6 +6,7 @@ export const revalidate = 0; // revalidate at most 30 seconds
 import "./for-retailers.css";
 import Features from "@/components/Features";
 import { client } from "../_lib/sanity";
+import ModalOpenBtnWrapper from "@/components/baseModal/ModalOpenBtnWrapper";
 
 async function getFeaturesData() {
   const query = `
@@ -30,12 +31,14 @@ const ForVendors = async () => {
         <Features bgColor="white" data={featuresData} />
         <ForRetailersMiddleSections />
         <section className="simple-cta-section">
-          <button
-            className="btn"
-            style={{ fontSize: "18px", padding: "12px 30px" }}
-          >
-            Book a call
-          </button>
+          <ModalOpenBtnWrapper>
+            <button
+              className="btn"
+              style={{ fontSize: "18px", padding: "12px 30px" }}
+            >
+              Book a call
+            </button>
+          </ModalOpenBtnWrapper>
         </section>
       </main>
     </>

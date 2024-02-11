@@ -27,7 +27,7 @@ async function getData(lang: string) {
   return data;
 }
 
-const NewFooter = async () => {
+const NewFooter = async (params: any) => {
   const lang = getLang();
   const data = await getData(lang);
 

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { client, urlFor } from "../_lib/sanity";
+import ModalOpenBtnWrapper from "@/components/baseModal/ModalOpenBtnWrapper";
 
 async function getFeaturesData() {
   const query = `
@@ -24,12 +25,14 @@ const Hero = async () => {
         <div>
           <h1 style={{ marginBottom: "15px" }}>{data?.title}</h1>
           <p className="mb-10">{data?.paragraph}</p>
-          <button
-            className="btn "
-            style={{ fontSize: "18px", padding: "12px 30px" }}
-          >
-            {data?.ctaText}
-          </button>
+          <ModalOpenBtnWrapper>
+            <button
+              className="btn "
+              style={{ fontSize: "18px", padding: "12px 30px" }}
+            >
+              {data?.ctaText}
+            </button>
+          </ModalOpenBtnWrapper>
         </div>
 
         <div className="secondary-hero__img-container">

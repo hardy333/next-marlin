@@ -5,6 +5,7 @@ import { BsFillPatchCheckFill } from "react-icons/bs";
 import HeroH1 from "./HeroH1";
 import HeroCtaBtn from "./HeroCtaBtn";
 import { getLang } from "@/app/_utils/getLang";
+import ModalOpenBtnWrapper from "./baseModal/ModalOpenBtnWrapper";
 
 export const revalidate = 0; // revalidate at most 30 seconds
 
@@ -25,23 +26,9 @@ async function getData(lang: string) {
   return data;
 }
 
-async function getLeadData(lang: string) {
-  const query = `
-  *[ _type == "leadForm"] | order(_createdAt desc){
-    title,
-    image
-  }[0]
-    `;
-
-  const data = await client.fetch(query);
-
-  return data;
-}
-
 const Hero = async () => {
   const lang = getLang();
   const data: mainShowcase = await getData(lang);
-  const leadData = await getLeadData(lang);
 
   return (
     <section className="hero">
@@ -75,7 +62,9 @@ const Hero = async () => {
               </li>
             </ul>
           </div>
-          <HeroCtaBtn leadData={leadData}>{data?.ctaText}</HeroCtaBtn>
+          <ModalOpenBtnWrapper>
+            <HeroCtaBtn>{data?.ctaText}</HeroCtaBtn>
+          </ModalOpenBtnWrapper>
         </div>
 
         <div className="box-container">

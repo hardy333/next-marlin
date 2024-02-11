@@ -1,7 +1,6 @@
 "use client";
 import BigBlogPost from "./BigBlogPost";
 import BlogPostsSection from "./BlogPostsSection";
-import { simpleBlogCard } from "./page";
 import { useBlogFilterContext } from "./blogFilterContext";
 
 const AllBlogsSection = ({ data, lang }: { data: any; lang: "en" | "geo" }) => {
