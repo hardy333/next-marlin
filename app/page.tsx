@@ -48,7 +48,7 @@ export default async function Home() {
       <ManageOrders />
 
       <Trends />
-      <FormSection title="sss" btnText="hello" image={null} />
+      {/* <FormSection title="sss" btnText="hello" image={null} /> */}
     </>
   );
 }

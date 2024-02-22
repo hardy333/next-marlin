@@ -103,8 +103,6 @@ export default async function RootLayout({
         <FormModalContextProvider>
           <LanguageContextProvider langValue={lang}>
             <Navbar />
-            {children}
-            <NewFooter />
             <BaseModal>
               <FormSection
                 image={leadData.image}
@@ -112,6 +110,9 @@ export default async function RootLayout({
                 btnText={leadData.btnText[lang]}
               />
             </BaseModal>
+            {children}
+            <NewFooter />
+
             <div
               className="d365-mkt-config"
               style={{ display: "none" }}
