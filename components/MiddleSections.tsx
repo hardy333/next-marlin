@@ -42,7 +42,7 @@ const MiddleSections = async () => {
       {data?.map((section: any, index: number) => {
         return (
           <section
-            key={section.data.heading}
+            key={section.data.heading + index}
             className="middle-section "
             id="what-is-marlin"
           >
@@ -112,9 +112,9 @@ const MiddleSections = async () => {
             <ul>
               {/* 1 */}
 
-              {worksSectionData.list.map((obj: any) => {
+              {worksSectionData.list.map((obj: any, i: number) => {
                 return (
-                  <li key={obj?.heading}>
+                  <li key={obj?.heading + i}>
                     <span
                       className={`w-[25px] h-[25px] rounded-full  flex items-center justify-center bg-[#549ef255] mt-1`}
                     >

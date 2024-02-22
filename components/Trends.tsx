@@ -59,7 +59,7 @@ const Trends = async () => {
             ?.slice(0, data2.blogPostCount)
             .map((blogPost: any, index: any) => (
               // Post start
-              <article key={index} className="blog-card">
+              <article key={index + blogPost.currentSlug} className="blog-card">
                 <Link href={`/blog/${blogPost.currentSlug}`} prefetch={true}>
                   <div className="blog-card__img-wrapper">
                     <div className="blog-card__img-container">

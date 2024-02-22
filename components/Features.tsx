@@ -70,9 +70,9 @@ const Features = async ({
     >
       {/* <SmallDotsSvg className="features-svg-small-dots-right" /> */}
       <div className="container-small features__container">
-        {resData?.map((obj: any) => {
+        {resData?.map((obj: any, index: number) => {
           return (
-            <article key={obj.h} className={cn(styles.featureCard)}>
+            <article key={obj.h + index} className={cn(styles.featureCard)}>
               <div
                 className={cn(styles.svgBox)}
                 style={{ background: obj.bgColor, color: obj.color }}

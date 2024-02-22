@@ -5,7 +5,7 @@ import { urlFor } from "@/app/_lib/sanity";
 
 type Props = {
   title: string;
-  image: object;
+  image: object | null;
   btnText: string;
 };
 
@@ -36,12 +36,14 @@ const FormSection = ({ title, image, btnText }: Props) => {
         <div
           className={`${styles.right} w-[50%] flex items-center justify-center`}
         >
-          <Image
-            width={1000}
-            height={800}
-            src={urlFor(image).url()}
-            alt="placeholder illustration"
-          />
+          {image && (
+            <Image
+              width={1000}
+              height={800}
+              src={urlFor(image).url()}
+              alt="placeholder illustration"
+            />
+          )}
         </div>
 
         <form
