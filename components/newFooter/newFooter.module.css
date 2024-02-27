@@ -105,6 +105,9 @@
   color: #8b3dff;
 }
 
+.mainList li:hover a {
+  color: #8b3dff;
+}
 /* Bottom */
 /* Bottom */
 
