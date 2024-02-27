@@ -1,9 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import url("//cdn.web-fonts.ge/fonts/dejavu-sans/css/dejavu-sans.min.css"); */
-
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
 
 * {
   margin: 0px;
@@ -518,6 +515,7 @@ ul {
   top: -50px;
   left: 0px;
 }
+
 .features-svg-small-dots-right {
   position: absolute;
   bottom: -50px;

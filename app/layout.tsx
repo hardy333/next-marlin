@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   },
 };
 
-import { Advent_Pro, Capriola } from "next/font/google";
 import LanguageContextProvider from "./context/languageContext";
 
 import { Public_Sans } from "next/font/google";
 import { getLang } from "./_utils/getLang";
+
 import FormModalContextProvider from "./context/FormModalContext";
 import BaseModal from "@/components/baseModal/BaseModal";
 import FormSection from "@/components/formSection/FormSection";
@@ -38,23 +38,11 @@ const public_sans = Public_Sans({
   variable: "--font-public-sans",
 });
 
-const capriola = Capriola({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-capriola",
-});
-
-const adventPro = Advent_Pro({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-advent-pro",
-});
-
 // Font files can be colocated inside of `pages`
-const dejavu = localFont({
-  src: "./_fonts/dejavu-sans-extra-light.ttf",
-  variable: "--font-dejavu",
-});
+// const dejavu = localFont({
+//   src: "./_fonts/dejavu-sans-extra-light.ttf",
+//   variable: "--font-dejavu",
+// });
 
 const dejavu2 = localFont({
   src: "./_fonts/bpg_dejavu_sans.ttf",
