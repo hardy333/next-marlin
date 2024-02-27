@@ -90,3 +90,9 @@
     word-break: break-all;
   }
 }
+
+@media (max-width: 600px) {
+  .full-blog-post__main-img {
+    height: 280px !important;
+  }
+}

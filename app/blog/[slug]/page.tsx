@@ -64,7 +64,7 @@ export default async function BlogArticle({
             height={1000}
             alt="Title Image"
             priority
-            className=" mt-8 border"
+            className=" mt-8 border full-blog-post__main-img"
             style={{ borderRadius: "10px", height: 450, objectFit: "cover" }}
           />
           <div
