@@ -2,7 +2,7 @@
 import BigBlogPost from "./BigBlogPost";
 import BlogPostsSection from "./BlogPostsSection";
 import { useBlogFilterContext } from "./blogFilterContext";
-
+import { useMediaQuery } from "@uidotdev/usehooks";
 const AllBlogsSection = ({ data, lang }: { data: any; lang: "en" | "geo" }) => {
   const { blogFilter } = useBlogFilterContext();
 
@@ -14,6 +14,9 @@ const AllBlogsSection = ({ data, lang }: { data: any; lang: "en" | "geo" }) => {
     filteredBlogs = data;
   }
 
+  // below 1000px big blog post is display: none;
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 1000px)");
+
   return (
     <>
       <div className="container-small">
@@ -21,7 +24,7 @@ const AllBlogsSection = ({ data, lang }: { data: any; lang: "en" | "geo" }) => {
       </div>
       <BlogPostsSection
         lang={lang}
-        data={filteredBlogs?.slice(1, filteredBlogs.length)}
+        data={filteredBlogs?.slice(isSmallDevice ? 0 : 1, filteredBlogs.length)}
       />
     </>
   );

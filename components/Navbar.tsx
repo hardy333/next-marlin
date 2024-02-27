@@ -7,6 +7,8 @@ import ModalOpenBtnWrapper from "./baseModal/ModalOpenBtnWrapper";
 import NavbarBurgerBtn from "./NavbarBurgerBtn";
 import NavbarBurgerBtnInside from "./NavbarBurgerBtnInside";
 
+import { useOnClickOutside } from "usehooks-ts";
+import { useRef } from "react";
 export const linksArr = [
   {
     text: {
@@ -52,6 +54,12 @@ const Navbar = ({
   navbarData: any;
   lang: "geo" | "en";
 }) => {
+  const ref = useRef(null);
+
+  useOnClickOutside(ref, () => {
+    document.querySelector(".navbar")?.classList.remove("open-content");
+  });
+
   return (
     <header className={`navbar `}>
       <div className="container navbar__container">
@@ -65,7 +73,7 @@ const Navbar = ({
           <MarlinLogoSvg />
           <MarlinTextSvg />
         </Link>
-        <div className="navbar_content">
+        <div ref={ref} className="navbar_content">
           <ul className="navbar__list" style={{ paddingRight: "45px" }}>
             {linksArr.map((link, index) => {
               return (
