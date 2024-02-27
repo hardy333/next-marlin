@@ -30,6 +30,7 @@ async function getData(lang: string) {
 const NewFooter = async (params: any) => {
   const lang = getLang();
   const data = await getData(lang);
+  console.log("Footer params", params);
 
   return (
     <footer className={cn(styles.footer)}>

@@ -36,16 +36,19 @@ export default async function BlogArticle({
   console.log("Layout was rendered", params);
 
   return (
-    <div className="relative pt-8">
+    <div className="relative pt-0 sm:pt-8">
       <div className="full-blog-post-page ">
         <main className="full-blog-post-page__main">
           <h1>
-            <span className=" block text-3xl mt-10 leading-8 font-bold tracking-tight sm:text-6xl">
+            <span
+              style={{ lineHeight: "1.4" }}
+              className=" block text-[30px] mt-0 sm:mt-10 leading-8 font-bold tracking-tight sm:text-6xl"
+            >
               {data.title}
             </span>
           </h1>
 
-          <div className="mt-[40px] flex flex-col  gap-3 ">
+          <div className="sm:mt-[30px] mt-[20px] flex flex-col  gap-3 ">
             <p>
               <span style={{ color: "#64748b" }}>September 9, 2023</span>
             </p>
@@ -65,7 +68,7 @@ export default async function BlogArticle({
             style={{ borderRadius: "10px", height: 450, objectFit: "cover" }}
           />
           <div
-            className={`mt-16 prose prose-blue prose-lg text-3xl dark:prose-invert prose-li:marker:to-blue-600 prose-a:text-primary content-container  blog-content-wrapper`}
+            className={`mt-16 prose prose-blue text-[16px]  dark:prose-invert prose-li:marker:to-blue-600 prose-a:text-primary content-container  blog-content-wrapper`}
           >
             <PortableText value={data.content} />
           </div>
