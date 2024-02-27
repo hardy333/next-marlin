@@ -186,7 +186,7 @@
 
 @media (max-width: 450px) {
   .footerBottom {
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;

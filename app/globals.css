@@ -483,6 +483,9 @@ ul {
   overflow: hidden;
   gap: 2rem;
   justify-content: center;
+  width: 0;
+  flex-grow: 1;
+  background-color: red;
 }
 
 .feature-card-circle {
@@ -499,7 +502,6 @@ ul {
 
 .features p {
   color: #211543;
-  color: red;
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
