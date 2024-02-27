@@ -95,11 +95,11 @@
     justify-content: center;
   }
   .right {
-    display: none;
+    display: none !important;
   }
 
   .left {
-    border: none;
+    border: none !important;
     width: 95%;
     max-width: 800px;
   }
