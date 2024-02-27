@@ -75,6 +75,18 @@ async function getLeadData(lang: string) {
   return data;
 }
 
+async function getNavbarData(lang: "en" | "geo") {
+  const query = `
+  *[_type == "navbar"] | order(_createdAt desc){
+    "btnText": btnText["${lang}"] 
+  }[0]
+    `;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
 export default async function RootLayout({
   children,
 }: {
@@ -82,6 +94,7 @@ export default async function RootLayout({
 }) {
   const lang = getLang();
   const leadData = await getLeadData(lang);
+  const navbarData = await getNavbarData(lang);
 
   return (
     <html lang="en">
@@ -102,7 +115,7 @@ export default async function RootLayout({
       > */}
         <FormModalContextProvider>
           <LanguageContextProvider langValue={lang}>
-            <Navbar />
+            <Navbar lang={lang} navbarData={navbarData} />
             <BaseModal>
               <FormSection
                 image={leadData.image}

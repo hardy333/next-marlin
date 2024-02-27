@@ -1,10 +1,9 @@
+"use client";
+
 import MarlinLogoSvg from "@/svgs/MarlinLogoSvg";
 import Link from "next/link";
 import LangSwitcher from "./langSwitcher.tsx/LangSwitcher";
-import { client } from "@/app/_lib/sanity";
-import { getLang } from "@/app/_utils/getLang";
 import ModalOpenBtnWrapper from "./baseModal/ModalOpenBtnWrapper";
-import { RxHamburgerMenu } from "react-icons/rx";
 import NavbarBurgerBtn from "./NavbarBurgerBtn";
 import NavbarBurgerBtnInside from "./NavbarBurgerBtnInside";
 
@@ -46,22 +45,13 @@ export const linksArr = [
   },
 ];
 
-async function getData(lang: "en" | "geo") {
-  const query = `
-  *[_type == "navbar"] | order(_createdAt desc){
-    "btnText": btnText["${lang}"] 
-  }[0]
-    `;
-
-  const data = await client.fetch(query);
-
-  return data;
-}
-
-const Navbar = async () => {
-  const lang = getLang();
-  const data = await getData(lang);
-
+const Navbar = ({
+  navbarData,
+  lang,
+}: {
+  navbarData: any;
+  lang: "geo" | "en";
+}) => {
   return (
     <header className={`navbar `}>
       <div className="container navbar__container">
@@ -79,7 +69,14 @@ const Navbar = async () => {
           <ul className="navbar__list" style={{ paddingRight: "45px" }}>
             {linksArr.map((link, index) => {
               return (
-                <li key={link.link + index}>
+                <li
+                  key={link.link + index}
+                  onClick={() => {
+                    document
+                      .querySelector(".navbar")
+                      ?.classList.remove("open-content");
+                  }}
+                >
                   <Link prefetch={true} href={link.link}>
                     {link.text[lang]}
                   </Link>
@@ -90,7 +87,7 @@ const Navbar = async () => {
           <div className="flex gap-4 items-center  navbar__btns-container">
             <LangSwitcher />
             <ModalOpenBtnWrapper>
-              <button className="btn btn--outline">{data.btnText}</button>
+              <button className="btn btn--outline">{navbarData.btnText}</button>
             </ModalOpenBtnWrapper>
           </div>
 
