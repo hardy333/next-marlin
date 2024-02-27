@@ -68,7 +68,8 @@ export default async function BlogArticle({
             style={{ borderRadius: "10px", height: 450, objectFit: "cover" }}
           />
           <div
-            className={`mt-16 prose prose-blue text-[16px]  dark:prose-invert prose-li:marker:to-blue-600 prose-a:text-primary content-container  blog-content-wrapper`}
+            className={`mt-16 prose prose-blue text-[16px]   prose-li:marker:to-blue-600 prose-a:text-primary content-container  blog-content-wrapper`}
+            style={{ color: "#211543" }}
           >
             <PortableText value={data.content} />
           </div>
