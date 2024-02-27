@@ -47,10 +47,10 @@ const FormSection = ({ title, image, btnText }: Props) => {
         </div>
 
         <form
-          className={`${styles.left} w-[50%] border-l border-l-[rgb(116, 117, 121)] p-[15px] pl-16 `}
+          className={`${styles.left} w-[50%] border-l border-l-[rgb(116, 117, 121)] p-[15px] sm:pl-16 `}
         >
           {/* 1 */}
-          <h2 className="text-[24px] font-bold mb-14">{title}</h2>
+          <h2 className="text-[24px] font-bold mb-14 pr-8">{title}</h2>
           <div className={styles.topInputs}>
             <div className={styles.inputGroup}>
               <label htmlFor="firstName">First Name</label>

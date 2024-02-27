@@ -237,7 +237,7 @@ ul {
     width: 90%;
     max-width: 320px;
     height: 100vh;
-    z-index: 100000;
+    z-index: 10000;
     flex-direction: column;
     box-shadow: 1px -5px 10px rgba(0, 0, 0, 0.2);
     align-items: start;
