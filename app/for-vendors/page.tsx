@@ -4,7 +4,7 @@ export const revalidate = 0; // revalidate at most 30 seconds
 
 // css
 import "./for-retailers.css";
-import Features from "@/components/Features";
+import Features from "@/components/features/Features";
 import { client } from "../_lib/sanity";
 import ModalOpenBtnWrapper from "@/components/baseModal/ModalOpenBtnWrapper";
 

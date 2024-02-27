@@ -1,4 +1,4 @@
-import { ConnectSvg, OptimizeSvg, AnalyzeSvg } from "./FeatureSvgs";
+import { ConnectSvg, OptimizeSvg, AnalyzeSvg } from "../FeatureSvgs";
 import cn from "classnames";
 import styles from "./features.module.css";
 

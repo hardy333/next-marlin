@@ -4,8 +4,11 @@ import LangSwitcher from "./langSwitcher.tsx/LangSwitcher";
 import { client } from "@/app/_lib/sanity";
 import { getLang } from "@/app/_utils/getLang";
 import ModalOpenBtnWrapper from "./baseModal/ModalOpenBtnWrapper";
+import { RxHamburgerMenu } from "react-icons/rx";
+import NavbarBurgerBtn from "./NavbarBurgerBtn";
+import NavbarBurgerBtnInside from "./NavbarBurgerBtnInside";
 
-const linksArr = [
+export const linksArr = [
   {
     text: {
       geo: "რა არის მარლინი",
@@ -72,23 +75,29 @@ const Navbar = async () => {
           <MarlinLogoSvg />
           <MarlinTextSvg />
         </Link>
-        <ul className="navbar__list" style={{ paddingRight: "45px" }}>
-          {linksArr.map((link, index) => {
-            return (
-              <li key={link.link + index}>
-                <Link prefetch={true} href={link.link}>
-                  {link.text[lang]}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="flex gap-4 items-center">
-          <LangSwitcher />
-          <ModalOpenBtnWrapper>
-            <button className="btn btn--outline">{data.btnText}</button>
-          </ModalOpenBtnWrapper>
+        <div className="navbar_content">
+          <ul className="navbar__list" style={{ paddingRight: "45px" }}>
+            {linksArr.map((link, index) => {
+              return (
+                <li key={link.link + index}>
+                  <Link prefetch={true} href={link.link}>
+                    {link.text[lang]}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="flex gap-4 items-center  navbar__btns-container">
+            <LangSwitcher />
+            <ModalOpenBtnWrapper>
+              <button className="btn btn--outline">{data.btnText}</button>
+            </ModalOpenBtnWrapper>
+          </div>
+
+          <NavbarBurgerBtnInside />
         </div>
+
+        <NavbarBurgerBtn />
       </div>
     </header>
   );

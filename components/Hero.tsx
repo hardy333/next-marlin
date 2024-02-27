@@ -34,7 +34,7 @@ const Hero = async () => {
     <section className="hero">
       <div className="container-small hero__container flex-container">
         {/* <Framer /> */}
-        <div>
+        <div className="hero__text-container">
           <HeroH1 title={data?.title} coloredWords={data?.titleColoredWords} />
           <p
             style={{
@@ -73,8 +73,6 @@ const Hero = async () => {
             data-aos="fade-left"
             data-aos-delay={400}
           >
-            {/* <BigDotsSvg className="hero-svg-big-dotts" /> */}
-            {/* <StarsSvg className="hero-svg-stars" /> */}
             <Image
               priority
               style={{ width: "100%", objectFit: "cover" }}
