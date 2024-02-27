@@ -82,4 +82,11 @@
   .full-blog-post-page__aside {
     display: none;
   }
+  .full-blog-post-page {
+    gap: 0;
+  }
+
+  .full-blog-post-page a {
+    word-break: break-all;
+  }
 }
