@@ -36,7 +36,6 @@ const getSectionData = async () => {
   return data;
 };
 
-import cn from "classnames";
 import ModalOpenBtnWrapper from "@/components/baseModal/ModalOpenBtnWrapper";
 // Hello
 
