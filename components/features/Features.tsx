@@ -1,6 +1,8 @@
 import { ConnectSvg, OptimizeSvg, AnalyzeSvg } from "../FeatureSvgs";
 import cn from "classnames";
 import styles from "./features.module.css";
+import Image from "next/image";
+import { urlFor } from "@/app/_lib/sanity";
 
 const initialData = [
   {
@@ -44,6 +46,7 @@ const Features = async ({
           ...initObj,
           h: data?.leftFeature.heading,
           p: data?.leftFeature.paragraph,
+          img: data?.leftFeature.image,
         };
       }
       if (index === 1) {
@@ -51,6 +54,7 @@ const Features = async ({
           ...initObj,
           h: data?.middleFeature.heading,
           p: data?.middleFeature.paragraph,
+          img: data?.middleFeature.image,
         };
       }
       if (index === 2) {
@@ -58,6 +62,7 @@ const Features = async ({
           ...initObj,
           h: data?.rightFeature.heading,
           p: data?.rightFeature.paragraph,
+          img: data?.rightFeature.image,
         };
       }
     });
@@ -77,7 +82,13 @@ const Features = async ({
                 className={cn(styles.svgBox)}
                 style={{ background: obj.bgColor, color: obj.color }}
               >
-                {obj.img}
+                {/* {obj.img} */}
+                <Image
+                  src={urlFor(obj.img).url()}
+                  alt="img"
+                  width={500}
+                  height={500}
+                />
               </div>
               <h2>{obj.h}</h2>
               <p>{obj.p}</p>

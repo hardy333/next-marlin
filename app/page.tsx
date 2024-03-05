@@ -14,16 +14,20 @@ async function getData(lang: string) {
   const query = `
   *[_type == "features"] | order(_createdAt desc){
     "leftFeature": {
+      "image": leftFeature.image,
      "paragraph": leftFeature.paragraph["${lang}"],
       "heading": leftFeature.heading["${lang}"],
        
     },
     "middleFeature": {
+      "image": middleFeature.image,
+
      "paragraph": middleFeature.paragraph["${lang}"],
       "heading": middleFeature.heading["${lang}"],
-       
     },
     "rightFeature": {
+      "image": rightFeature.image,
+
      "paragraph": rightFeature.paragraph["${lang}"],
       "heading": rightFeature.heading["${lang}"],
     },
@@ -38,6 +42,8 @@ export default async function Home() {
   const lang = getLang();
 
   let featuresData = await getData(lang);
+
+  console.log({ featuresData });
 
   return (
     <>

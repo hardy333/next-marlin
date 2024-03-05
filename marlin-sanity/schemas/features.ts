@@ -12,6 +12,7 @@ export default {
       title: 'Left feature',
       type: 'object',
       fields: [
+        {name: 'image', type: 'image', title: 'image'},
         {name: 'heading', type: 'localeString', title: 'heading'},
         {name: 'paragraph', type: 'localeString', title: 'paragraph'},
       ],
@@ -21,6 +22,7 @@ export default {
       title: 'Middle feature',
       type: 'object',
       fields: [
+        {name: 'image', type: 'image', title: 'image'},
         {name: 'heading', type: 'localeString', title: 'heading'},
         {name: 'paragraph', type: 'localeString', title: 'paragraph'},
       ],
@@ -30,6 +32,7 @@ export default {
       title: 'Right feature',
       type: 'object',
       fields: [
+        {name: 'image', type: 'image', title: 'image'},
         {name: 'heading', type: 'localeString', title: 'heading'},
         {name: 'paragraph', type: 'localeString', title: 'paragraph'},
       ],
