@@ -1,7 +1,7 @@
 /* For Retailers Hero */
 /* For Retailers Hero */
 .for-retailers-hero {
-  background-color: #e8ebfc;
+  /* background-color: #e8ebfc; */
 }
 
 .for-retailers-hero__container {
@@ -59,11 +59,22 @@
   object-fit: cover;
 }
 
+.hero-2-img-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: visible !important;
+}
+
 @media (max-width: 900px) {
   .for-retailers-hero__container {
     flex-direction: column;
     padding: 50px 20px;
     text-align: center;
+    min-height: unset;
   }
   .for-retailers-hero__container > * {
     width: 100%;
@@ -76,5 +87,9 @@
   .secondary-hero__img-container {
     max-width: 500px;
     margin-inline: auto;
+  }
+
+  .hero-2-img-container {
+    display: none;
   }
 }

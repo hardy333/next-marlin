@@ -35,7 +35,7 @@ const Hero = async () => {
           </ModalOpenBtnWrapper>
         </div>
 
-        <div className="secondary-hero__img-container">
+        <div className="secondary-hero__img-container  hero-2-img-container">
           <Image
             alt="img"
             width={1800}
