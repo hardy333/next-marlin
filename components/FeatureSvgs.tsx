@@ -4,23 +4,18 @@ export const AnalyzeSvg = () => (
     width="66"
     height="66"
     viewBox="0 0 24 24"
-    className="duoicon duoicon-id-card"
+    className="duoicon duoicon-slideshow"
     // style="color: rgb(99, 102, 241);"
   >
     <path
       fill="currentColor"
-      d="M20 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16Z"
+      d="M21 3a1 1 0 1 1 0 2v11a2 2 0 0 1-2 2h-5.055l2.293 2.293a1 1 0 0 1-1.414 1.414l-2.829-2.828-2.828 2.828a1 1 0 0 1-1.414-1.414L10.046 18H5a2 2 0 0 1-2-2V5a1 1 0 1 1 0-2h18Z"
       className="duoicon-secondary-layer"
       opacity=".3"
     ></path>
     <path
       fill="currentColor"
-      d="M10 9v2H8V9h2Zm7 2h-3a1 1 0 0 0-.117 1.993L14 13h3a1 1 0 0 0 .117-1.993L17 11Z"
-      className="duoicon-primary-layer"
-    ></path>
-    <path
-      fill="currentColor"
-      d="M10 7H8a2 2 0 0 0-1.995 1.85L6 9v2a2 2 0 0 0 1.85 1.995L8 13h2a2 2 0 0 0 1.995-1.85L12 11V9a2 2 0 0 0-1.85-1.995L10 7Zm7 8H7a1 1 0 1 0 0 2h10a1 1 0 1 0 0-2Z"
+      d="M8 11a1 1 0 0 0-1 1v1a1 1 0 1 0 2 0v-1a1 1 0 0 0-1-1Zm4-2a1 1 0 0 0-1 1v3a1 1 0 1 0 2 0v-3a1 1 0 0 0-1-1Zm4-2a1 1 0 0 0-.993.883L15 8v5a1 1 0 0 0 1.993.117L17 13V8a1 1 0 0 0-1-1Z"
       className="duoicon-primary-layer"
     ></path>
   </svg>
@@ -58,20 +53,19 @@ export const OptimizeSvg = () => {
       width="66"
       height="66"
       viewBox="0 0 24 24"
-      className="duoicon duoicon-align-bottom"
+      className="duoicon duoicon-user"
+      // style="color: rgb(99, 102, 241);"
     >
       <path
         fill="currentColor"
-        fillRule="evenodd"
-        d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5Z"
-        className="duoicon-secondary-layer"
-        opacity=".3"
+        d="M12 13c2.396 0 4.575.694 6.178 1.671.8.49 1.484 1.065 1.978 1.69.486.616.844 1.352.844 2.139 0 .845-.411 1.511-1.003 1.986-.56.45-1.299.748-2.084.956-1.578.417-3.684.558-5.913.558s-4.335-.14-5.913-.558c-.785-.208-1.524-.506-2.084-.956C3.41 20.01 3 19.345 3 18.5c0-.787.358-1.523.844-2.139.494-.625 1.177-1.2 1.978-1.69C7.425 13.694 9.605 13 12 13Z"
+        className="duoicon-primary-layer"
       ></path>
       <path
         fill="currentColor"
-        fillRule="evenodd"
-        d="M15 7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-4Z"
-        className="duoicon-primary-layer"
+        d="M12 2c3.849 0 6.255 4.167 4.33 7.5A5 5 0 0 1 12 12c-3.849 0-6.255-4.167-4.33-7.5A5 5 0 0 1 12 2Z"
+        className="duoicon-secondary-layer"
+        opacity=".3"
       ></path>
     </svg>
   );

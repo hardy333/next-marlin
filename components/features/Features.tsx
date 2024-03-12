@@ -9,22 +9,22 @@ const initialData = [
     img: <ConnectSvg />,
     h: "Connect",
     p: `Supposing so be resolving breakfast am or perfectly Lorem, ipsum..`,
-    color: "rgb(12, 188, 135)",
-    bgColor: "rgba(12, 188, 135, 0.1)",
+    color: "#E6C539",
+    bgColor: "rgba(230, 198, 57, 0.1)",
   },
   {
     img: <OptimizeSvg />,
     h: "Optimize",
     p: `Rapturous did believe him all had supported.`,
-    bgColor: "rgba(253, 126, 20, 0.1)",
-    color: "rgb(253, 126, 20)",
+    color: "#30D9BD",
+    bgColor: "rgba(48, 217, 189, 0.1)",
   },
   {
     img: <AnalyzeSvg />,
     h: "Analyze",
     p: `Arranging rapturous did believe him all had supported.`,
-    color: "rgb(23, 162, 184)",
-    bgColor: "rgba(23, 162, 184, 0.1)",
+    color: "#F33347",
+    bgColor: "rgba(243, 51, 70, 0.1)",
   },
 ];
 
@@ -46,7 +46,7 @@ const Features = async ({
           ...initObj,
           h: data?.leftFeature.heading,
           p: data?.leftFeature.paragraph,
-          img: data?.leftFeature.image,
+          // img: data?.leftFeature.image,
         };
       }
       if (index === 1) {
@@ -54,7 +54,7 @@ const Features = async ({
           ...initObj,
           h: data?.middleFeature.heading,
           p: data?.middleFeature.paragraph,
-          img: data?.middleFeature.image,
+          // img: data?.middleFeature.image,
         };
       }
       if (index === 2) {
@@ -62,7 +62,7 @@ const Features = async ({
           ...initObj,
           h: data?.rightFeature.heading,
           p: data?.rightFeature.paragraph,
-          img: data?.rightFeature.image,
+          // img: data?.rightFeature.image,
         };
       }
     });
@@ -82,13 +82,13 @@ const Features = async ({
                 className={cn(styles.svgBox)}
                 style={{ background: obj.bgColor, color: obj.color }}
               >
-                {/* {obj.img} */}
-                <Image
+                {obj.img}
+                {/* <Image
                   src={urlFor(obj.img).url()}
                   alt="img"
                   width={500}
                   height={500}
-                />
+                /> */}
               </div>
               <h2>{obj.h}</h2>
               <p>{obj.p}</p>
