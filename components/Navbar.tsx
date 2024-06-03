@@ -31,13 +31,13 @@ export const linksArr = [
     },
     link: "/for-vendors",
   },
-  {
-    text: {
-      geo: "ფასები",
-      en: "pricing",
-    },
-    link: "/pricing",
-  },
+  // {
+  //   text: {
+  //     geo: "ფასები",
+  //     en: "pricing",
+  //   },
+  //   link: "/pricing",
+  // },
   {
     text: {
       geo: "ბლოგი",
