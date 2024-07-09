@@ -60,8 +60,8 @@ export default async function BlogArticle({
 
           <Image
             src={urlFor(data.titleImage).url()}
-            width={1600}
-            height={1000}
+            width={1400}
+            height={800}
             alt="Title Image"
             priority
             className=" mt-8 border full-blog-post__main-img"
